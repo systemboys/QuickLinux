@@ -46,7 +46,7 @@ while true; do
     if [ $? -ne 0 ]; then
         clear
         cd ../..
-        ./QuickLinux.sh
+        ./${fileName}
     fi
 
     case $choice in

@@ -14,6 +14,13 @@ developer="$2"
 sessionName="Sessão Linux"
 sessionDescription="Opções de referência ao Linux."
 
+# Função para sair do script
+sair_do_script() {
+    clear
+    echo "Saindo do menu. Até mais!"
+    exit "$1"
+}
+
 # Função para atualizar pacotes Linux
 update_packages() {
     sudo apt-get update
@@ -39,7 +46,7 @@ while true; do
     if [ $? -ne 0 ]; then
         clear
         cd ../..
-        ./QuickLinux.sh
+        ./${fileName}
     fi
 
     case $choice in

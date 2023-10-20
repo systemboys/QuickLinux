@@ -15,12 +15,14 @@ developer="® $(date +%Y) - GLOBAL TEC Informática | www.gti1.com.br"
 
 # Função para executar sessão Menu QuickLinux
 Menu_QuickLinux() {
+    export fileName
     cd Package_Installers/Menu_QuickLinux
     ./Menu_QuickLinux.sh "$fileName" "$developer"
 }
 
 # Função para executar sessão Linux
 Linux_Session() {
+    export fileName
     cd Package_Installers/Linux_Session
     ./Linux_Session.sh "$fileName" "$developer"
 }
