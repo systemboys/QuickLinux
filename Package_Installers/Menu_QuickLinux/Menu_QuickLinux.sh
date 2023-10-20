@@ -39,9 +39,9 @@ DeleteQuickLinux() {
     clear
     cd ../.. && rm -rf QuickLinux
     dialog --msgbox "QuickLinux deletado!" 8 40
-    sleep 3
+    clear
+    echo "Saindo do menu. Adeus!"
     exit 0
-    clear && ls -l
 }
 
 # Função para atualizar o kernel Linux
