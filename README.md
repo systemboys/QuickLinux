@@ -2,7 +2,7 @@
 
 > **( ! )** Esse menu ainda está em desenvolvimento!
 
-![Menu de instalações de pacotes Linux](./images/QuickLinux.png?raw=true "Menu de instalações de pacotes Linux")
+![Menu de instalações de pacotes Linux](./Images/QuickLinux.png?raw=true "Menu de instalações de pacotes Linux")
 
 QuickLinux: Facilite a vida no Linux com um menu interativo. Instale pacotes, atualize o sistema e execute comandos essenciais com apenas alguns cliques. Simplifique sua experiência no Linux.
 
