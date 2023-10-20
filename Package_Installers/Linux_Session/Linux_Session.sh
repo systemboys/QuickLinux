@@ -53,7 +53,7 @@ shut_down_linux() {
         echo "50" ; sleep 1
         echo "70" ; sleep 1
         echo "100" ; sleep 1
-    ) | dialog --title "Reinicializando o Linux" --gauge "Aguarde, reinicializando o Linux..." 10 70 0
+    ) | dialog --title "Desligando o Linux" --gauge "Aguarde, Desligando o Linux..." 10 70 0
     sudo poweroff
 }
 
