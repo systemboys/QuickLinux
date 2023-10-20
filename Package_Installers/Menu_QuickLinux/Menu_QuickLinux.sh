@@ -28,7 +28,16 @@ DeleteQuickLinux() {
 
 # Função para atualizar o kernel Linux
 ReloadQuickLinux() {
-    # Your commands here
+    (
+        echo "10" ; sleep 1
+        echo "30" ; sleep 1
+        echo "50" ; sleep 1
+        echo "70" ; sleep 1
+        echo "100" ; sleep 1
+    ) | dialog --title "Atualizando Pacotes" --gauge "Aguarde, atualizando pacotes..." 10 70 0
+    clear
+    cd ../..
+    ./${fileName}
     dialog --msgbox "QuickLinux recarregado!" 8 40
 }
 
@@ -37,6 +46,7 @@ while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
             --menu "${sessionDescription}" 15 40 2 \
+            0 "... Voltar" \
             1 "Atualizar QuickLinux" \
             2 "Deletar QuickLinux" \
             3 "Recarregar QuickLinux" \
@@ -50,6 +60,11 @@ while true; do
     fi
 
     case $choice in
+        0)
+            clear
+            cd ../..
+            ./${fileName}
+            ;;
         1)
             clear
             UpdateQuickLinux
