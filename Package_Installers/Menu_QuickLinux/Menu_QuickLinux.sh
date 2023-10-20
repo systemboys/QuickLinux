@@ -37,7 +37,8 @@ DeleteQuickLinux() {
         echo "100" ; sleep 1
     ) | dialog --title "Deletando QuickLinux" --gauge "Aguarde, deletando QuickLinux..." 10 70 0
     clear
-    cd ../.. && rm -rf QuickLinux
+    cd ../..
+    rm -rf QuickLinux
     clear
     echo "Saindo do menu. Adeus!"
     exit 0
