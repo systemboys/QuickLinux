@@ -24,7 +24,7 @@ UpdateQuickLinux() {
         echo "100" ; sleep 1
     ) | dialog --title "Atualizando QuickLinux" --gauge "Aguarde, atualizando QuickLinux..." 10 70 0
     clear
-    cd ../.. && rm -rf QuickLinux && git clone https://github.com/systemboys/QuickLinux.git && cd QuickLinux && ./QuickLinux.sh
+    cd ../../.. && rm -rf QuickLinux && git clone https://github.com/systemboys/QuickLinux.git && cd QuickLinux && ./QuickLinux.sh
 }
 
 # Função para atualizar o kernel Linux
