@@ -25,7 +25,6 @@ UpdateQuickLinux() {
     ) | dialog --title "Atualizando QuickLinux" --gauge "Aguarde, atualizando QuickLinux..." 10 70 0
     clear
     cd ../.. && rm -rf QuickLinux && git clone https://github.com/systemboys/QuickLinux.git && cd QuickLinux && ./QuickLinux.sh
-    dialog --msgbox "QuickLinux atualizados!" 8 40
 }
 
 # Função para atualizar o kernel Linux
@@ -54,7 +53,7 @@ while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
             --menu "${sessionDescription}" 15 40 2 \
-            0 "... Voltar" \
+            0 "Voltar ..." \
             1 "Atualizar QuickLinux" \
             2 "Deletar QuickLinux" \
             3 "Recarregar QuickLinux" \
