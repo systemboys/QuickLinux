@@ -152,7 +152,7 @@ E chamar o arquivo de instalação da seguinte forma:
 ...
 ```
 
-> **( ! )** Obs.: Esse novo arquivo deve está dentro do diretório `./Package_Installers/Internet/`.
+> **_( ! )_** Obs.: Esse novo arquivo deve está dentro do diretório `./Package_Installers/Internet/`.
 
 **Ou apenas outros comandos qualquer**
 
@@ -162,20 +162,21 @@ O exemplo a seguir, é para outros comandos sem verificações:
 #!/bin/bash
 
 # Verifica se o número de argumentos é correto
-if [ "$#" -ne 2 ]; then
+if [ "$#" -ne 1 ]; then
     echo "Erro: Número incorreto de argumentos."
     exit 1
 fi
 
 # Obtém os valores dos argumentos
-sleep="$1"
-fileName="$2"
+fileName="$1"
 
 # Start of commands
 
 # Your Linux commands...
 
 # End of commands
+
+dialog --msgbox "${packageName} já está instalado! Ignorando a instalação..." 8 40
 
 cd ..
 ./${fileName}
