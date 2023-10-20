@@ -40,7 +40,7 @@ DeleteQuickLinux() {
     cd ../../..
     rm -rf QuickLinux
     clear
-    echo "Saindo do menu. Adeus!"
+    echo "O QuickLinux foi totalmente apagado. Adeus!"
     exit 0
 }
 
