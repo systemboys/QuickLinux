@@ -16,7 +16,17 @@ sessionDescription="Opções de referência ao QuickMenu."
 
 # Função para atualizar pacotes Linux
 UpdateQuickLinux() {
-    # Your commands here
+    cd ../.. && rm -rf QuickLinux && git clone https://github.com/systemboys/QuickLinux.git && cd QuickLinux && ./QuickLinux.sh
+    (
+        echo "10" ; sleep 1
+        echo "30" ; sleep 1
+        echo "50" ; sleep 1
+        echo "70" ; sleep 1
+        echo "100" ; sleep 1
+    ) | dialog --title "Atualizando QuickLinux" --gauge "Aguarde, atualizando QuickLinux..." 10 70 0
+    clear
+    cd ../..
+    ./${fileName}
     dialog --msgbox "QuickLinux atualizados!" 8 40
 }
 
@@ -34,7 +44,7 @@ ReloadQuickLinux() {
         echo "50" ; sleep 1
         echo "70" ; sleep 1
         echo "100" ; sleep 1
-    ) | dialog --title "Atualizando Pacotes" --gauge "Aguarde, atualizando pacotes..." 10 70 0
+    ) | dialog --title "Recarregando QuickLinux" --gauge "Aguarde, recarregando QuickLinux..." 10 70 0
     clear
     cd ../..
     ./${fileName}
