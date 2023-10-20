@@ -21,8 +21,8 @@ update_kernel() {
 
 # Menu interativo usando dialog
 while true; do
-    choice=$(dialog --clear --backtitle "Menu Interativo" \
-            --title "Escolha uma opção" \
+    choice=$(dialog --clear --backtitle "QuickLinux: Desenvolvido pela GTi (www.gti1.com.br)" \
+            --title "QuickLinux" \
             --menu "Selecione as opções usando (↓ ↑ → ←) e pressione \"Enter\". Pode usar os núermso ou o clique também:" 15 40 2 \
             1 "Atualizar pacotes Linux" \
             2 "Atualizar kernel Linux" \
