@@ -59,15 +59,15 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 
 ```bash
 /QuickLinux
-├─ /Imagens
+├─ /Imagens/
 │    └─ QuickLinux.png
-├─ /Package_Installers
-│    ├─ /Internet
+├─ /Package_Installers/
+│    ├─ /Internet/
 │    │    ├─ Install_Package1.sh
 │    │    ├─ Install_Package2.sh
 │    │    ├─ Install_Package3.sh
 │    │    └─ ...
-│    ├─ /Desenvolvimento
+│    ├─ /Development/
 │    │    └─ ...
 │    └─ ...
 ├─ QuickLinux.sh
