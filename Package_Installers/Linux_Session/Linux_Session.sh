@@ -33,6 +33,30 @@ update_kernel() {
     dialog --msgbox "Kernel Linux atualizado!" 8 40
 }
 
+# Função para reiniciar o Linux
+restart_linux() {
+    (
+        echo "10" ; sleep 1
+        echo "30" ; sleep 1
+        echo "50" ; sleep 1
+        echo "70" ; sleep 1
+        echo "100" ; sleep 1
+    ) | dialog --title "Reinicializando o Linux" --gauge "Aguarde, reinicializando o Linux..." 10 70 0
+    sudo reboot
+}
+
+# Função para desligar o Linux
+shut_down_linux() {
+    (
+        echo "10" ; sleep 1
+        echo "30" ; sleep 1
+        echo "50" ; sleep 1
+        echo "70" ; sleep 1
+        echo "100" ; sleep 1
+    ) | dialog --title "Reinicializando o Linux" --gauge "Aguarde, reinicializando o Linux..." 10 70 0
+    sudo poweroff
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -41,6 +65,8 @@ while true; do
             0 "Voltar..." \
             1 "Atualizar pacotes Linux" \
             2 "Atualizar kernel Linux" \
+            3 "Reiniciar o Linux" \
+            4 "Desligar o Linux" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -63,6 +89,14 @@ while true; do
         2)
             clear
             update_kernel
+            ;;
+        3)
+            clear
+            restart_linux
+            ;;
+        4)
+            clear
+            shut_down_linux
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
