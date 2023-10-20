@@ -36,11 +36,11 @@ while true; do
     fi
 
     case $choice in
-        1)
+        1) # Agualizar Pacotes Linux
             clear
             update_packages
             ;;
-        2)
+        2) # Atualizar Kernel Linux
             clear
             update_kernel
             ;;
