@@ -64,7 +64,7 @@ while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
             --menu "${sessionDescription}" 15 40 2 \
-            0 "Voltar ..." \
+            0 "Voltar..." \
             1 "Atualizar QuickLinux" \
             2 "Deletar QuickLinux" \
             3 "Recarregar QuickLinux" \
