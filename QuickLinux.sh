@@ -7,25 +7,31 @@ if ! command -v dialog &> /dev/null; then
     sudo apt-get install -y dialog
 fi
 
-# Função para atualizar pacotes Linux
-update_packages() {
-    sudo apt-get update
-    dialog --msgbox "Pacotes Linux atualizados!" 8 40
+# Variáveis úteis
+fileName=$(basename "$0")
+sessionName="QuickLinux"
+sessionDescription="Selecione as opções usando (↓ ↑ → ←) e pressione \"Enter\". Pode usar os núermso ou o clique também:"
+developer="® $(date +%Y) - GLOBAL TEC Informática | www.gti1.com.br"
+
+# Função para executar sessão Menu QuickLinux
+Menu_QuickLinux() {
+    cd Package_Installers/Menu_QuickLinux
+    ./Menu_QuickLinux.sh "$fileName" "$developer"
 }
 
-# Função para atualizar o kernel Linux
-update_kernel() {
-    sudo apt-get upgrade -y
-    dialog --msgbox "Kernel Linux atualizado!" 8 40
+# Função para executar sessão Linux
+Linux_Session() {
+    cd Package_Installers/Linux_Session
+    ./Linux_Session.sh "$fileName" "$developer"
 }
 
 # Menu interativo usando dialog
 while true; do
-    choice=$(dialog --clear --backtitle "QuickLinux: Desenvolvido pela GTi (www.gti1.com.br)" \
-            --title "QuickLinux" \
-            --menu "Selecione as opções usando (↓ ↑ → ←) e pressione \"Enter\". Pode usar os núermso ou o clique também:" 15 40 2 \
-            1 "Atualizar pacotes Linux" \
-            2 "Atualizar kernel Linux" \
+    choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
+            --title "${sessionName}" \
+            --menu "${sessionDescription}" 15 40 2 \
+            1 "Menu QuickLinux" \
+            2 "Linux" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -36,13 +42,13 @@ while true; do
     fi
 
     case $choice in
-        1) # Agualizar Pacotes Linux
+        1) # Sessão Menu QuickLinux
             clear
-            update_packages
+            Menu_QuickLinux
             ;;
-        2) # Atualizar Kernel Linux
+        2) # Sessão Linux
             clear
-            update_kernel
+            Linux_Session
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
