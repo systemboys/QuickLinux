@@ -29,7 +29,15 @@ UpdateQuickLinux() {
 
 # Função para atualizar o kernel Linux
 DeleteQuickLinux() {
-    # Your commands here
+    (
+        echo "10" ; sleep 1
+        echo "30" ; sleep 1
+        echo "50" ; sleep 1
+        echo "70" ; sleep 1
+        echo "100" ; sleep 1
+    ) | dialog --title "Deletando QuickLinux" --gauge "Aguarde, deletando QuickLinux..." 10 70 0
+    clear
+    cd ../.. && rm -rf QuickLinux
     dialog --msgbox "QuickLinux deletado!" 8 40
 }
 
