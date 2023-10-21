@@ -13,6 +13,8 @@ if ! command -v ${packageVersionName} &> /dev/null; then
     clear
     dialog --msgbox "${packageName} não está instalado! Instalando..." 8 40
 
+    clear
+
     # Adicionar a chave GPG
     wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
 
@@ -23,7 +25,7 @@ if ! command -v ${packageVersionName} &> /dev/null; then
     sudo apt update
 
     # Instalar o AnyDesk
-    sudo apt install anydesk
+    sudo apt install anydesk -y
 
     clear
     dialog --msgbox "${packageName} instalado com sucesso!" 8 40
