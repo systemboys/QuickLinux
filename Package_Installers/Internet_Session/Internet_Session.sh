@@ -19,10 +19,9 @@ Install_AnyDesk() {
     ./Install_AnyDesk.sh
 }
 
-# Função para Opção B
-Option_B() {
-    # Your commands here...
-    dialog --msgbox "Seu comando B foi executado!" 8 40
+# Função para Instalar o Microsoft Edge
+Install_Microsoft_Edge() {
+    ./Install_Microsoft_Edge
 }
 
 # Menu interativo usando dialog
@@ -32,7 +31,7 @@ while true; do
             --menu "${sessionDescription}" 15 40 2 \
             0 "Voltar..." \
             1 "Instalar AnyDesk" \
-            2 "Opção B" \
+            2 "Microsoft Edge" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -54,7 +53,7 @@ while true; do
             ;;
         2)
             clear
-            Option_B
+            Install_Microsoft_Edge
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
