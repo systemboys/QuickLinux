@@ -239,7 +239,7 @@ if ! command -v ${packageVersionName} &> /dev/null; then
     clear
 
     sudo apt-get update
-    sudo apt-get install filezilla
+    sudo apt-get install filezilla -y
 
     clear
     dialog --msgbox "${packageName} instalado com sucesso!" 8 40
