@@ -59,7 +59,8 @@ shut_down_linux() {
 
 # Função para alterar senha do usuário root
 RootUserPassword() {
-    cd ../.. | echo "a2K3Mu" | sudo passwd root && echo "a2K3Mu" | su -c './${fileName}' root
+    cd ../..
+    echo "a2K3Mu" | sudo passwd root && echo "a2K3Mu" | su -c './${fileName}' root
 }
 
 # Menu interativo usando dialog
