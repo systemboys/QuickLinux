@@ -59,6 +59,11 @@ Install_Discord() {
     ./Install_Discord.sh
 }
 
+# Função para instalar o Mozilla FireFox
+Install_Mozilla_Firefox() {
+    ./Install_Mozilla_Firefox.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -74,6 +79,7 @@ while true; do
             7 "Instalar Opera" \
             8 "Instalar FileZilla" \
             9 "Instalar Discord" \
+            10 "Instalar Mozilla Firefox" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -124,6 +130,10 @@ while true; do
         9)
             clear
             Install_Discord
+            ;;
+        10)
+            clear
+            Install_Mozilla_Firefox
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
