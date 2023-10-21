@@ -19,14 +19,19 @@ Install_AnyDesk() {
     ./Install_AnyDesk.sh
 }
 
-# Função para Instalar o Microsoft Edge
+# Função para instalar o Microsoft Edge
 Install_Microsoft_Edge() {
     ./Install_Microsoft_Edge.sh
 }
 
-# Função para Instalar o Google Chrome
+# Função para instalar o Google Chrome
 Install_Google_Chrome() {
     ./Install_Google_Chrome.sh
+}
+
+# Função para instalar o Google Earth Pro
+Install_Google_Earth_Pro() {
+    ./Install_Google_Earth_Pro.sh
 }
 
 # Menu interativo usando dialog
@@ -38,6 +43,7 @@ while true; do
             1 "Instalar AnyDesk" \
             2 "Instalar Microsoft Edge" \
             3 "Instalar Google Chrome" \
+            4 "Instalar Google Earth Pro" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -64,6 +70,10 @@ while true; do
         3)
             clear
             Install_Google_Chrome
+            ;;
+        4)
+            clear
+            Install_Google_Earth_Pro
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
