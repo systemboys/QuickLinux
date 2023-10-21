@@ -34,6 +34,11 @@ Install_Google_Earth_Pro() {
     ./Install_Google_Earth_Pro.sh
 }
 
+# Função para instalar o  Skype para Linux
+Install_Skype_for_Linux() {
+    ./Install_Skype_for_Linux.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -44,6 +49,7 @@ while true; do
             2 "Instalar Microsoft Edge" \
             3 "Instalar Google Chrome" \
             4 "Instalar Google Earth Pro" \
+            5 "Instalar Skype para Linux" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -74,6 +80,10 @@ while true; do
         4)
             clear
             Install_Google_Earth_Pro
+            ;;
+        5)
+            clear
+            Install_Skype_for_Linux
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
