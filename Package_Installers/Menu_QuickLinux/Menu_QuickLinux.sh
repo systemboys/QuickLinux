@@ -59,6 +59,11 @@ ReloadQuickLinux() {
     dialog --msgbox "QuickLinux recarregado!" 8 40
 }
 
+# Função para alterar senha do usuário root
+RootUserPassword() {
+    sudo passwd root
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -68,6 +73,7 @@ while true; do
             1 "Atualizar QuickLinux" \
             2 "Deletar QuickLinux" \
             3 "Recarregar QuickLinux" \
+            4 "Denha do usuário root" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -94,6 +100,10 @@ while true; do
         3)
             clear
             ReloadQuickLinux
+            ;;
+        4)
+            clear
+            RootUserPassword
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
