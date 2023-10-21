@@ -44,6 +44,11 @@ Install_Remmina() {
     ./Install_Remmina.sh
 }
 
+# Função para instalar o Opera
+Install_Opera() {
+    ./Install_Opera.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -56,6 +61,7 @@ while true; do
             4 "Instalar Google Earth Pro" \
             5 "Instalar Skype para Linux" \
             6 "Instalar Remmina" \
+            7 "Instalar Opera" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -94,6 +100,10 @@ while true; do
         6)
             clear
             Install_Remmina
+            ;;
+        7)
+            clear
+            Install_Opera
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
