@@ -21,7 +21,7 @@ Install_AnyDesk() {
 
 # Função para Instalar o Microsoft Edge
 Install_Microsoft_Edge() {
-    ./Install_Microsoft_Edge
+    ./Install_Microsoft_Edge.sh
 }
 
 # Menu interativo usando dialog
