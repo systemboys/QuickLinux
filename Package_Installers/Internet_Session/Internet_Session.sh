@@ -15,10 +15,9 @@ fileNameSession=$(basename "$0")
 sessionName="Sessão Internet"
 sessionDescription="Opções de referência a Sessão Internet."
 
-# Função para Opção A
-Option_A() {
-    # Your commands here...
-    dialog --msgbox "Seu comando A foi executado!" 8 40
+# Função para instalar o AnyDesk
+Install_AnyDesk() {
+    ./Install_AnyDesk.sh "$fileNameSession"
 }
 
 # Função para Opção B
@@ -33,7 +32,7 @@ while true; do
             --title "${sessionName}" \
             --menu "${sessionDescription}" 15 40 2 \
             0 "Voltar..." \
-            1 "Opção A" \
+            1 "Instalar AnyDesk" \
             2 "Opção B" \
             2>&1 >/dev/tty)
 
@@ -52,7 +51,7 @@ while true; do
             ;;
         1)
             clear
-            Option_A
+            Install_AnyDesk
             ;;
         2)
             clear
