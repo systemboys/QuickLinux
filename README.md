@@ -62,14 +62,16 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 ├─ /Imagens/
 │    └─ QuickLinux.png
 ├─ /Package_Installers/
-│    ├─ /Internet/
+│    ├─ /Internet_Session/
 │    │    ├─ Install_Package1.sh
 │    │    ├─ Install_Package2.sh
 │    │    ├─ Install_Package3.sh
-│    │    └─ ...
-│    ├─ /Development/
-│    │    └─ ...
-│    └─ ...
+│    │    └─ Internet_Session.sh
+│    ├─ /Linux_Session/
+│    │    └─ Linux_Session.sh
+│    ├─ /Menu_QuickLinux/
+│    │    └─ Package_Installers.sh
+│    └─ Package_Installers.sh
 ├─ QuickLinux.sh
 └─ README.md
 ```
