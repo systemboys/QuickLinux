@@ -64,6 +64,11 @@ Install_Mozilla_Firefox() {
     ./Install_Mozilla_Firefox.sh
 }
 
+# Função para instalar o TigerVNC Viewer
+Install_TigerVNC_Viewer() {
+    ./Install_TigerVNC_Viewer.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -80,6 +85,7 @@ while true; do
             8 "Instalar FileZilla" \
             9 "Instalar Discord" \
             10 "Instalar Mozilla Firefox" \
+            11 "Instalar TigerVNC Viewer" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -134,6 +140,10 @@ while true; do
         10)
             clear
             Install_Mozilla_Firefox
+            ;;
+        11)
+            clear
+            Install_TigerVNC_Viewer
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
