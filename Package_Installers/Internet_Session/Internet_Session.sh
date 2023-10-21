@@ -54,6 +54,11 @@ Install_FileZilla() {
     ./Install_FileZilla.sh
 }
 
+# Função para instalar o Discord
+Install_Discord() {
+    ./Install_Discord.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -68,6 +73,7 @@ while true; do
             6 "Instalar Remmina" \
             7 "Instalar Opera" \
             8 "Instalar FileZilla" \
+            9 "Instalar Discord" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -114,6 +120,10 @@ while true; do
         8)
             clear
             Install_FileZilla
+            ;;
+        9)
+            clear
+            Install_Discord
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
