@@ -186,7 +186,9 @@ Depois coloque a posição da chamada da função na **_case_**:
 # ... (restante do código)
 ```
 
-Para separar os scripts de execuções de comandos em cada opção da nova sessão, você pode criar um arquivo (`Option_A.sh`) para cada opção dentro do diretório da nova sessão `/New_Session_A/`, no arquivo `New_Session_A.sh` da sua nova função, altere o conteúdo da função:
+Para separar os scripts de execuções de comandos em cada opção da nova sessão, você pode criar um arquivo (`Option_A.sh`) para cada opção dentro do diretório da nova sessão `/New_Session_A/`, no arquivo `New_Session_A.sh` da sua nova função.
+
+Altere o conteúdo da função:
 
 ```bash
 # Função para Opção A
