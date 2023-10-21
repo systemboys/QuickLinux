@@ -39,6 +39,11 @@ Install_Skype_for_Linux() {
     ./Install_Skype_for_Linux.sh
 }
 
+# Função para instalar o Remmina
+Install_Remmina() {
+    ./Install_Remmina.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -50,6 +55,7 @@ while true; do
             3 "Instalar Google Chrome" \
             4 "Instalar Google Earth Pro" \
             5 "Instalar Skype para Linux" \
+            6 "Instalar Remmina" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -84,6 +90,10 @@ while true; do
         5)
             clear
             Install_Skype_for_Linux
+            ;;
+        6)
+            clear
+            Install_Remmina
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
