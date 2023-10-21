@@ -15,16 +15,20 @@ developer="® $(date +%Y) - GLOBAL TEC Informática | www.gti1.com.br"
 
 # Função para executar sessão Menu QuickLinux
 Menu_QuickLinux() {
-    export fileName
     cd Package_Installers/Menu_QuickLinux
     ./Menu_QuickLinux.sh "$fileName" "$developer"
 }
 
 # Função para executar sessão Linux
 Linux_Session() {
-    export fileName
     cd Package_Installers/Linux_Session
     ./Linux_Session.sh "$fileName" "$developer"
+}
+
+# Função para executar sessão Internet
+Internet_Session() {
+    cd Package_Installers/Internet_Session
+    ./Internet_Session.sh "$fileName" "$developer"
 }
 
 # Menu interativo usando dialog
@@ -34,6 +38,7 @@ while true; do
             --menu "${sessionDescription}" 15 40 2 \
             1 "Menu QuickLinux" \
             2 "Linux" \
+            3 "Internet" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -49,6 +54,10 @@ while true; do
             Menu_QuickLinux
             ;;
         2) # Sessão Linux
+            clear
+            Linux_Session
+            ;;
+        3) # Sessão Internet
             clear
             Linux_Session
             ;;
