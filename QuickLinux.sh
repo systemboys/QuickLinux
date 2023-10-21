@@ -49,11 +49,6 @@ while true; do
     fi
 
     case $choice in
-        0)
-            clear
-            cd ../..
-            ./${fileName}
-            ;;
         1) # Sessão Menu QuickLinux
             clear
             Menu_QuickLinux
