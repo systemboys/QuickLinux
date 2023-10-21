@@ -68,7 +68,7 @@ RootUserPassword() {
     #     echo "Você digitou a senha: $passRoot"
     # fi
     # -----------------
-    dialog --inputbox 'Digite a nova senha:' 0 0  2>/tmp/passRoot.txt
+    # dialog --inputbox 'Digite a nova senha:' 0 0  2>/tmp/passRoot.txt
     passRoot=$( cat /tmp/passRoot.txt )
     cd ../..
     echo "$passRoot" | sudo passwd root
