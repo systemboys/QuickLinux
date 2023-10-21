@@ -98,7 +98,6 @@ fi
 # Obtém os valores dos argumentos
 fileName="$1"
 developer="$2"
-fileNameSession=$(basename "$0")
 
 # Variáveis úteis
 sessionName="Nova Sessão A"
@@ -202,7 +201,7 @@ Para:
 ```bash
 # Função para Opção A
 Option_A() {
-    ./Option_A.sh "$fileNameSession"
+    ./Option_A.sh
 }
 ```
 
@@ -211,17 +210,10 @@ E dentro do arquivo `Option_A.sh` o seguinte conteúdo:
 ```bash
 #!/bin/bash
 
-# Verifica se o número de argumentos é correto
-if [ "$#" -ne 1 ]; then
-    echo "Erro: Número incorreto de argumentos."
-    exit 1
-fi
-
-# Obtém os valores dos argumentos
-fileNameSession="$1"
-
 clear
+
 # Your commands here...
+
 dialog --msgbox "Seu comando A foi executado!" 8 40
 ```
 

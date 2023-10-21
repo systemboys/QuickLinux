@@ -9,7 +9,6 @@ fi
 # Obtém os valores dos argumentos
 fileName="$1"
 developer="$2"
-fileNameSession=$(basename "$0")
 
 # Variáveis úteis
 sessionName="Sessão Internet"
@@ -17,7 +16,7 @@ sessionDescription="Opções de referência a Sessão Internet."
 
 # Função para instalar o AnyDesk
 Install_AnyDesk() {
-    ./Install_AnyDesk.sh "$fileNameSession"
+    ./Install_AnyDesk.sh
 }
 
 # Função para Opção B
