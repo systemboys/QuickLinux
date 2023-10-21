@@ -4,7 +4,7 @@ clear
 
 # Variáveis úteis
 packageVersionName="anydesk" # Nome do arquivo na instalação para procurar a versão no pacote
-       packageName="AnyDesk" # Apenas o nome do pacote
+packageName="AnyDesk" # Apenas o nome do pacote
 
 # Start of commands
 
