@@ -120,6 +120,7 @@ while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
             --menu "${sessionDescription}" 15 40 2 \
+            0 "Voltar..." \
             1 "Opção A" \
             2 "Opção B" \
             2>&1 >/dev/tty)
@@ -132,6 +133,11 @@ while true; do
     fi
 
     case $choice in
+        0)
+            clear
+            cd ../..
+            ./${fileName}
+            ;;
         1)
             clear
             Option_A
