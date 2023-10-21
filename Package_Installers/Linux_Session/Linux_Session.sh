@@ -60,7 +60,8 @@ shut_down_linux() {
 # Função para alterar senha do usuário root
 RootUserPassword() {
     cd ../..
-    echo "a2K3Mu" | sudo passwd root && echo "a2K3Mu" | su -c './${fileName}' root
+    sudo passwd root
+    su -c './QuickLinux.sh' root
 }
 
 # Menu interativo usando dialog
