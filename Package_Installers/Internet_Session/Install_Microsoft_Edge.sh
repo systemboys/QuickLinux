@@ -6,8 +6,6 @@ clear
 packageVersionName="microsoft-edge-stable" # Nome do arquivo na instalação para procurar a versão no pacote
 packageName="Microsoft Edge" # Apenas o nome do pacote
 
-# Start of commands
-
 # Verificar se o está instalado
 if ! command -v ${packageVersionName} &> /dev/null; then
     clear

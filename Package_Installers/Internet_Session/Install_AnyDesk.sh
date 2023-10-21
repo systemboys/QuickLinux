@@ -6,8 +6,6 @@ clear
 packageVersionName="anydesk" # Nome do arquivo na instalação para procurar a versão no pacote
 packageName="AnyDesk" # Apenas o nome do pacote
 
-# Start of commands
-
 # Verificar se o está instalado
 if ! command -v ${packageVersionName} &> /dev/null; then
     clear
