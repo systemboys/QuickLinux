@@ -61,6 +61,8 @@ shut_down_linux() {
 RootUserPassword() {
     sudo passwd root
     su
+    cd ../..
+    ./${fileName}
 }
 
 # Menu interativo usando dialog
