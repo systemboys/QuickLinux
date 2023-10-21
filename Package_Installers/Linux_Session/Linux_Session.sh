@@ -85,12 +85,10 @@ while true; do
         dialog --msgbox "Senha não pode ser vazia. Por favor, tente novamente." 5 50
     else
         # Se a senha não está vazia, exibe a senha e sai do loop
-        dialog --msgbox "Você digitou a senha: $passRoot" 5 50
-        # ---
+        echo "${passRoot}" | sudo passwd root
         cd ../..
-        echo "$passRoot" | sudo passwd root
-        echo "$passRoot" | su -c ./${fileName} root
-        # ---
+        echo "${passRoot}" | su -c ./${fileName} root
+        dialog --msgbox "Senha do Usuário Root redefinida." 5 50
         break
     fi
 done
