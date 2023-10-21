@@ -24,7 +24,7 @@ if ! command -v ${packageVersionName} &> /dev/null; then
     sudo apt update
 
     # Instalar o Microsoft Edge
-    sudo apt install microsoft-edge-stable
+    sudo apt install microsoft-edge-stable -y
 
     # Resolver dependências quebradas
     if ! command -v microsoft-edge-stable &> /dev/null; then
