@@ -9,6 +9,7 @@ fi
 # Obtém os valores dos argumentos
 fileName="$1"
 developer="$2"
+fileNameSession=$(basename "$0")
 
 # Variáveis úteis
 sessionName="Sessão Internet"
