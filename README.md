@@ -171,7 +171,7 @@ Dê a opção no menu:
 
 ```bash
 # ... (outras opções)
-3 "Opção B" \
+3 "New_Session_A" \
 # ... (restante do código)
 ```
 
