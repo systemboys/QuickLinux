@@ -61,7 +61,7 @@ shut_down_linux() {
 RootUserPassword() {
     cd ../..
     sudo passwd root
-    su -c './QuickLinux.sh' root
+    su -c ./${fileName} root
 }
 
 # Menu interativo usando dialog
