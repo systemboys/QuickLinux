@@ -179,7 +179,7 @@ Depois coloque a posição da chamada da função na **_case_**:
 
 ```bash
 # ... (restante do código)
-3) # Sessão Internet
+3) # Sessão New_Session_A
     clear
     New_Session_A
     ;;
