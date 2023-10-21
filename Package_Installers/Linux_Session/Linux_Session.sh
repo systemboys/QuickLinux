@@ -59,9 +59,16 @@ shut_down_linux() {
 
 # Função para alterar senha do usuário root
 RootUserPassword() {
+    # cd ../..
+    # sudo passwd root
+    # su -c ./${fileName} root
+    # -----------------
+    dialog --inputbox 'Digite a nova senha:' 0 0  2>/tmp/passRoot.txt
+    passRoot=$( cat /tmp/passRoot.txt )
     cd ../..
-    sudo passwd root
-    su -c ./${fileName} root
+    echo "$passRoot" | sudo passwd root
+    echo "$passRoot" | su -c ./${fileName} root
+    # -----------------
 }
 
 # Menu interativo usando dialog
