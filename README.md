@@ -110,7 +110,7 @@ Option_A() {
 }
 
 # Função para Opção B
-Option_B_() {
+Option_B() {
     # Your commands here...
     dialog --msgbox "Seu comando B foi executado!" 8 40
 }
