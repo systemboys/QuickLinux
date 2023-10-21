@@ -220,3 +220,34 @@ clear
 dialog --msgbox "Seu comando A foi executado!" 8 40
 ```
 
+Caso você queira verificar se determinado pacote está instalado e ignorar a instalação, ou avançar na instalação caso não esteja instalado, o código acima pode ser alterado para o seguinte:
+
+```bash
+#!/bin/bash
+
+clear
+
+# Variáveis úteis
+packageVersionName="filezilla" # Nome do arquivo na instalação para procurar a versão no pacote
+packageName="FileZilla" # Apenas o nome do pacote
+
+# Verificar se o está instalado
+if ! command -v ${packageVersionName} &> /dev/null; then
+    clear
+    dialog --msgbox "${packageName} não está instalado! Instalando..." 8 40
+
+    clear
+
+    sudo apt-get update
+    sudo apt-get install filezilla
+
+    clear
+    dialog --msgbox "${packageName} instalado com sucesso!" 8 40
+else
+    clear
+    dialog --msgbox "${packageName} já está instalado! Ignorando a instalação..." 8 40
+fi
+```
+
+> **_( i )_** No exemplo acima, o pacote é o "FileZilla". O script verifica se está instalado para ignorar a instalação caso esteja, caso contrário, segue a instalação do pacote.
+

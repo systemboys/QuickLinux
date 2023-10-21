@@ -49,6 +49,11 @@ Install_Opera() {
     ./Install_Opera.sh
 }
 
+# Função para instlar o FileZilla
+Install_FileZilla() {
+    ./Install_FileZilla.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -62,6 +67,7 @@ while true; do
             5 "Instalar Skype para Linux" \
             6 "Instalar Remmina" \
             7 "Instalar Opera" \
+            8 "Instalar FileZilla" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -104,6 +110,10 @@ while true; do
         7)
             clear
             Install_Opera
+            ;;
+        8)
+            clear
+            Install_FileZilla
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
