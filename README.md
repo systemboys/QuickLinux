@@ -84,7 +84,7 @@ Aqui você pode editar o arquivo caso necessário, adicionando mais recursos.
 
 ## Incrementações de itens
 
-Para adicionar uma nova sessão, crie um diretório com o nome da nova sua nova sessão (Ex.: `New_Session_A`), dentro dela crie o arquivo `.sh` (Ex.: `New_Session_A.sh`) e segue abaixo seu conteúdo:
+Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sessão (Ex.: `New_Session_A`), dentro do diretório `/Package_Installers/` e dentro do diretório de sua nova sessão crie o arquivo `.sh` (Ex.: `New_Session_A.sh`) e segue abaixo seu conteúdo:
 
 ```bash
 #!/bin/bash
@@ -152,3 +152,37 @@ while true; do
     esac
 done
 ```
+
+Para chamar sua nova sessão a partir do menu inicial, adicione a função que executa a mesma:
+
+```bash
+# ... (outras funções)
+
+# Função para executar sessão Internet
+New_Session_A() {
+    cd Package_Installers/New_Session_A
+    ./New_Session_A.sh "$fileName" "$developer"
+}
+
+# ... (restante do código)
+```
+
+Dê a opção no menu:
+
+```bash
+# ... (outras opções)
+3 "Opção B" \
+# ... (restante do código)
+```
+
+Depois coloque a posição da chamada da função na **_case_**:
+
+```bash
+# ... (restante do código)
+3) # Sessão Internet
+    clear
+    Internet_Session
+    ;;
+# ... (restante do código)
+```
+
