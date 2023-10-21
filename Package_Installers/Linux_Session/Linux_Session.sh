@@ -59,12 +59,12 @@ shut_down_linux() {
 
 # Função para alterar senha do usuário root
 RootUserPassword() {
-    dialog                                           \
-       --title 'Redefinir senha'                     \
-       --passwordbox 'Por favor, informe a senha:'   \
-       0 0  2>/tmp/passRoot.txt
+    #dialog                                           \
+    #   --title 'Redefinir senha'                     \
+    #   --passwordbox 'Por favor, informe a senha:'   \
+    #   0 0  2>/tmp/passRoot.txt
     # -----------------
-    # dialog --inputbox 'Digite a nova senha:' 0 0  2>/tmp/passRoot.txt
+    dialog --passwordbox 'Digite a nova senha:' 0 0  2>/tmp/passRoot.txt
     passRoot=$( cat /tmp/passRoot.txt )
     cd ../..
     echo "$passRoot" | sudo passwd root
