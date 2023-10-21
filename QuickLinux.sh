@@ -31,6 +31,12 @@ Internet_Session() {
     ./Internet_Session.sh "$fileName" "$developer"
 }
 
+# Função para executar sessão Desenvolvimento
+Development_Session() {
+    cd Package_Installers/Development_Session
+    ./Development_Session.sh "$fileName" "$developer"
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -39,6 +45,7 @@ while true; do
             1 "Menu QuickLinux" \
             2 "Linux" \
             3 "Internet" \
+            4 "Desenvolvimento" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -60,6 +67,10 @@ while true; do
         3) # Sessão Internet
             clear
             Internet_Session
+            ;;
+        4) # Sessão Desenvolvimento
+            clear
+            Development_Session
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
