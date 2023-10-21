@@ -181,7 +181,7 @@ Depois coloque a posição da chamada da função na **_case_**:
 # ... (restante do código)
 3) # Sessão Internet
     clear
-    Internet_Session
+    New_Session_A
     ;;
 # ... (restante do código)
 ```
