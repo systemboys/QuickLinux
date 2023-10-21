@@ -84,7 +84,7 @@ Aqui você pode editar o arquivo caso necessário, adicionando mais recursos.
 
 ## Incrementações de itens
 
-Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sessão (Ex.: `New_Session_A`), dentro do diretório `/Package_Installers/` e dentro do diretório de sua nova sessão crie o arquivo `.sh` (Ex.: `New_Session_A.sh`) e segue abaixo seu conteúdo:
+Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sessão (Ex.: `/New_Session_A/`), dentro do diretório `/Package_Installers/` e dentro do diretório de sua nova sessão crie o arquivo `.sh` (Ex.: `New_Session_A.sh`) e segue abaixo seu conteúdo:
 
 ```bash
 #!/bin/bash
@@ -184,5 +184,31 @@ Depois coloque a posição da chamada da função na **_case_**:
     New_Session_A
     ;;
 # ... (restante do código)
+```
+
+Para separar os scripts de execuções de comandos em cada opção da nova sessão, você pode criar um arquivo (`Option_A.sh`) para cada opção dentro do diretório da nova sessão `/New_Session_A/`, no arquivo `New_Session_A.sh` da sua nova função, altere o conteúdo da função:
+
+```bash
+# Função para Opção A
+Option_A() {
+    # Your commands here...
+    dialog --msgbox "Seu comando A foi executado!" 8 40
+}
+```
+
+Para:
+
+```bash
+# Função para Opção A
+Option_A() {
+    ./Option_A.sh
+}
+```
+
+E dentro do arquivo `Option_A.sh` o seguinte conteúdo:
+
+```bash
+# Your commands here...
+dialog --msgbox "Seu comando A foi executado!" 8 40
 ```
 
