@@ -66,6 +66,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
   │    │    ├─ Install_Package1.sh
   │    │    ├─ Install_Package2.sh
   │    │    ├─ Install_Package3.sh
+  │    │    ├─ ...
   │    │    └─ Internet_Session.sh
   │    ├─ /Linux_Session/
   │    │    └─ Linux_Session.sh
