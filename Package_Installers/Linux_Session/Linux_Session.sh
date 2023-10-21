@@ -63,9 +63,9 @@ RootUserPassword() {
     passRoot=$(dialog --title 'Redefinir senha' --passwordbox 'Por favor, informe a senha:' 0 0 3>&1 1>&2 2>&3)
     # Verifica se o usuário pressionou Cancelar
     if [ $? -ne 0 ]; then
-        echo "Você cancelou a operação."
+        dialog --msgbox "Você cancelou a operação." 5 40
     else
-        echo "Você digitou a senha: $passRoot"
+        dialog --msgbox "Você digitou a senha: $passRoot" 5 40
     fi
     # -----------------
     # dialog --inputbox 'Digite a nova senha:' 0 0  2>/tmp/passRoot.txt
