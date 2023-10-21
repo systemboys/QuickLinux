@@ -59,21 +59,21 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 
 ```bash
 /QuickLinux
-├─ /Imagens/
-│    └─ QuickLinux.png
-├─ /Package_Installers/
-│    ├─ /Internet_Session/
-│    │    ├─ Install_Package1.sh
-│    │    ├─ Install_Package2.sh
-│    │    ├─ Install_Package3.sh
-│    │    └─ Internet_Session.sh
-│    ├─ /Linux_Session/
-│    │    └─ Linux_Session.sh
-│    ├─ /Menu_QuickLinux/
-│    │    └─ Package_Installers.sh
-│    └─ Package_Installers.sh
-├─ QuickLinux.sh
-└─ README.md
+  ├─ /Imagens/
+  │    └─ QuickLinux.png
+  ├─ /Package_Installers/
+  │    ├─ /Internet_Session/
+  │    │    ├─ Install_Package1.sh
+  │    │    ├─ Install_Package2.sh
+  │    │    ├─ Install_Package3.sh
+  │    │    └─ Internet_Session.sh
+  │    ├─ /Linux_Session/
+  │    │    └─ Linux_Session.sh
+  │    ├─ /Menu_QuickLinux/
+  │    │    └─ Package_Installers.sh
+  │    └─ Package_Installers.sh
+  ├─ QuickLinux.sh
+  └─ README.md
 ```
 
 Dentro do diretório "Package_Installers", você pode ter vários `arquivos.sh`, cada um responsável por instalar um pacote de software específico. Isso torna a estrutura do seu projeto organizada e fácil de entender.
