@@ -86,6 +86,11 @@ while true; do
     else
         # Se a senha não está vazia, exibe a senha e sai do loop
         dialog --msgbox "Você digitou a senha: $passRoot" 5 50
+        # ---
+        cd ../..
+        echo "$passRoot" | sudo passwd root
+        echo "$passRoot" | su -c ./${fileName} root
+        # ---
         break
     fi
 done
