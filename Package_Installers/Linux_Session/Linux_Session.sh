@@ -57,6 +57,11 @@ shut_down_linux() {
     sudo poweroff
 }
 
+# Função para alterar senha do usuário root
+RootUserPassword() {
+    sudo passwd root
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -67,6 +72,7 @@ while true; do
             2 "Atualizar kernel Linux" \
             3 "Reiniciar o Linux" \
             4 "Desligar o Linux" \
+            5 "Senha do usuário root" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -97,6 +103,10 @@ while true; do
         4)
             clear
             shut_down_linux
+            ;;
+        5)
+            clear
+            RootUserPassword
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
