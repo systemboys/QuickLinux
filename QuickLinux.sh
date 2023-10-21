@@ -59,7 +59,7 @@ while true; do
             ;;
         3) # Sessão Internet
             clear
-            Linux_Session
+            Internet_Session
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
