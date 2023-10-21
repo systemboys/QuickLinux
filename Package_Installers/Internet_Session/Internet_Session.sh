@@ -24,6 +24,11 @@ Install_Microsoft_Edge() {
     ./Install_Microsoft_Edge.sh
 }
 
+# Função para Instalar o Google Chrome
+Install_Google_Chrome() {
+    ./Install_Google_Chrome.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -31,7 +36,8 @@ while true; do
             --menu "${sessionDescription}" 15 40 2 \
             0 "Voltar..." \
             1 "Instalar AnyDesk" \
-            2 "Microsoft Edge" \
+            2 "Instalar Microsoft Edge" \
+            3 "Instalar Google Chrome" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -54,6 +60,10 @@ while true; do
         2)
             clear
             Install_Microsoft_Edge
+            ;;
+        3)
+            clear
+            Install_Google_Chrome
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
