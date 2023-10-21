@@ -60,6 +60,7 @@ shut_down_linux() {
 # Função para alterar senha do usuário root
 RootUserPassword() {
     sudo passwd root
+    su
 }
 
 # Menu interativo usando dialog
