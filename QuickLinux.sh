@@ -2,8 +2,9 @@
 
 # Verifica se o script está sendo executado como superusuário
 if [ "$EUID" -ne 0 ]; then
-    dialog --msgbox 'Este script precisa ser executado como superusuário.' 8 40
+    dialog --msgbox 'Este script precisa ser executado como superusuário.' 6 40
     exit 1
+    clear
 fi
 
 # Verifica se o dialog está instalado
