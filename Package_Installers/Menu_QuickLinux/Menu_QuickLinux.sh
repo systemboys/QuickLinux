@@ -41,6 +41,7 @@ DeleteQuickLinux() {
     rm -rf QuickLinux
     clear
     dialog --msgbox 'O QuickLinux foi totalmente apagado. Adeus!' 6 40
+    exit 0
     pkill -SIGINT -f "$(basename "$0")"
 }
 
