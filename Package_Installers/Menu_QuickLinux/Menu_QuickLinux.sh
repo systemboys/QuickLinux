@@ -41,7 +41,7 @@ DeleteQuickLinux() {
     rm -rf QuickLinux
     clear
     dialog --msgbox 'O QuickLinux foi totalmente apagado. Adeus!' 6 40
-    kill -SIGINT $$
+    pkill -SIGINT -f "$(basename "$0")"
 }
 
 # Função para atualizar o kernel Linux
