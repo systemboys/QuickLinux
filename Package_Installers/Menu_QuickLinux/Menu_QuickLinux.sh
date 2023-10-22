@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Verifica se o script está sendo executado como superusuário
+if [ "$EUID" -ne 0 ]; then
+    echo "Este script precisa ser executado como superusuário."
+    exit 1
+fi
+
 # Verifica se o número de argumentos é correto
 if [ "$#" -ne 2 ]; then
     echo "Erro: Número incorreto de argumentos."

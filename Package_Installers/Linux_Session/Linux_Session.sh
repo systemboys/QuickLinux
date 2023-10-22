@@ -59,45 +59,35 @@ shut_down_linux() {
 
 # Função para alterar senha do usuário root
 RootUserPassword() {
-    # -----------------
-# Captura a senha do usuário usando o dialog
-# passRoot=$(dialog --title 'Redefinir senha' --passwordbox 'Por favor, informe a senha:' 0 0 3>&1 1>&2 2>&3)
-# Verifica se o usuário pressionou Cancelar
-# if [ $? -ne 0 ]; then
-#     dialog --msgbox "Você cancelou a operação." 5 40
-# else
-#     dialog --msgbox "Você digitou a senha: $passRoot" 5 40
-# fi
-    # -----------------
-# Loop para garantir que o usuário forneça uma senha não vazia
-while true; do
-    # Captura a senha do usuário usando o dialog
-    passRoot=$(dialog --title 'Redefinir senha' --passwordbox 'Por favor, informe a senha:' 0 0 3>&1 1>&2 2>&3)
+    # Loop para garantir que o usuário forneça uma senha não vazia
+    while true; do
+        # Captura a senha do usuário usando o dialog
+        passRoot=$(dialog --title 'Redefinir senha' --passwordbox 'Por favor, informe a senha:' 0 0 3>&1 1>&2 2>&3)
 
-    # Verifica se o usuário pressionou Cancelar
-    if [ $? -ne 0 ]; then
-        dialog --msgbox "Você cancelou a operação." 5 40
-        exit 0
-    fi
+        # Verifica se o usuário pressionou Cancelar
+        if [ $? -ne 0 ]; then
+            dialog --msgbox "Operação cancelada pelo usuário." 5 50
+            exit 0
+        fi
 
-    # Verifica se a senha está vazia
-    if [ -z "$passRoot" ]; then
-        dialog --msgbox "Senha não pode ser vazia. Por favor, tente novamente." 5 50
-    else
-        # Se a senha não está vazia, exibe a senha e sai do loop
-        cd ../..
-        echo "${passRoot}" | sudo passwd root && echo "${passRoot}" | su -c "./${fileName}" root
-        dialog --msgbox "Senha do Usuário Root redefinida." 5 50
-        break
-    fi
-done
-    # -----------------
-    # dialog --inputbox 'Digite a nova senha:' 0 0  2>/tmp/passRoot.txt
-    # passRoot=$( cat /tmp/passRoot.txt )
-    # cd ../..
-    # echo "$passRoot" | sudo passwd root
-    # echo "$passRoot" | su -c ./${fileName} root
-    # -----------------
+        # Verifica se a senha está vazia
+        if [ -z "$passRoot" ]; then
+            dialog --msgbox "Senha não pode ser vazia. Por favor, tente novamente." 5 50
+        else
+            # Se a senha não está vazia, tenta alterar a senha do root
+            echo "root:${passRoot}" | chpasswd
+
+            # Verifica se a alteração da senha foi bem-sucedida
+            if [ $? -eq 0 ]; then
+                dialog --msgbox "Senha do Usuário Root redefinida com sucesso." 5 50
+                # Executa o arquivo.sh como root
+                su -c "./${fileName}" root
+                break
+            else
+                dialog --msgbox "Falha ao redefinir a senha do Usuário Root. Tente novamente." 5 50
+            fi
+        fi
+    done
 }
 
 # Menu interativo usando dialog
