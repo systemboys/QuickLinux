@@ -42,6 +42,7 @@ DeleteQuickLinux() {
     clear
     echo "O QuickLinux foi totalmente apagado. Adeus!"
     exit 0
+    kill -SIGINT $$
 }
 
 # Função para atualizar o kernel Linux
