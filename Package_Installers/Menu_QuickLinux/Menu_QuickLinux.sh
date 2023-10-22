@@ -2,7 +2,7 @@
 
 # Verifica se o script está sendo executado como superusuário
 if [ "$EUID" -ne 0 ]; then
-    echo "Este script precisa ser executado como superusuário."
+    dialog --msgbox 'Este script precisa ser executado como superusuário.' 5 40
     exit 1
 fi
 
