@@ -40,9 +40,8 @@ DeleteQuickLinux() {
     cd ../../..
     rm -rf QuickLinux
     clear
-    echo "O QuickLinux foi totalmente apagado. Adeus!"
+    dialog --msgbox 'O QuickLinux foi totalmente apagado. Adeus!' 6 40
     kill -SIGINT $$
-    exit 0
 }
 
 # Função para atualizar o kernel Linux
