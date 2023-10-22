@@ -18,7 +18,7 @@ fi
 fileName=$(basename "$0")
 sessionName="QuickLinux"
 sessionDescription="Selecione as opções usando (↓ ↑ → ←) e pressione \"Enter\". Pode usar os núermso ou o clique também:"
-developer="$(echo -e "\u24C7") $(date +%Y) - GLOBAL TEC Informática | www.gti1.com.br"
+developer="$(echo -e "\u00A9") $(date +%Y) - GLOBAL TEC Informática $(echo -e "\u24C7") | www.gti1.com.br"
 
 # Função para executar sessão Menu QuickLinux
 Menu_QuickLinux() {
