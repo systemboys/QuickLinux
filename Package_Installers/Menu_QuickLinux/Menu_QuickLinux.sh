@@ -27,7 +27,7 @@ UpdateQuickLinux() {
     cd ../../.. && rm -rf QuickLinux && git clone https://github.com/systemboys/QuickLinux.git && cd QuickLinux && ./QuickLinux.sh
 }
 
-# Função para atualizar o kernel Linux
+# Função para deletar o kernel Linux
 DeleteQuickLinux() {
     (
         echo "10" ; sleep 1
@@ -41,8 +41,8 @@ DeleteQuickLinux() {
     rm -rf QuickLinux
     clear
     echo "O QuickLinux foi totalmente apagado. Adeus!"
-    exit 0
     kill -SIGINT $$
+    exit 0
 }
 
 # Função para atualizar o kernel Linux
