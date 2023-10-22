@@ -72,19 +72,19 @@ RootUserPassword() {
 
         # Verifica se a senha está vazia
         if [ -z "$passRoot" ]; then
-            dialog --msgbox "Senha não pode ser vazia. Por favor, tente novamente." 5 50
+            dialog --msgbox "Senha não pode ser vazia. Por favor, tente novamente." 6 50
         else
             # Se a senha não está vazia, tenta alterar a senha do root
             echo "root:${passRoot}" | chpasswd
 
             # Verifica se a alteração da senha foi bem-sucedida
             if [ $? -eq 0 ]; then
-                dialog --msgbox "Senha do Usuário Root redefinida com sucesso." 5 50
+                dialog --msgbox "Senha do Usuário Root redefinida com sucesso." 6 50
                 # Executa o arquivo.sh como root
                 su -c "./${fileName}" root
                 break
             else
-                dialog --msgbox "Falha ao redefinir a senha do Usuário Root. Tente novamente." 5 50
+                dialog --msgbox "Falha ao redefinir a senha do Usuário Root. Tente novamente." 6 50
             fi
         fi
     done
