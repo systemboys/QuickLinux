@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Verifica se o script está sendo executado como superusuário
+if [ "$EUID" -ne 0 ]; then
+    dialog --msgbox 'Este script precisa ser executado como superusuário.' 5 40
+    exit 1
+fi
+
 # Verifica se o dialog está instalado
 if ! command -v dialog &> /dev/null; then
     echo "Dialog não está instalado. Instalando..."
