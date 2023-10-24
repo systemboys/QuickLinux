@@ -24,10 +24,8 @@
 #
 # Licença: GPL.
 
-# -----------------------
 # Obtém o número da última versão do histórico do script
 lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+' "$0" | tail -n 1)
-# -----------------------
 
 # Verifica se o script está sendo executado como superusuário
 if [ "$EUID" -ne 0 ]; then
