@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 # QuickLinux.sh - Executa o menu de instalações de pacotes e outros
 # comandos Linux.
 #
