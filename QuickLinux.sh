@@ -18,11 +18,13 @@
 # v1.0.1 2023-10-01 às 07h30, Marcos Aurélio:
 #   - Testes de instalações de pacotes e alguns comandos Linux.
 # v1.0.2 2023-10-02 às 21h15, Marcos Aurélio:
-#   - Alguns ajustes nas linhas de comandos, para melhora o entendimento.
+#   - Alguns ajustes nas linhas de comandos, para melhorar o entendimento.
 # v1.0.3 2023-10-19 às 10h00, Marcos Aurélio:
 #   - O menu foi mudado para o modelo de janelas "Dialog", ficando mais elegante.
 # v1.0.4 2023-10-24 às 14h15, Marcos Aurélio:
 #   - Adicionado uma variável que "Obtém o número da última versão do histórico do script"
+# v1.0.5 2023-10-24 às 20h50, Marcos Aurélio:
+#   - Correção da instrução na primeira tela do menu, uma palavra errada foi corrigida.
 #
 # Licença: GPL.
 
@@ -46,7 +48,7 @@ fi
 # Variáveis úteis
 fileName=$(basename "$0")
 sessionName="QuickLinux ${lastVersion}"
-sessionDescription="Selecione as opções usando (↓ ↑ → ←) e pressione \"Enter\". Pode usar os núermso ou o clique também:"
+sessionDescription="Selecione as opções usando (↓ ↑ → ←) e pressione \"Enter\". Pode usar os números ou o clique também:"
 developer="$(echo -e "\u00A9") $(date +%Y) - GLOBAL TEC Informática $(echo -e "\u24C7") | www.gti1.com.br"
 
 # Função para executar sessão Menu QuickLinux
