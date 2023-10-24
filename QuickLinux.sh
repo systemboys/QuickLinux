@@ -12,22 +12,22 @@
 # pacotes e comandos Linux.
 # ---------------------------------------------------------------
 # Histórico:
-# v1.0 2023-09-30 às 19h30, Marcos Aurélio:
+# v1.0.0 2023-09-30 às 19h30, Marcos Aurélio:
 #   - Versão inicial, menu de controle de instalações de pacotes e outros
 #     comandos para sistemas Linux.
-# v1.1 2023-10-01 às 07h30, Marcos Aurélio:
+# v1.0.1 2023-10-01 às 07h30, Marcos Aurélio:
 #   - Testes de instalações de pacotes e alguns comandos Linux.
-# v1.2 2023-10-02 às 21h15, Marcos Aurélio:
+# v1.0.2 2023-10-02 às 21h15, Marcos Aurélio:
 #   - Alguns ajustes nas linhas de comandos, para melhora o entendimento.
-# v1.3 2023-10-19 às 10h00, Marcos Aurélio:
+# v1.0.3 2023-10-19 às 10h00, Marcos Aurélio:
 #   - O menu foi mudado para o modelo de janelas "Dialog", ficando mais elegante.
-# v1.4 2023-10-24 às 14h15, Marcos Aurélio:
+# v1.0.4 2023-10-24 às 14h15, Marcos Aurélio:
 #   - Adicionado uma variável que "Obtém o número da última versão do histórico do script"
 #
 # Licença: GPL.
 
 # Obtém o número da última versão do histórico do script
-lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+' "$0" | tail -n 1)
+lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "$0" | tail -n 1)
 
 # Verifica se o script está sendo executado como superusuário
 if [ "$EUID" -ne 0 ]; then
