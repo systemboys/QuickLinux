@@ -45,7 +45,7 @@ fi
 
 # Variáveis úteis
 fileName=$(basename "$0")
-sessionName="QuickLinux v1.3 - ${lastVersion}"
+sessionName="QuickLinux ${lastVersion}"
 sessionDescription="Selecione as opções usando (↓ ↑ → ←) e pressione \"Enter\". Pode usar os núermso ou o clique também:"
 developer="$(echo -e "\u00A9") $(date +%Y) - GLOBAL TEC Informática $(echo -e "\u24C7") | www.gti1.com.br"
 
