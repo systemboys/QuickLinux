@@ -21,6 +21,8 @@
 #   - Alguns ajustes nas linhas de comandos, para melhora o entendimento.
 # v1.3 2023-10-19 às 10h00, Marcos Aurélio:
 #   - O menu foi mudado para o modelo de janelas "Dialog", ficando mais elegante.
+# v1.4 2023-10-24 às 14h15, Marcos Aurélio:
+#   - Adicionado uma variável que "Obtém o número da última versão do histórico do script"
 #
 # Licença: GPL.
 
