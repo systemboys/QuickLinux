@@ -16,7 +16,7 @@ sessionDescription="Opções de referência a Desenvolvimento."
 
 # Função para instalar Docker
 install_Docker() {
-    ./install_Docker.sh
+    ./Install_Docker.sh
 }
 
 # Função para instalar Docker Compose
