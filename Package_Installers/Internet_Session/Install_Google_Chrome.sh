@@ -23,7 +23,12 @@ if ! command -v ${packageVersionName} &> /dev/null; then
     chmod 777 google-chrome-stable_current_amd64.deb && rm -r google-chrome-stable_current_amd64.deb
 
     clear
-    dialog --msgbox "${packageName} instalado com sucesso!" 8 40
+    
+    if ! command -v ${packageVersionName} &> /dev/null; then
+        dialog --msgbox "Erro na instalação de ${packageName}!" 8 40
+    else
+        dialog --msgbox "${packageName} instalado com sucesso!" 8 40
+    fi
 else
     clear
     dialog --msgbox "${packageName} já está instalado! Ignorando a instalação..." 8 40

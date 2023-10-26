@@ -22,8 +22,13 @@ if ! [ -x "$(command -v google-earth-pro)" ]; then
     # Dar permissões e apagar o arquivo
     chmod 777 google-earth-pro-stable_current_amd64.deb && rm -r google-earth-pro-stable_current_amd64.deb
 
-    # clear
-    dialog --msgbox "${packageName} instalado com sucesso!" 8 40
+    clear
+    
+    if ! [ -x "$(command -v google-earth-pro)" ]; then
+        dialog --msgbox "Erro na instalação de ${packageName}!" 8 40
+    else
+        dialog --msgbox "${packageName} instalado com sucesso!" 8 40
+    fi
 else
     clear
     dialog --msgbox "${packageName} já está instalado! Ignorando a instalação..." 8 40

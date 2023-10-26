@@ -18,7 +18,12 @@ if ! [ -d "/opt/${packageVersionName}" ]; then
     sudo apt install -t buster-backports firefox
 
     clear
-    dialog --msgbox "${packageName} instalado com sucesso!" 8 40
+    
+    if ! [ -d "/opt/${packageVersionName}" ]; then
+        dialog --msgbox "Erro na instalação de ${packageName}!" 8 40
+    else
+        dialog --msgbox "${packageName} instalado com sucesso!" 8 40
+    fi
 else
     clear
     dialog --msgbox "${packageName} já está instalado! Ignorando a instalação..." 8 40
