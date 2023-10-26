@@ -21,7 +21,7 @@ install_Docker() {
 
 # Função para instalar Docker Compose
 Install_Docker_Compose() {
-    ./Install_Docker_Compose
+    ./Install_Docker_Compose.sh
 }
 
 # Menu interativo usando dialog
