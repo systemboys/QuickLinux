@@ -26,8 +26,10 @@
 # v1.0.5 2023-10-24 às 20h50, Marcos Aurélio:
 #   - Correção da instrução na primeira tela do menu, uma palavra errada foi corrigida.
 # v1.0.6 2023-10-26 às 00h20, Marcos Aurélio:
-#   - Opação para instalar o Docker na sessão 'Desenvolvimento' e incrementação de
+#   - Opção para instalar o Docker na sessão "Desenvolvimento" e incrementação de
 #     verificação de instalação de pacotes no termino de cada instalação.
+# v1.0.7 2023-10-26 às 01h17, Marcos Aurélio:
+#   - Opção para instalar o Docker Compose na sessão "Desenvolvimento".
 #
 # Licença: GPL.
 

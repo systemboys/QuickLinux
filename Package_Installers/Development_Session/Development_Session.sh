@@ -14,9 +14,14 @@ developer="$2"
 sessionName="Desenvolvimento"
 sessionDescription="Opções de referência a Desenvolvimento."
 
-# Função para Opção A
+# Função para instalar Docker
 install_Docker() {
     ./install_Docker.sh
+}
+
+# Função para instalar Docker Compose
+Install_Docker_Compose() {
+    ./Install_Docker_Compose
 }
 
 # Menu interativo usando dialog
@@ -26,6 +31,7 @@ while true; do
             --menu "${sessionDescription}" 15 40 2 \
             0 "Voltar..." \
             1 "Instalar Docker" \
+            2 "Instalar Docker Compose" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -44,6 +50,10 @@ while true; do
         1)
             clear
             install_Docker
+            ;;
+        2)
+            clear
+            Install_Docker_Compose
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
