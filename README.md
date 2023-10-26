@@ -72,9 +72,8 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
   │    │    └─ Internet_Session.sh
   │    ├─ /Linux_Session/
   │    │    └─ Linux_Session.sh
-  │    ├─ /Menu_QuickLinux/
-  │    │    └─ Package_Installers.sh
-  │    └─ Package_Installers.sh
+  │    └─ /Menu_QuickLinux/
+  │         └─ Package_Installers.sh
   ├─ QuickLinux.sh
   └─ README.md
 ```
