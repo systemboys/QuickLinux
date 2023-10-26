@@ -15,15 +15,8 @@ sessionName="Desenvolvimento"
 sessionDescription="Opções de referência a Desenvolvimento."
 
 # Função para Opção A
-Option_A() {
-    # Your commands here...
-    dialog --msgbox "Seu comando A foi executado!" 8 40
-}
-
-# Função para Opção B
-Option_B() {
-    # Your commands here...
-    dialog --msgbox "Seu comando B foi executado!" 8 40
+install_Docker() {
+    ./install_Docker.sh
 }
 
 # Menu interativo usando dialog
@@ -32,8 +25,7 @@ while true; do
             --title "${sessionName}" \
             --menu "${sessionDescription}" 15 40 2 \
             0 "Voltar..." \
-            1 "Opção A" \
-            2 "Opção B" \
+            1 "Instalar Docker" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -51,11 +43,7 @@ while true; do
             ;;
         1)
             clear
-            Option_A
-            ;;
-        2)
-            clear
-            Option_B
+            install_Docker
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
