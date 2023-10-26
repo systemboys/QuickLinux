@@ -13,6 +13,7 @@ if ! command -v ${packageVersionName} &> /dev/null; then
 
     clear
 
+    sudo apt update
     curl -fsSL https://get.docker.com | bash
 
     clear
