@@ -15,15 +15,8 @@ sessionName="Redes"
 sessionDescription="Opções de referência a Redes."
 
 # Função para Opção A
-Option_A() {
-    # Your commands here...
-    dialog --msgbox "Seu comando A foi executado!" 8 40
-}
-
-# Função para Opção B
-Option_B() {
-    # Your commands here...
-    dialog --msgbox "Seu comando B foi executado!" 8 40
+Check_IP() {
+    ./Check_IP.sh
 }
 
 # Menu interativo usando dialog
@@ -32,7 +25,7 @@ while true; do
             --title "${sessionName}" \
             --menu "${sessionDescription}" 15 40 2 \
             0 "Voltar..." \
-            1 "Opção A" \
+            1 "Verificar IP" \
             2 "Opção B" \
             2>&1 >/dev/tty)
 
@@ -51,11 +44,7 @@ while true; do
             ;;
         1)
             clear
-            Option_A
-            ;;
-        2)
-            clear
-            Option_B
+            Check_IP
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
