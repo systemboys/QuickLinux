@@ -14,7 +14,7 @@ developer="$2"
 sessionName="Redes"
 sessionDescription="Opções de referência a Redes."
 
-# Função para Opção A
+# Função para Verificar o IP
 Check_IP() {
     ./Check_IP.sh
 }
@@ -26,7 +26,6 @@ while true; do
             --menu "${sessionDescription}" 15 40 2 \
             0 "Voltar..." \
             1 "Verificar IP" \
-            2 "Opção B" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
