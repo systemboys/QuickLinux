@@ -3,7 +3,7 @@
 clear
 
 # Variáveis úteis
-packageVersionName="Lynx" # Nome do arquivo na instalação para procurar a versão no pacote
+packageVersionName="lynx" # Nome do arquivo na instalação para procurar a versão no pacote
 packageName="Lynx Browser" # Apenas o nome do pacote
 
 # Verificar se o está instalado
