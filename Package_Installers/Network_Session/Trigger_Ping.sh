@@ -12,10 +12,10 @@ pingDomain() {
     fi
 
     # Pinga o domínio e armazena o resultado
-    ping_result=$(ping -c 8 "$domain")
+    ping_result=$(ping -c 5 "$domain")
 
     # Exibe o resultado em uma janela de mensagem usando dialog
-    dialog --title "Resultado do Ping para $domain" --msgbox "$ping_result" 20 70
+    dialog --title "Resultado do Ping para $domain" --msgbox "$ping_result" 20 100
 }
 
 # Inicia o loop para o menu interativo usando dialog
@@ -24,7 +24,7 @@ while true; do
     choice=$(dialog --clear --backtitle "Ping Tool" \
             --menu "Escolha uma opção:" 10 40 2 \
             1 "Pingar um Domínio" \
-            2 "Sair" \
+            2 "Sair..." \
             2>&1 >/dev/tty)
 
     # Verifica a escolha do usuário
