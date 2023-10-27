@@ -64,16 +64,32 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
   ├─ /Imagens/
   │    └─ QuickLinux.png
   ├─ /Package_Installers/
+  │    ├─ /Development_Session/
+  │    │    ├─ Development_Session.sh
+  │    │    ├─ Install_Docker_Compose.sh
+  │    │    └─ Install_Docker.sh
   │    ├─ /Internet_Session/
+  │    │    ├─ Internet_Session.sh
   │    │    ├─ Install_Package1.sh
   │    │    ├─ Install_Package2.sh
   │    │    ├─ Install_Package3.sh
-  │    │    ├─ ...
-  │    │    └─ Internet_Session.sh
+  │    │    └─ ...
   │    ├─ /Linux_Session/
   │    │    └─ Linux_Session.sh
-  │    └─ /Menu_QuickLinux/
-  │         └─ Package_Installers.sh
+  │    ├─ /Menu_QuickLinux/
+  │    │    └─ Package_Installers.sh
+  │    ├─ /Network_Session/
+  │    │    ├─ Network_Session.sh
+  │    │    ├─ Install_Package1.sh
+  │    │    ├─ Install_Package2.sh
+  │    │    ├─ Install_Package3.sh
+  │    │    └─ ...
+  │    └─ /Terminal_Utilities_Session/
+  │         ├─ Terminal_Utilities_Session.sh
+  │         ├─ Install_Package1.sh
+  │         ├─ Install_Package2.sh
+  │         ├─ Install_Package3.sh
+  │         └─ ...
   ├─ QuickLinux.sh
   └─ README.md
 ```
