@@ -88,6 +88,12 @@ Terminal_Utilities_Session() {
     ./Terminal_Utilities_Session.sh "$fileName" "$developer"
 }
 
+# Função para executar sessão Redes
+Network_Session() {
+    cd Package_Installers/Network_Session
+    ./Network_Session.sh "$fileName" "$developer"
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -98,6 +104,7 @@ while true; do
             3 "Internet" \
             4 "Desenvolvimento" \
             5 "Utilitários de Terminal" \
+            6 "Redes" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -127,6 +134,10 @@ while true; do
         5) # Sessão de Utilitários de Terminal
             clear
             Terminal_Utilities_Session
+            ;;
+        6) # Sessão de Redes
+            clear
+            Network_Session
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
