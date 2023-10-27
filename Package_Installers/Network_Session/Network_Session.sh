@@ -14,9 +14,14 @@ developer="$2"
 sessionName="Redes"
 sessionDescription="Opções de referência a Redes."
 
-# Função para Verificar o IP
+# Função para verificar o IP
 Check_IP() {
     ./Check_IP.sh
+}
+
+# Função para disparar um PING
+Trigger_Ping() {
+    ./Trigger_Ping.sh
 }
 
 # Menu interativo usando dialog
@@ -26,6 +31,7 @@ while true; do
             --menu "${sessionDescription}" 15 40 2 \
             0 "Voltar..." \
             1 "Verificar IP" \
+            2 "Disparando um PING" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -44,6 +50,10 @@ while true; do
         1)
             clear
             Check_IP
+            ;;
+        2)
+            clear
+            Trigger_Ping
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
