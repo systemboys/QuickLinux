@@ -30,6 +30,8 @@
 #     verificação de instalação de pacotes no termino de cada instalação.
 # v1.0.7 2023-10-26 às 01h17, Marcos Aurélio:
 #   - Opção para instalar o Docker Compose na sessão "Desenvolvimento".
+# v1.0.8 2023-10-27 às 14h17, Marcos Aurélio:
+#   - Opção para sessão de Utilitários de Termianl.
 #
 # Licença: GPL.
 
@@ -80,6 +82,12 @@ Development_Session() {
     ./Development_Session.sh "$fileName" "$developer"
 }
 
+# Função para executar sessão Utilitários de Terminal
+Terminal_Utilities_Session() {
+    cd Package_Installers/Terminal_Utilities_Session
+    ./Terminal_Utilities_Session.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -89,6 +97,7 @@ while true; do
             2 "Linux" \
             3 "Internet" \
             4 "Desenvolvimento" \
+            5 "Utilitários de Terminal" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -114,6 +123,10 @@ while true; do
         4) # Sessão Desenvolvimento
             clear
             Development_Session
+            ;;
+        5) # Sessão de Utilitários de Terminal
+            clear
+            Terminal_Utilities_Session
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
