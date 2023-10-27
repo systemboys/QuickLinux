@@ -85,7 +85,7 @@ Development_Session() {
 # Função para executar sessão Utilitários de Terminal
 Terminal_Utilities_Session() {
     cd Package_Installers/Terminal_Utilities_Session
-    ./Terminal_Utilities_Session.sh
+    ./Terminal_Utilities_Session.sh "$fileName" "$developer"
 }
 
 # Menu interativo usando dialog
