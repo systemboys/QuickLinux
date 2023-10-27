@@ -14,7 +14,7 @@ if ! command -v ${packageVersionName} &> /dev/null; then
     clear
 
     sudo apt-get update
-    sudo apt install links2 -y
+    sudo apt install lynx -y
 
     clear
     
