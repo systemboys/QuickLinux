@@ -31,7 +31,7 @@ while true; do
             --menu "${sessionDescription}" 15 40 2 \
             0 "Voltar..." \
             1 "Verificar IP" \
-            2 "Disparar um PING" \
+            2 "Disparar PING" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
