@@ -14,10 +14,9 @@ developer="$2"
 sessionName="Utilitários de Terminal"
 sessionDescription="Opções de referência a Utilitários de Terminal."
 
-# Função para Opção A
-Option_A() {
-    # Your commands here...
-    dialog --msgbox "Seu comando A foi executado!" 8 40
+# Função para instalar o navegador Links2
+Install_Links2_browser() {
+    ./Install_Links2_browser.sh
 }
 
 # Função para Opção B
@@ -32,7 +31,7 @@ while true; do
             --title "${sessionName}" \
             --menu "${sessionDescription}" 15 40 2 \
             0 "Voltar..." \
-            1 "Opção A" \
+            1 "Instalar navegador Links2" \
             2 "Opção B" \
             2>&1 >/dev/tty)
 
@@ -51,7 +50,7 @@ while true; do
             ;;
         1)
             clear
-            Option_A
+            Install_Links2_browser
             ;;
         2)
             clear
