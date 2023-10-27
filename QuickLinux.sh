@@ -32,6 +32,8 @@
 #   - Opção para instalar o Docker Compose na sessão "Desenvolvimento".
 # v1.0.8 2023-10-27 às 14h17, Marcos Aurélio:
 #   - Opção para sessão de Utilitários de Termianl.
+# v1.0.9 2023-10-27 às 15h40, Marcos Aurélio:
+#   - Opção para sessão de Redes.
 #
 # Licença: GPL.
 
