@@ -34,6 +34,14 @@
 #   - Opção para sessão de Utilitários de Termianl.
 # v1.0.9 2023-10-27 às 15h40, Marcos Aurélio:
 #   - Opção para sessão de Redes.
+# v1.1.0 2023-10-27 às 16h20, Marcos Aurélio:
+#   - Opção para "Verificar IP" sessão de "Redes".
+# v1.1.1 2023-10-27 às 17h00, Marcos Aurélio:
+#   - Opção para "Disparar PING" sessão de "Redes".
+# v1.1.2 2023-10-27 às 17h15, Marcos Aurélio:
+#   - Opção para "Pingar um Domínio" em "Disparar PING" sessão de "Redes".
+# v1.1.3 2023-10-27 às 17h22, Marcos Aurélio:
+#   - Opção para "Pingar um Domínio forçando IPv4" em "Disparar PING" sessão de "Redes".
 #
 # Licença: GPL.
 
