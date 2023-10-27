@@ -57,7 +57,7 @@ while true; do
             # Chama a função para pingar um domínio
             pingDomain
             ;;
-        1)
+        2)
             # Chama a função para pingar um domínio forçando IPv4
             pingDomainIPv4
             ;;
