@@ -24,7 +24,7 @@ pingDomain() {
     fi
 
     # Pinga o domínio e armazena o resultado
-    ping_result=$(ping "$cmdPing" 5 "$domain")
+    ping_result=$(ping $cmdPing 5 $domain)
 
     # Exibe o resultado em uma janela de mensagem usando dialog
     dialog --title "Resultado do Ping para $domain => $cmdIP" --msgbox "$ping_result" 20 100
