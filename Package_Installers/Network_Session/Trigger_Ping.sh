@@ -48,7 +48,7 @@ Trace_Route_Traveled() {
     fi
 
     # Pinga o domínio e armazena o resultado
-    ping_result=$(traceroute -i "$domain")
+    ping_result=$(traceroute "$domain")
 
     # Exibe o resultado em uma janela de mensagem usando dialog
     dialog --title "Resultado do Ping para $domain" --msgbox "$ping_result" 20 100
