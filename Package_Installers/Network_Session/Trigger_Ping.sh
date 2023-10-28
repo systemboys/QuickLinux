@@ -2,7 +2,16 @@
 
 # Função para realizar o ping e mostrar o resultado em uma janela de mensagem
 pingDomain() {
-    $cmdIP=$1
+
+    # Verificar qual a solicitação de IP foi selecionada
+    case "$1" in
+        1)
+            $cmdPing="-c"
+            ;;
+        2)
+            $cmdPing="-4 -c"
+            ;;
+    esac
 
     # Solicita ao usuário que insira o domínio usando o dialog
     domain=$(dialog --inputbox 'Digite o domínio:' 8 40 3>&1 1>&2 2>&3)
@@ -14,7 +23,7 @@ pingDomain() {
     fi
 
     # Pinga o domínio e armazena o resultado
-    ping_result=$(ping "$cmdIP" 5 "$domain")
+    ping_result=$(ping "$cmdPing" 5 "$domain")
 
     # Exibe o resultado em uma janela de mensagem usando dialog
     dialog --title "Resultado do Ping para $domain => $cmdIP" --msgbox "$ping_result" 20 100
@@ -39,13 +48,11 @@ while true; do
             ;;
         1)
             # Chama a função para pingar um domínio
-            cmdIP1="-c"
-            pingDomain "$cmdIP1"
+            pingDomain "1"
             ;;
         2)
             # Chama a função para pingar um domínio forçando IPv4
-            cmdIP2="-4 -c"
-            pingDomain "$cmdIP2"
+            pingDomain "2"
             ;;
     esac
 done
