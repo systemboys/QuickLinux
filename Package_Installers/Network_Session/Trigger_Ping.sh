@@ -51,7 +51,7 @@ Trace_Route_Traveled() {
     ping_result=$(traceroute "$domain")
 
     # Exibe o resultado em uma janela de mensagem usando dialog
-    dialog --title "Resultado do Ping para $domain" --msgbox "$ping_result" 20 100
+    dialog --title "Resultado do Ping de rastreio para $domain" --msgbox "$ping_result" 20 100
 }
 
 # Inicia o loop para o menu interativo usando dialog
