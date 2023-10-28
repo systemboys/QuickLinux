@@ -58,7 +58,7 @@ Trace_Route_Traveled() {
 while true; do
     # Mostra um menu para escolher entre pingar um domínio ou sair
     choice=$(dialog --clear --backtitle "Ping Tool" \
-            --menu "Escolha uma opção:" 10 40 2 \
+            --menu "Escolha uma opção:" 12 40 2 \
             0 "Sair..." \
             1 "Pingar um Domínio" \
             2 "Pingar um Domínio forçando IPv4" \
