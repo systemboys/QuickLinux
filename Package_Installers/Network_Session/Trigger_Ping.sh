@@ -39,13 +39,11 @@ while true; do
             ;;
         1)
             # Chama a função para pingar um domínio
-            cmdIP="-c"
-            pingDomain "$cmdIP"
+            pingDomain "-c"
             ;;
         2)
             # Chama a função para pingar um domínio forçando IPv4
-            cmdIP="-4 -c"
-            pingDomain "$cmdIP"
+            pingDomain "-4 -c"
             ;;
     esac
 done
