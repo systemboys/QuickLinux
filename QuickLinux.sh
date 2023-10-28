@@ -42,6 +42,9 @@
 #   - Opção para "Pingar um Domínio" em "Disparar PING" sessão de "Redes".
 # v1.1.3 2023-10-27 às 17h22, Marcos Aurélio:
 #   - Opção para "Pingar um Domínio forçando IPv4" em "Disparar PING" sessão de "Redes".
+# v1.1.4 2023-10-28 às 00h15, Marcos Aurélio:
+#   - Adicionada a opção "Traceroute", "traçar rota". Comando para identificar a rota
+#     percorrida por um pacote de dados pela rede até a chegada em seu destino.
 #
 # Licença: GPL.
 
