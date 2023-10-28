@@ -2,9 +2,10 @@
 
 # Função para realizar o ping e mostrar o resultado em uma janela de mensagem
 pingDomain() {
+    local cmdPing="$1"
 
     # Verificar qual a solicitação de IP foi selecionada
-    case "$1" in
+    case "$cmdPing" in
         1)
             $cmdPing="-c"
             ;;
