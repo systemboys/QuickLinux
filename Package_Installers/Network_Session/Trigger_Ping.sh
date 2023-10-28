@@ -2,18 +2,6 @@
 
 # Função para realizar o ping e mostrar o resultado em uma janela de mensagem
 pingDomain() {
-    local cmdPing="$1"
-
-    # Verificar qual a solicitação de IP foi selecionada
-    case "$cmdPing" in
-        1)
-            $cmdPing="-c"
-            ;;
-        2)
-            $cmdPing="-4 -c"
-            ;;
-    esac
-
     # Solicita ao usuário que insira o domínio usando o dialog
     domain=$(dialog --inputbox 'Digite o domínio:' 8 40 3>&1 1>&2 2>&3)
 
@@ -24,10 +12,28 @@ pingDomain() {
     fi
 
     # Pinga o domínio e armazena o resultado
-    ping_result=$(ping $cmdPing 5 $domain)
+    ping_result=$(ping -c 5 "$domain")
 
     # Exibe o resultado em uma janela de mensagem usando dialog
-    dialog --title "Resultado do Ping para $domain => $cmdIP" --msgbox "$ping_result" 20 100
+    dialog --title "Resultado do Ping para $domain" --msgbox "$ping_result" 20 100
+}
+
+# Função para realizar o ping forçando IPv4 e mostrar o resultado em uma janela de mensagem
+pingDomainIPv4() {
+    # Solicita ao usuário que insira o domínio usando o dialog
+    domain=$(dialog --inputbox 'Digite o domínio:' 8 40 3>&1 1>&2 2>&3)
+
+    # Verifica se o campo de domínio está vazio
+    if [ -z "$domain" ]; then
+        dialog --msgbox "O domínio não pode estar vazio. Por favor, tente novamente." 8 40
+        return
+    fi
+
+    # Pinga o domínio e armazena o resultado
+    ping_result=$(ping -4 -c 5 "$domain")
+
+    # Exibe o resultado em uma janela de mensagem usando dialog
+    dialog --title "Resultado do Ping para $domain" --msgbox "$ping_result" 20 100
 }
 
 # Inicia o loop para o menu interativo usando dialog
@@ -49,11 +55,11 @@ while true; do
             ;;
         1)
             # Chama a função para pingar um domínio
-            pingDomain "1"
+            pingDomain
             ;;
         2)
             # Chama a função para pingar um domínio forçando IPv4
-            pingDomain "2"
+            pingDomainIPv4
             ;;
     esac
 done
