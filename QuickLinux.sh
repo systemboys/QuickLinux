@@ -12,37 +12,37 @@
 # pacotes e comandos Linux.
 # ---------------------------------------------------------------
 # Histórico:
-# v1.0.0 2023-09-30 às 19h30, Marcos Aurélio:
+# v0.0.1 2023-09-30 às 19h30, Marcos Aurélio:
 #   - Versão inicial, menu de controle de instalações de pacotes e outros
 #     comandos para sistemas Linux.
-# v1.0.1 2023-10-01 às 07h30, Marcos Aurélio:
+# v0.0.2 2023-10-01 às 07h30, Marcos Aurélio:
 #   - Testes de instalações de pacotes e alguns comandos Linux.
-# v1.0.2 2023-10-02 às 21h15, Marcos Aurélio:
+# v0.0.3 2023-10-02 às 21h15, Marcos Aurélio:
 #   - Alguns ajustes nas linhas de comandos, para melhorar o entendimento.
-# v1.0.3 2023-10-19 às 10h00, Marcos Aurélio:
+# v0.0.4 2023-10-19 às 10h00, Marcos Aurélio:
 #   - O menu foi mudado para o modelo de janelas "Dialog", ficando mais elegante.
-# v1.0.4 2023-10-24 às 14h15, Marcos Aurélio:
+# v0.0.5 2023-10-24 às 14h15, Marcos Aurélio:
 #   - Adicionado uma variável que "Obtém o número da última versão do histórico do script"
-# v1.0.5 2023-10-24 às 20h50, Marcos Aurélio:
+# v0.0.6 2023-10-24 às 20h50, Marcos Aurélio:
 #   - Correção da instrução na primeira tela do menu, uma palavra errada foi corrigida.
-# v1.0.6 2023-10-26 às 00h20, Marcos Aurélio:
+# v0.0.7 2023-10-26 às 00h20, Marcos Aurélio:
 #   - Opção para instalar o Docker na sessão "Desenvolvimento" e incrementação de
 #     verificação de instalação de pacotes no termino de cada instalação.
-# v1.0.7 2023-10-26 às 01h17, Marcos Aurélio:
+# v0.0.8 2023-10-26 às 01h17, Marcos Aurélio:
 #   - Opção para instalar o Docker Compose na sessão "Desenvolvimento".
-# v1.0.8 2023-10-27 às 14h17, Marcos Aurélio:
+# v0.0.9 2023-10-27 às 14h17, Marcos Aurélio:
 #   - Opção para sessão de Utilitários de Termianl.
-# v1.0.9 2023-10-27 às 15h40, Marcos Aurélio:
+# v0.1.0 2023-10-27 às 15h40, Marcos Aurélio:
 #   - Opção para sessão de Redes.
-# v1.1.0 2023-10-27 às 16h20, Marcos Aurélio:
+# v0.1.1 2023-10-27 às 16h20, Marcos Aurélio:
 #   - Opção para "Verificar IP" sessão de "Redes".
-# v1.1.1 2023-10-27 às 17h00, Marcos Aurélio:
+# v0.1.2 2023-10-27 às 17h00, Marcos Aurélio:
 #   - Opção para "Disparar PING" sessão de "Redes".
-# v1.1.2 2023-10-27 às 17h15, Marcos Aurélio:
+# v0.1.3 2023-10-27 às 17h15, Marcos Aurélio:
 #   - Opção para "Pingar um Domínio" em "Disparar PING" sessão de "Redes".
-# v1.1.3 2023-10-27 às 17h22, Marcos Aurélio:
+# v0.1.4 2023-10-27 às 17h22, Marcos Aurélio:
 #   - Opção para "Pingar um Domínio forçando IPv4" em "Disparar PING" sessão de "Redes".
-# v1.1.4 2023-10-28 às 00h15, Marcos Aurélio:
+# v0.1.5 2023-10-28 às 00h15, Marcos Aurélio:
 #   - Adicionada a opção "Traceroute", "traçar rota". Comando para identificar a rota
 #     percorrida por um pacote de dados pela rede até a chegada em seu destino.
 #
