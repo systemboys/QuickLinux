@@ -8,7 +8,7 @@
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 #
 # ---------------------------------------------------------------
-# Este programa tem a finadade de agilizar nas instalações de
+# Este programa tem a finalidade de agilizar nas instalações de
 # pacotes e comandos Linux.
 # ---------------------------------------------------------------
 # Histórico:
