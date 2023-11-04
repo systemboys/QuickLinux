@@ -22,4 +22,6 @@ processor_info=$(grep "model name" /proc/cpuinfo | head -n 1 | cut -d ":" -f 2 |
 # Obter informações da memória
 memory_info=$(grep "MemTotal" /proc/meminfo | cut -d ":" -f 2 | sed 's/^[ \t]*//')
 
-dialog --msgbox "Seu comando A foi executado!" 8 40
+# Imprimir as informações obtidas
+dialog --msgbox "Informações do processador: $processor_info" 8 40
+
