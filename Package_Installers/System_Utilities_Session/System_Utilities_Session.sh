@@ -32,8 +32,8 @@ fileName="$1"
 developer="$2"
 
 # Variáveis úteis
-sessionName="Nova Sessão A"
-sessionDescription="Opções de referência a Nova Sessão A."
+sessionName="Sessão Utilitários do Sistema"
+sessionDescription="Opções de referência a Sessão Utilitários do Sistema."
 
 # Função para Opção A
 Option_A() {
