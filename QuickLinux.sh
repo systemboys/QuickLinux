@@ -115,7 +115,7 @@ Network_Session() {
 # função para executar sessão Utilitários do Sistema
 System_Utilities_Session() {
     cd Package_Installers/System_Utilities_Session
-    ./System_Utilities_Session.sh
+    ./System_Utilities_Session.sh "$fileName" "$developer"
 }
 
 # Menu interativo usando dialog
