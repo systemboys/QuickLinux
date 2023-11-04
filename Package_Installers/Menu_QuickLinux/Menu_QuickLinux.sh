@@ -14,7 +14,7 @@ developer="$2"
 sessionName="Opções do QuickLinux"
 sessionDescription="Opções de referência ao QuickMenu."
 
-# Função para atualizar pacotes Linux
+# Função para atualizar QuickLinux local pelo QuickLinux do repositório
 UpdateQuickLinux() {
     (
         echo "10" ; sleep 1
@@ -27,7 +27,7 @@ UpdateQuickLinux() {
     cd ../../.. && rm -rf QuickLinux && git clone https://github.com/systemboys/QuickLinux.git && cd QuickLinux && ./QuickLinux.sh
 }
 
-# Função para deletar o kernel Linux
+# Função para deletar o QuickLinux
 DeleteQuickLinux() {
     (
         echo "10" ; sleep 1
@@ -45,13 +45,12 @@ DeleteQuickLinux() {
     pkill -SIGINT -f "$(basename "$0")"
 }
 
-# Função para atualizar o kernel Linux
+# Função para recarregar o QuickLinux
 ReloadQuickLinux() {
     (
-        echo "10" ; sleep 1
-        echo "30" ; sleep 1
+        echo "25" ; sleep 1
         echo "50" ; sleep 1
-        echo "70" ; sleep 1
+        echo "75" ; sleep 1
         echo "100" ; sleep 1
     ) | dialog --title "Recarregando QuickLinux" --gauge "Aguarde, recarregando QuickLinux..." 10 70 0
     clear
