@@ -25,7 +25,8 @@ processor_info=$(grep "model name" /proc/cpuinfo | head -n 1 | cut -d ":" -f 2 |
 memory_info=$(grep "MemTotal" /proc/meminfo | cut -d ":" -f 2 | sed 's/^[ \t]*//')
 
 # Imprimir as informações obtidas na janela Dialog
-echo "Informações do processador: $processor_info"
-echo "Informações da memória: $memory_info"
+# echo "Informações do processador: $processor_info"
+# echo "Informações da memória: $memory_info"
 
 dialog --msgbox "Informações do processador: $processor_info, Informações da memória: $memory_info" 8 40
+
