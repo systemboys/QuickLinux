@@ -11,7 +11,7 @@
 # ---------------------------------------------------------------
 # Histórico:
 # v0.0.1 2023-11-04 às 17h20, Marcos Aurélio:
-#   - Versão inicial, adicionada a opção "Utilitários do Sistema" na sessão
+#   - Versão inicial, adicionada a opção "Informações do Sistema" na sessão
 #     "Utilitários do Sistema" para fornecer informações detalhadas sobre o
 #     processador e a memória do sistema.
 #
@@ -35,16 +35,9 @@ developer="$2"
 sessionName="Sessão Utilitários do Sistema"
 sessionDescription="Opções de referência a Sessão Utilitários do Sistema."
 
-# Função para Opção A
+# Função para Opção Informações do Sistema
 Option_A() {
-    # Your commands here...
-    dialog --msgbox "Seu comando A foi executado!" 8 40
-}
-
-# Função para Opção B
-Option_B() {
-    # Your commands here...
-    dialog --msgbox "Seu comando B foi executado!" 8 40
+    .System_Information.sh
 }
 
 # Menu interativo usando dialog
@@ -53,8 +46,7 @@ while true; do
             --title "${sessionName}" \
             --menu "${sessionDescription}" 15 40 2 \
             0 "Voltar..." \
-            1 "Opção A" \
-            2 "Opção B" \
+            1 "Informações do Sistema" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -72,11 +64,7 @@ while true; do
             ;;
         1)
             clear
-            Option_A
-            ;;
-        2)
-            clear
-            Option_B
+            System_Information
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40

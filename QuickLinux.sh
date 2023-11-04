@@ -48,7 +48,7 @@
 # v0.1.6 2023-11-01 às 01h10, Marcos Aurélio:
 #   - Alterada a opção "Disparar PING" para "Disparar PING / Traçar rota" na sessão "Redes".
 # v0.1.7 2023-11-04 às 17h20, Marcos Aurélio:
-#   - Adicionada a opção "Utilitários do Sistema" na sessão "Utilitários do Sistema" para
+#   - Adicionada a opção "Informações do Sistema" na sessão "Utilitários do Sistema" para
 #     fornecer informações detalhadas sobre o processador e a memória do sistema.
 #
 # Licença: GPL.
