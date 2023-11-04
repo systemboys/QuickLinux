@@ -36,8 +36,8 @@ sessionName="Sessão Utilitários do Sistema"
 sessionDescription="Opções de referência a Sessão Utilitários do Sistema."
 
 # Função para Opção Informações do Sistema
-Option_A() {
-    .System_Information.sh
+System_Information() {
+    ./System_Information.sh
 }
 
 # Menu interativo usando dialog
