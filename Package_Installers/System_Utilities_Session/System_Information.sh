@@ -37,5 +37,5 @@ dialog --msgbox "Processador:
 $processor_info
 
 Memória:
-$(formatar_tamanho $tamanho_kb)" 15 80
+$(formatar_tamanho $tamanho_kb)" 12 80
 
