@@ -47,6 +47,9 @@
 #     percorrida por um pacote de dados pela rede até a chegada em seu destino.
 # v0.1.6 2023-11-01 às 01h10, Marcos Aurélio:
 #   - Alterada a opção "Disparar PING" para "Disparar PING / Traçar rota" na sessão "Redes".
+# v0.1.7 2023-11-04 às 17h20, Marcos Aurélio:
+#   - Adicionada a opção "Utilitários do Sistema" na sessão "Utilitários do Sistema" para
+#     fornecer informações detalhadas sobre o processador e a memória do sistema.
 #
 # Licença: GPL.
 
@@ -109,6 +112,12 @@ Network_Session() {
     ./Network_Session.sh "$fileName" "$developer"
 }
 
+# função para executar sessão Utilitários do Sistema
+System_Utilities_Session() {
+    cd Package_Installers/System_Utilities_Session
+    ./System_Utilities_Session.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -120,6 +129,7 @@ while true; do
             4 "Desenvolvimento" \
             5 "Utilitários de Terminal" \
             6 "Redes" \
+            7 "Utilitários do Sistema" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -153,6 +163,10 @@ while true; do
         6) # Sessão de Redes
             clear
             Network_Session
+            ;;
+        7) # Sessão Utilitários do Sistema
+            clear
+            System_Utilities_Session
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
