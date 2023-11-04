@@ -45,6 +45,8 @@
 # v0.1.5 2023-10-28 às 00h15, Marcos Aurélio:
 #   - Adicionada a opção "Traceroute", "traçar rota". Comando para identificar a rota
 #     percorrida por um pacote de dados pela rede até a chegada em seu destino.
+# v0.1.6 2023-11-01 às 01h10, Marcos Aurélio:
+#   - Alterada a opção "Disparar PING" para "Disparar PING / Traçar rota" na sessão "Redes".
 #
 # Licença: GPL.
 
