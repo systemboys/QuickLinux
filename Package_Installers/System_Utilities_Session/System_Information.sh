@@ -16,6 +16,10 @@
 
 clear
 
-# Your commands here...
+# Obter informações do processador
+processor_info=$(grep "model name" /proc/cpuinfo | head -n 1 | cut -d ":" -f 2 | sed 's/^[ \t]*//')
+
+# Obter informações da memória
+memory_info=$(grep "MemTotal" /proc/meminfo | cut -d ":" -f 2 | sed 's/^[ \t]*//')
 
 dialog --msgbox "Seu comando A foi executado!" 8 40
