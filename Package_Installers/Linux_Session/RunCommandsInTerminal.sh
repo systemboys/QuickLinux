@@ -31,4 +31,4 @@ fi
 command_result=$(eval "$insertedCommand")
 
 # Exibe o resultado em uma janela de mensagem usando dialog
-dialog --title "Resultado do comando $insertedCommand" --msgbox "$command_result" 20 70
+dialog --title "Resultado do comando $insertedCommand" --msgbox "$command_result" 20 95
