@@ -1,5 +1,19 @@
 #!/bin/bash
 
+# System_Information.sh - Opções para sessão relacionadas a utilitários para Linux.
+#
+# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+#
+# ---------------------------------------------------------------
+# Este programa tem a finalidade de Opções para sessão relacionadas a utilitários para Linux.
+# ---------------------------------------------------------------
+# Histórico:
+# v0.0.1 2023-10-29 às 17h00, Marcos Aurélio:
+#   - Versão inicial, Opções para sessão relacionadas a utilitários para Linux.
+#
+# Licença: GPL.
+
 # Verifica se o número de argumentos é correto
 if [ "$#" -ne 2 ]; then
     echo "Erro: Número incorreto de argumentos."

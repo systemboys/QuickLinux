@@ -1,5 +1,19 @@
 #!/bin/bash
 
+# System_Information.sh - Opções relacionadas à redes.
+#
+# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+#
+# ---------------------------------------------------------------
+# Este programa tem a finalidade de Opções relacionadas à redes.
+# ---------------------------------------------------------------
+# Histórico:
+# v0.0.1 2023-10-29 às 17h00, Marcos Aurélio:
+#   - Versão inicial, Opções relacionadas à redes.
+#
+# Licença: GPL.
+
 # Verifica se o número de argumentos é correto
 if [ "$#" -ne 2 ]; then
     echo "Erro: Número incorreto de argumentos."

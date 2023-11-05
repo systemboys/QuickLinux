@@ -84,6 +84,12 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
   │    │    ├─ Install_Package2.sh
   │    │    ├─ Install_Package3.sh
   │    │    └─ ...
+  │    ├─ /System_Utilities_Session/
+  │    │    ├─ System_Utilities_Session.sh
+  │    │    ├─ Install_Package1.sh
+  │    │    ├─ Install_Package2.sh
+  │    │    ├─ Install_Package3.sh
+  │    │    └─ ...
   │    └─ /Terminal_Utilities_Session/
   │         ├─ Terminal_Utilities_Session.sh
   │         ├─ Install_Package1.sh

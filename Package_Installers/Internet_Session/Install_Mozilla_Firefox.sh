@@ -1,5 +1,19 @@
 #!/bin/bash
 
+# System_Information.sh - Instalar o navegador Mozilla Firefox no Linux.
+#
+# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+#
+# ---------------------------------------------------------------
+# Este programa tem a finalidade de Instalar o navegador Mozilla Firefox no Linux.
+# ---------------------------------------------------------------
+# Histórico:
+# v0.0.1 2023-10-29 às 17h00, Marcos Aurélio:
+#   - Versão inicial, Instalar o navegador Mozilla Firefox no Linux.
+#
+# Licença: GPL.
+
 clear
 
 # Variáveis úteis

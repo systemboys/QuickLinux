@@ -1,5 +1,19 @@
 #!/bin/bash
 
+# System_Information.sh - Opções de ferramentas PING para redes.
+#
+# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+#
+# ---------------------------------------------------------------
+# Este programa tem a finalidade de Opções de ferramentas PING para redes.
+# ---------------------------------------------------------------
+# Histórico:
+# v0.0.1 2023-10-29 às 17h00, Marcos Aurélio:
+#   - Versão inicial, Opções de ferramentas PING para redes.
+#
+# Licença: GPL.
+
 # Função para realizar o ping e mostrar o resultado em uma janela de mensagem
 pingDomain() {
     # Solicita ao usuário que insira o domínio usando o dialog
