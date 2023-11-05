@@ -90,6 +90,11 @@ RootUserPassword() {
     done
 }
 
+# Função para Opção "Executar comandos no terminal"
+RunCommandsInTerminal() {
+    ./RunCommandsInTerminal.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -101,6 +106,7 @@ while true; do
             3 "Reiniciar o Linux" \
             4 "Desligar o Linux" \
             5 "Senha do usuário root" \
+            6 "Executar comandos no terminal" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -135,6 +141,10 @@ while true; do
         5)
             clear
             RootUserPassword
+            ;;
+        6)
+            clear
+            RunCommandsInTerminal
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
