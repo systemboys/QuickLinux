@@ -112,10 +112,16 @@ Network_Session() {
     ./Network_Session.sh "$fileName" "$developer"
 }
 
-# função para executar sessão Utilitários do Sistema
+# Função para executar sessão Utilitários do Sistema
 System_Utilities_Session() {
     cd Package_Installers/System_Utilities_Session
     ./System_Utilities_Session.sh "$fileName" "$developer"
+}
+
+# Função para Executar comandos no terminal
+RunCommandsInTerminal() {
+    cd Package_Installers/Linux_Session
+    ./RunCommandsInTerminal.sh "$fileName" "$developer"
 }
 
 # Menu interativo usando dialog
@@ -130,6 +136,7 @@ while true; do
             5 "Utilitários de Terminal" \
             6 "Redes" \
             7 "Utilitários do Sistema" \
+            8 "Run commands in terminal" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -167,6 +174,10 @@ while true; do
         7) # Sessão Utilitários do Sistema
             clear
             System_Utilities_Session
+            ;;
+        8) # Executar comandos no terminal
+            clear
+            RunCommandsInTerminal
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
