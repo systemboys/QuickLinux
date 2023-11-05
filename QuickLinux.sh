@@ -52,6 +52,8 @@
 #     fornecer informações detalhadas sobre o processador e a memória do sistema.
 # v0.1.8 2023-11-04 às 22h20, Marcos Aurélio:
 #   - Adicionada a opção que permite que o usuário insira comandos no terminal Linux.
+# v0.1.8 2023-11-04 às 23h46, Marcos Aurélio:
+#   - Adicionado os caracteres (🚀🐧) no título do QuickLinux.
 #
 # Licença: GPL.
 
@@ -74,7 +76,7 @@ fi
 
 # Variáveis úteis
 fileName=$(basename "$0")
-sessionName="QuickLinux ${lastVersion}"
+sessionName="QuickLinux ${lastVersion} 🚀🐧"
 sessionDescription="Selecione as opções usando (↓ ↑ → ←) e pressione \"Enter\". Pode usar os números ou o clique também:"
 developer="$(echo -e "\u00A9") $(date +%Y) - GLOBAL TEC Informática $(echo -e "\u24C7") | www.gti1.com.br"
 
