@@ -19,7 +19,7 @@
 clear
 
 # Solicita ao usuário que insira um comando de terminal usando o dialog
-insertedCommand=$(dialog --inputbox 'Digite seu comando numa linha só:' 8 40 3>&1 1>&2 2>&3)
+insertedCommand=$(dialog --inputbox 'Digite seu comando numa linha só:' 8 95 3>&1 1>&2 2>&3)
 
 # Verifica se o campo da janela Dialog está vazio
 if [ -z "$insertedCommand" ]; then
@@ -31,4 +31,4 @@ fi
 command_result=$(eval "$insertedCommand")
 
 # Exibe o resultado em uma janela de mensagem usando dialog
-dialog --title "Resultado do comando $insertedCommand" --msgbox "$command_result" 20 95
+dialog --title "Resultado do comando $insertedCommand" --msgbox "$command_result" 20 100
