@@ -18,17 +18,17 @@
 
 clear
 
-# Solicita ao usuário que insira o domínio usando o dialog
-domain=$(dialog --inputbox 'Digite o domínio:' 8 40 3>&1 1>&2 2>&3)
+# Solicita ao usuário que insira um comando de terminal usando o dialog
+insertedCommand=$(dialog --inputbox 'Digite o domínio:' 8 40 3>&1 1>&2 2>&3)
 
-# Verifica se o campo de domínio está vazio
-if [ -z "$domain" ]; then
-    dialog --msgbox "O domínio não pode estar vazio. Por favor, tente novamente." 8 40
+# Verifica se o campo da janela Dialog está vazio
+if [ -z "$insertedCommand" ]; then
+    dialog --msgbox "O campo não pode estar vazio. Por favor, tente novamente." 8 40
     return
 fi
 
 # Pinga o domínio e armazena o resultado
-ping_result=$(ping -c 8 "$domain")
+ping_result=$insertedCommand
 
 # Exibe o resultado em uma janela de mensagem usando dialog
-dialog --title "Resultado do Ping para $domain" --msgbox "$ping_result" 20 70
+dialog --title "Resultado do Ping para $insertedCommand" --msgbox "$ping_result" 20 70
