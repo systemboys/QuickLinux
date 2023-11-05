@@ -50,6 +50,8 @@
 # v0.1.7 2023-11-04 às 17h20, Marcos Aurélio:
 #   - Adicionada a opção "Informações do Sistema" na sessão "Utilitários do Sistema" para
 #     fornecer informações detalhadas sobre o processador e a memória do sistema.
+# v0.1.8 2023-11-04 às 22h20, Marcos Aurélio:
+#   - Versão inicial, adicionada a opção que permite que o usuário insira comandos no terminal Linux.
 #
 # Licença: GPL.
 
