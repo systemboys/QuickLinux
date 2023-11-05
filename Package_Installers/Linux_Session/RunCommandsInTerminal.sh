@@ -24,11 +24,11 @@ insertedCommand=$(dialog --inputbox 'Digite seu comando numa linha só:' 8 40 3>
 # Verifica se o campo da janela Dialog está vazio
 if [ -z "$insertedCommand" ]; then
     dialog --msgbox "O campo não pode estar vazio. Por favor, tente novamente." 8 40
-    return
+    exit 1
 fi
 
-# Pinga o domínio e armazena o resultado
-ping_result=$("$insertedCommand")
+# Executa o comando inserido pelo usuário e armazena o resultado
+command_result=$(eval "$insertedCommand")
 
 # Exibe o resultado em uma janela de mensagem usando dialog
-dialog --title "Resultado do comando $insertedCommand" --msgbox "$ping_result" 20 70
+dialog --title "Resultado do comando $insertedCommand" --msgbox "$command_result" 20 70
