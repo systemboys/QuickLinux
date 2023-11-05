@@ -19,7 +19,7 @@
 clear
 
 # Solicita ao usuário que insira um comando de terminal usando o dialog
-insertedCommand=$(dialog --inputbox 'Digite seu comando em uma linha só:' 8 40 3>&1 1>&2 2>&3)
+insertedCommand=$(dialog --inputbox 'Digite seu comando numa linha só:' 8 40 3>&1 1>&2 2>&3)
 
 # Verifica se o campo da janela Dialog está vazio
 if [ -z "$insertedCommand" ]; then
@@ -28,7 +28,7 @@ if [ -z "$insertedCommand" ]; then
 fi
 
 # Pinga o domínio e armazena o resultado
-ping_result=$insertedCommand
+ping_result=$("$insertedCommand")
 
 # Exibe o resultado em uma janela de mensagem usando dialog
 dialog --title "Resultado do Ping para $insertedCommand" --msgbox "$ping_result" 20 70
