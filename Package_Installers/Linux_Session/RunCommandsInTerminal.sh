@@ -19,7 +19,7 @@
 clear
 
 # Solicita ao usuário que insira um comando de terminal usando o dialog
-insertedCommand=$(dialog --inputbox 'Digite o domínio:' 8 40 3>&1 1>&2 2>&3)
+insertedCommand=$(dialog --inputbox 'Digite seu comando em uma linha só:' 8 40 3>&1 1>&2 2>&3)
 
 # Verifica se o campo da janela Dialog está vazio
 if [ -z "$insertedCommand" ]; then
