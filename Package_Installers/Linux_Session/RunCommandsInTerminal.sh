@@ -31,4 +31,4 @@ fi
 ping_result=$("$insertedCommand")
 
 # Exibe o resultado em uma janela de mensagem usando dialog
-dialog --title "Resultado do Ping para $insertedCommand" --msgbox "$ping_result" 20 70
+dialog --title "Resultado do comando $insertedCommand" --msgbox "$ping_result" 20 70
