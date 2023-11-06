@@ -102,6 +102,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
   │         ├─ Install_Package2.sh
   │         ├─ Install_Package3.sh
   │         └─ ...
+  ├─ Install.sh
   ├─ QuickLinux.sh
   └─ README.md
 ```
