@@ -33,15 +33,13 @@ QuickLinux: Facilite a vida no Linux com um menu interativo. Instale pacotes, at
    ./QuickLinux.sh
    ```
 
-   > Ou você pode ir direto ao ponto, execute o seuinte comando no seu terminal Linux:
+   > Você pode executar o seguinte comando no seu terminal Linux. Obs.: **( ! )** Sertifique-se de que o `Git` esteja instalado em seu Linux!:
    
    ```bash
    cd /tmp/ && rm -rf QuickLinux && git clone https://github.com/systemboys/QuickLinux.git && cd QuickLinux && ./QuickLinux.sh
    ```
-   
-   > **( ! )** Sertifique-se de que o `Git` esteja instalado em seu Linux!
 
-   **_( i )_** Você pode colar a seguinte linha de comando diretamente no seu terminal caso não tenha o Git, assim, tanto o Git quanto o QuickLinux serão instalados:
+   Uma outra alternativa direta, é colar a seguinte linha de comando diretamente no seu terminal caso não tenha o Git instalado no seu Linux, assim, tanto o Git quanto o QuickLinux serão instalados:
 
    ```bash
    bash -c "$(curl -fsSL https://github.com/systemboys/QuickLinux/raw/main/Install.sh)"
