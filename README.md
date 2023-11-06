@@ -41,6 +41,12 @@ QuickLinux: Facilite a vida no Linux com um menu interativo. Instale pacotes, at
    
    > **( ! )** Sertifique-se de que o `Git` esteja instalado em seu Linux!
 
+   **_( i )_** Você pode colar a seguinte linha de comando diretamente no seu terminal caso não tenha o Git, assim, tanto o Git quanto o QuickLinux serão instalados:
+
+   ```bash
+   bash -c "$(curl -fsSL https://github.com/systemboys/QuickLinux/raw/main/install.sh)"
+   ```
+
 3. **Explore e Instale:** Explore as categorias, escolha os pacotes que deseja instalar e siga as instruções. Em poucos instantes, você terá os programas desejados em seu sistema Linux.
 
 **Contribua e Compartilhe:**
