@@ -17,9 +17,6 @@
 # Incluindo o GlobalVariables.sh para acessar as variáveis
 source ../../GlobalVariables.sh
 
-# Obtém o caminho do arquivo que contém o histórico
-# fileHistory="../../QuickLinux.sh"
-
 # Obtém o número da última versão do histórico do script
 lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
 

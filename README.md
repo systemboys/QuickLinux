@@ -118,6 +118,12 @@ Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sess�
 ```bash
 #!/bin/bash
 
+# Incluindo o GlobalVariables.sh para acessar as variáveis
+source ../../GlobalVariables.sh
+
+# Obtém o número da última versão do histórico do script
+lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
+
 # Verifica se o número de argumentos é correto
 if [ "$#" -ne 2 ]; then
     echo "Erro: Número incorreto de argumentos."
@@ -129,7 +135,7 @@ fileName="$1"
 developer="$2"
 
 # Variáveis úteis
-sessionName="Nova Sessão A"
+sessionName="${programName} ${lastVersion} 🚀🐧"
 sessionDescription="Opções de referência a Nova Sessão A."
 
 # Função para Opção A

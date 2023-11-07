@@ -54,6 +54,8 @@
 #   - Adicionada a opção que permite que o usuário insira comandos no terminal Linux.
 # v0.1.8 2023-11-04 às 23h46, Marcos Aurélio:
 #   - Adicionado os caracteres (🚀🐧) no título do QuickLinux.
+# v0.1.9 2023-11-07 às 23h00, Marcos Aurélio:
+#   - Adicionadas as variáveis globais que estão no arquivo "GlobalVariables.sh".
 #
 # Licença: GPL.
 
