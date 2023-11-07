@@ -31,7 +31,7 @@ fileName="$1"
 developer="$2"
 
 # Variáveis úteis
-sessionName="${programName} ${lastVersion} 🚀🐧"
+sessionName="Sessão ${programName} ${lastVersion} 🚀🐧"
 sessionDescription="Opções de referência ao QuickMenu."
 
 # Função para atualizar QuickLinux local pelo QuickLinux do repositório
