@@ -14,7 +14,11 @@
 #
 # Licença: GPL.
 
+# Incluindo o GlobalVariables.sh para acessar as variáveis
 source ../../GlobalVariables.sh
+
+# Obtém o caminho do arquivo que contém o histórico
+fileHistory="../../QuickLinux.sh"
 
 # Verifica se o número de argumentos é correto
 if [ "$#" -ne 2 ]; then
