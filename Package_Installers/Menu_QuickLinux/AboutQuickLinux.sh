@@ -16,12 +16,15 @@
 
 clear
 
-# Obtém o número da última versão do histórico do script
-lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
+# Obtém o número da última versão do histórico do script local
+latestLocalVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
+
+# Obtém o número da última versão do histórico do script no GitHub
+latestDithubVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "$(curl -fsSL https://github.com/systemboys/QuickLinux/raw/main/QuickLinux.sh)" | tail -n 1)
 
 dialog --msgbox "Sobre o QuickLinux
 
-**Sobre o QuickLinux: $lastVersion**
+**Sobre o QuickLinux: $latestDithubVersion**
 
 Bem-vindo ao QuickLinux, sua ferramenta interativa definitiva para simplificar sua jornada no mundo do Linux. Projetado para tornar as operações diárias no Linux rápidas, fáceis e acessíveis, o QuickLinux é seu parceiro confiável para tarefas essenciais no terminal.
 
