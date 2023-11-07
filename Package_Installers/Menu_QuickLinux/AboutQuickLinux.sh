@@ -17,7 +17,7 @@
 clear
 
 # Baixa o arquivo do GitHub para o diretório /tmp
-curl -sLJO https://github.com/systemboys/QuickLinux/raw/main/QuickLinux.sh -o /tmp/QuickLinux.sh
+curl -sLJO https://github.com/systemboys/QuickLinux/blob/main/QuickLinux.sh -o /tmp/QuickLinux.sh
 
 # Obtém a versão do arquivo local
 lastLocalVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "/tmp/QuickLinux/QuickLinux.sh" | tail -n 1)
