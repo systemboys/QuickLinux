@@ -24,7 +24,7 @@ lastGitHubVersion=$(curl -s https://github.com/systemboys/QuickLinux/blob/main/Q
 
 # Comparar as duas variáveis
 if [ "$lastLocalVersion" != "$lastGitHubVersion" ]; then
-  versionMessage="Há uma nova versão!"
+  versionMessage="Há uma nova versão! ($lastGitHubVersion)"
 else
   versionMessage="Esta é a última versão!"
 fi
