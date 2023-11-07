@@ -77,7 +77,7 @@ Trace_Route_Traveled() {
 # Inicia o loop para o menu interativo usando dialog
 while true; do
     # Mostra um menu para escolher entre pingar um domínio ou sair
-    choice=$(dialog --clear --backtitle "${programName} ${lastVersion} 🚀🐧" \
+    choice=$(dialog --clear --backtitle "${programName} ${lastVersion} 🚀🐧 | ${developer}" \
             --menu "Escolha uma opção:" 12 40 2 \
             0 "Voltar..." \
             1 "Pingar um Domínio" \
