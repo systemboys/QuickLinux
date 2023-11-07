@@ -17,6 +17,12 @@
 #
 # Licença: GPL.
 
+# Incluindo o GlobalVariables.sh para acessar as variáveis
+source ../../GlobalVariables.sh
+
+# Obtém o número da última versão do histórico do script
+lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
+
 clear
 
 # Resto do script...
@@ -32,7 +38,7 @@ fileName="$1"
 developer="$2"
 
 # Variáveis úteis
-sessionName="Sessão Utilitários do Sistema"
+sessionName="${programName} ${lastVersion} 🚀🐧"
 sessionDescription="Opções de referência a Sessão Utilitários do Sistema."
 
 # Função para Opção Informações do Sistema
