@@ -16,4 +16,4 @@ Bem-vindo ao QuickLinux, sua ferramenta interativa definitiva para simplificar s
 
 O QuickLinux foi projetado para fazer com que você se sinta em casa no Linux, mesmo se você for um iniciante ou um usuário experiente. Simplifique sua experiência no Linux, reduzindo o tempo gasto em comandos complexos e focando no que realmente importa: seu trabalho, seu projeto e sua criatividade. Experimente a facilidade do QuickLinux agora mesmo!
 
-O QuickLinux é desenvolvido pela GLOBAL TEC Informática, uma empresa que trabalha no ramo de informática desde 2008." 8 40
+O QuickLinux é desenvolvido pela GLOBAL TEC Informática, uma empresa que trabalha no ramo de informática desde 2008." 12 80
