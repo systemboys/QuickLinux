@@ -81,6 +81,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
   │    ├─ /Linux_Session/
   │    │    └─ Linux_Session.sh
   │    ├─ /Menu_QuickLinux/
+  │    │    ├─ AboutQuickLinux.sh
   │    │    └─ Package_Installers.sh
   │    ├─ /Network_Session/
   │    │    ├─ Network_Session.sh
@@ -100,6 +101,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
   │         ├─ Install_Package2.sh
   │         ├─ Install_Package3.sh
   │         └─ ...
+  ├─ GlobalVariables.sh
   ├─ Install.sh
   ├─ QuickLinux.sh
   └─ README.md
