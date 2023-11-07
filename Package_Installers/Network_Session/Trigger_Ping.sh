@@ -14,6 +14,12 @@
 #
 # Licença: GPL.
 
+# Incluindo o GlobalVariables.sh para acessar as variáveis
+source ../../../GlobalVariables.sh
+
+# Obtém o número da última versão do histórico do script
+lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../../QuickLinux.sh" | tail -n 1)
+
 # Função para realizar o ping e mostrar o resultado em uma janela de mensagem
 pingDomain() {
     # Solicita ao usuário que insira o domínio usando o dialog
@@ -71,9 +77,9 @@ Trace_Route_Traveled() {
 # Inicia o loop para o menu interativo usando dialog
 while true; do
     # Mostra um menu para escolher entre pingar um domínio ou sair
-    choice=$(dialog --clear --backtitle "Ping Tool" \
+    choice=$(dialog --clear --backtitle "${programName} ${lastVersion} 🚀🐧" \
             --menu "Escolha uma opção:" 12 40 2 \
-            0 "Sair..." \
+            0 "Voltar..." \
             1 "Pingar um Domínio" \
             2 "Pingar um Domínio forçando IPv4" \
             3 "Traçar rota percorrida" \
