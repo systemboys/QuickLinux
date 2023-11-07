@@ -74,10 +74,13 @@ Trace_Route_Traveled() {
     dialog --title "Resultado do Ping de rastreio para $domain" --msgbox "$ping_result" 20 100
 }
 
+# Variáveis úteis
+sessionName="${programName} ${lastVersion} 🚀🐧"
+
 # Inicia o loop para o menu interativo usando dialog
 while true; do
     # Mostra um menu para escolher entre pingar um domínio ou sair
-    choice=$(dialog --clear --backtitle "${programName} ${lastVersion} 🚀🐧 | ${developer}" \
+    choice=$(dialog --clear --backtitle "${programName} | ${developer}" \
             --menu "Escolha uma opção:" 12 40 2 \
             0 "Voltar..." \
             1 "Pingar um Domínio" \
