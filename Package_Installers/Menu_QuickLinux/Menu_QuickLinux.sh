@@ -21,7 +21,7 @@ source ../../GlobalVariables.sh
 # fileHistory="../../QuickLinux.sh"
 
 # Obtém o número da última versão do histórico do script
-latestQuicklinksVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
+lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
 
 # Verifica se o número de argumentos é correto
 if [ "$#" -ne 2 ]; then
@@ -34,7 +34,7 @@ fileName="$1"
 developer="$2"
 
 # Variáveis úteis
-sessionName="${programName} ${latestQuicklinksVersion} 🚀🐧"
+sessionName="${programName} ${lastVersion} 🚀🐧"
 sessionDescription="Opções de referência ao QuickMenu."
 
 # Função para atualizar QuickLinux local pelo QuickLinux do repositório
