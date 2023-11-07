@@ -20,10 +20,15 @@ clear
 lastLocalVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
 
 # Obtém o número da última versão do histórico do script no GitHub
-lastGitHubVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' curl -s https://github.com/systemboys/QuickLinux/raw/main/QuickLinux.sh | tail -n 1)
+lastGitHubVersion=$(curl -s https://github.com/systemboys/QuickLinux/raw/main/QuickLinux.sh | grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' | tail -n 1)
+
+# Exibe as saídas para diagnóstico
+echo "Versão local: $lastLocalVersion"
+echo "Versão no GitHub: $lastGitHubVersion"
 
 # Exibe as versões em uma caixa de mensagem usando dialog
 dialog --msgbox "Versão local: $lastLocalVersion | Versão no GitHub: $lastGitHubVersion" 10 60
+
 
 
 # dialog --msgbox "Sobre o QuickLinux
