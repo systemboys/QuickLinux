@@ -80,7 +80,7 @@ sessionName="${programName} ${lastVersion} 🚀🐧"
 # Inicia o loop para o menu interativo usando dialog
 while true; do
     # Mostra um menu para escolher entre pingar um domínio ou sair
-    choice=$(dialog --clear --backtitle "${programName} | ${developer}" \
+    choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --menu "Escolha uma opção:" 12 40 2 \
             0 "Voltar..." \
             1 "Pingar um Domínio" \
