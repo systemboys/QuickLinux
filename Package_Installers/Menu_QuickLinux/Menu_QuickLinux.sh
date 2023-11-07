@@ -73,6 +73,11 @@ ReloadQuickLinux() {
     dialog --msgbox "QuickLinux recarregado!" 8 40
 }
 
+# Função para carregar o "Sobre o QuickLinux"
+AboutQuicklinux() {
+    ./AboutQuicklinux.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -82,6 +87,7 @@ while true; do
             1 "Atualizar QuickLinux" \
             2 "Deletar QuickLinux" \
             3 "Recarregar QuickLinux" \
+            4 "Sobre o QuickLinux" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -108,6 +114,10 @@ while true; do
         3)
             clear
             ReloadQuickLinux
+            ;;
+        4)
+            clear
+            AboutQuicklinux
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
