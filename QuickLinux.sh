@@ -58,7 +58,7 @@
 # Licença: GPL.
 
 # Obtém o número da última versão do histórico do script
-lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "$0" | tail -n 1)
+latestQuicklinksVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "$0" | tail -n 1)
 
 # Incluindo o GlobalVariables.sh para acessar as variáveis
 source GlobalVariables.sh
@@ -79,7 +79,7 @@ fi
 
 # Variáveis úteis
 fileName=$(basename "$0")
-sessionName="${programName} ${lastVersion} 🚀🐧"
+latestQuicklinksVersion} 🚀🐧"
 sessionDescription="Selecione as opções usando (↓ ↑ → ←) e pressione \"Enter\". Pode usar os números ou o clique também:"
 
 # Função para executar sessão Menu QuickLinux
