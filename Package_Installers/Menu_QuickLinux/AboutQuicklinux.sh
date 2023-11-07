@@ -2,6 +2,9 @@
 
 clear
 
+# Inclua o arquivo1.sh usando o caminho completo
+source ../../GlobalVariables.sh
+
 # Obtém o caminho do arquivo que contém o histórico
 fileHistory="../../QuickLinux.sh"
 
@@ -9,6 +12,8 @@ fileHistory="../../QuickLinux.sh"
 lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "$fileHistory" | tail -n 1)
 
 dialog --msgbox "Sobre o QuickLinux
+
+$variavelA
 
 **Sobre o QuickLinux: $lastVersion**
 
