@@ -1,9 +1,20 @@
 #!/bin/bash
 
-clear
+# AboutQuickLinux.sh - Executa o que exibe o Sobre o QuickLinux.
+#
+# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+#
+# ---------------------------------------------------------------
+# Este programa tem a finalidade de exibir o conteúdo do "Sobre o QuickLinux".
+# ---------------------------------------------------------------
+# Histórico:
+# v0.0.1 2023-11-06 às 23h00, Marcos Aurélio:
+#   - Versão inicial, exibindo o conteúdo sobre o QuickLinux.
+#
+# Licença: GPL.
 
-# Inclua o arquivo1.sh usando o caminho completo
-source ../../GlobalVariables.sh
+clear
 
 # Obtém o caminho do arquivo que contém o histórico
 fileHistory="../../QuickLinux.sh"
@@ -12,8 +23,6 @@ fileHistory="../../QuickLinux.sh"
 lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "$fileHistory" | tail -n 1)
 
 dialog --msgbox "Sobre o QuickLinux
-
-$variavelA
 
 **Sobre o QuickLinux: $lastVersion**
 

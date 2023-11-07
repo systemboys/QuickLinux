@@ -14,6 +14,8 @@
 #
 # Licença: GPL.
 
+source ../../GlobalVariables.sh
+
 # Verifica se o número de argumentos é correto
 if [ "$#" -ne 2 ]; then
     echo "Erro: Número incorreto de argumentos."
@@ -25,7 +27,7 @@ fileName="$1"
 developer="$2"
 
 # Variáveis úteis
-sessionName="Opções do QuickLinux"
+sessionName="${programName} ${lastVersion} 🚀🐧"
 sessionDescription="Opções de referência ao QuickMenu."
 
 # Função para atualizar QuickLinux local pelo QuickLinux do repositório
@@ -74,8 +76,8 @@ ReloadQuickLinux() {
 }
 
 # Função para carregar o "Sobre o QuickLinux"
-AboutQuicklinux() {
-    ./AboutQuicklinux.sh
+AboutQuickLinux() {
+    ./AboutQuickLinux.sh
 }
 
 # Menu interativo usando dialog
@@ -117,7 +119,7 @@ while true; do
             ;;
         4)
             clear
-            AboutQuicklinux
+            AboutQuickLinux
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
