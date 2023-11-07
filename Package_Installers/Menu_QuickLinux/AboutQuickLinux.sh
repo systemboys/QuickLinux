@@ -16,9 +16,22 @@
 
 clear
 
+# Obtém o número da última versão do histórico do script local
+lastLocalVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
+
+# Obtém o número da última versão do histórico do script no GitHub
+lastGitHubVersion=$(curl -s https://github.com/systemboys/QuickLinux/blob/main/QuickLinux.sh | grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' | tail -n 1)
+
+# Comparar as duas variáveis
+if [ "$lastLocalVersion" != "$lastGitHubVersion" ]; then
+  versionMessage="Há uma nova versão!"
+else
+  versionMessage="Esta é a última versão!"
+fi
+
 dialog --msgbox "Sobre o QuickLinux
 
-**Sobre o QuickLinux: $lastLocalVersion >>> $lastGitHubVersion <<<**
+**Sobre o QuickLinux: $lastLocalVersion >>> $versionMessage <<<**
 
 Bem-vindo ao QuickLinux, sua ferramenta interativa definitiva para simplificar sua jornada no mundo do Linux. Projetado para tornar as operações diárias no Linux rápidas, fáceis e acessíveis, o QuickLinux é seu parceiro confiável para tarefas essenciais no terminal.
 
