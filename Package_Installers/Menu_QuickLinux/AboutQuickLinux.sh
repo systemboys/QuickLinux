@@ -17,7 +17,7 @@
 clear
 
 # Obtém o número da última versão do histórico do script
-latestQuicklinksVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
+lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
 
 dialog --msgbox "Sobre o QuickLinux
 
