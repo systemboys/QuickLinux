@@ -20,7 +20,7 @@ clear
 latestLocalVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
 
 # Obtém o número da última versão do histórico do script no GitHub
-latestDithubVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "$(curl -fsSL https://github.com/systemboys/QuickLinux/raw/main/QuickLinux.sh)" | tail -n 1)
+latestDithubVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' bash -c "$(curl -fsSL https://github.com/systemboys/QuickLinux/raw/main/QuickLinux.sh)" | tail -n 1)
 
 dialog --msgbox "Sobre o QuickLinux
 
