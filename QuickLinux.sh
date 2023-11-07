@@ -60,6 +60,9 @@
 # Obtém o número da última versão do histórico do script
 lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "$0" | tail -n 1)
 
+# Incluindo o GlobalVariables.sh para acessar as variáveis
+source GlobalVariables.sh
+
 # Verifica se o script está sendo executado como superusuário
 if [ "$EUID" -ne 0 ]; then
     dialog --msgbox 'Este script precisa ser executado como superusuário.' 6 40
@@ -76,9 +79,8 @@ fi
 
 # Variáveis úteis
 fileName=$(basename "$0")
-sessionName="QuickLinux ${lastVersion} 🚀🐧"
+sessionName="${programName} ${lastVersion} 🚀🐧"
 sessionDescription="Selecione as opções usando (↓ ↑ → ←) e pressione \"Enter\". Pode usar os números ou o clique também:"
-developer="$(echo -e "\u00A9") $(date +%Y) - GLOBAL TEC Informática $(echo -e "\u24C7") | www.gti1.com.br"
 
 # Função para executar sessão Menu QuickLinux
 Menu_QuickLinux() {
