@@ -18,10 +18,10 @@
 source ../../GlobalVariables.sh
 
 # Obtém o caminho do arquivo que contém o histórico
-fileHistory="../../QuickLinux.sh"
+# fileHistory="../../QuickLinux.sh"
 
 # Obtém o número da última versão do histórico do script
-latestQuicklinksVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "$0" | tail -n 1)
+latestQuicklinksVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
 
 # Verifica se o número de argumentos é correto
 if [ "$#" -ne 2 ]; then
