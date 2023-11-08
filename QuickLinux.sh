@@ -59,6 +59,9 @@
 # v0.2.0 2023-11-07 às 02h00, Marcos Aurélio:
 #   - Foi colocado uma verificação na janela "Sobre o QuickLinux" onde compara a versão
 #     local com a versão do QuickLinux no repositório no GitHub.
+# v0.2.1 2023-11-07 às 22h00, Marcos Aurélio:
+#   - Extraindo o Histórico de Versões do QuickLinux e exibindo em "Sobre o QuickLinux"
+#     na sessão "Menu QuickLinux."
 #
 # Licença: GPL.
 
