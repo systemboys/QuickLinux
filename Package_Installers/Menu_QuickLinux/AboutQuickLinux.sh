@@ -56,7 +56,7 @@ clear
 # -------------------------------------
 
 # Obtém o histórico de versões entre # Histórico: e # Licença: GPL
-historico=$(sed -n '/# Histórico:/,/# Licença: GPL/p' ../../QuickLinux.sh)
+historico=$(sed -n '/# Histórico:/,/# Licença: GPL/p' ../QuickLinux.sh)
 
 # Exibe o histórico em uma caixa de mensagem usando dialog
 dialog --msgbox "$historico" 20 80
