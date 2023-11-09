@@ -66,6 +66,8 @@
 #   - Alteração na exibição de versão disponível.
 # v0.2.3 2023-11-08 às 23h25, Marcos Aurélio:
 #   - Exibição do local de instalação do QuickLinux.
+# v0.2.4 2023-11-09 às 00h45, Marcos Aurélio:
+#   - Versão inicial, script que verifica a versão do kernel Linux na sessão Linux.
 #
 # Licença: GPL.
 
