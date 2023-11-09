@@ -64,6 +64,8 @@
 #     na sessão "Menu QuickLinux."
 # v0.2.2 2023-11-08 às 22h00, Marcos Aurélio:
 #   - Alteração na exibição de versão disponível.
+# v0.2.3 2023-11-08 às 23h25, Marcos Aurélio:
+#   - Exibição do local de instalação do QuickLinux.
 #
 # Licença: GPL.
 

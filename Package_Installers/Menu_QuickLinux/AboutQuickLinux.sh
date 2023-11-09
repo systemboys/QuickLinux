@@ -13,11 +13,14 @@
 #   - Versão inicial, exibindo o conteúdo sobre o QuickLinux.
 # v0.0.2 2023-11-08 às 22h00, Marcos Aurélio:
 #   - Alteração na exibição de versão disponível.
+# v0.0.3 2023-11-08 às 23h25, Marcos Aurélio:
+#   - Exibição do local de instalação do QuickLinux.
 #
 # Licença: GPL.
 
 clear
 
+# ---ÚLTIMAS VERSÕES---
 # Obtém o número da última versão do histórico do script local
 lastLocalVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
 
@@ -36,6 +39,15 @@ else
   versionMessage="Seu QuickLinux está atualizado!
 Versão atual: $lastLocalVersion"
 fi
+# ---/ÚLTIMAS VERSÕES---
+
+# ---LOCAL DE INSTALAÇÃO---
+# Obtém o diretório atual onde o script está sendo executado
+current_dir=$(dirname "$0")
+
+# Obtém o caminho completo do arquivo
+file_path=$(realpath "$current_dir")
+# ---/LOCAL DE INSTALAÇÃO---
 
 dialog --msgbox "Sobre o QuickLinux
 
@@ -46,6 +58,8 @@ $versionMessage
 Bem-vindo ao QuickLinux, sua ferramenta interativa definitiva para simplificar sua jornada no mundo do Linux. Projetado para tornar as operações diárias no Linux rápidas, fáceis e acessíveis, o QuickLinux é seu parceiro confiável para tarefas essenciais no terminal.
 
 **O Que o QuickLinux Oferece:**
+
+Local de instalação: $file_path/QuickLinux
 
 - **Atualização e Manutenção Simples:** Atualize seus pacotes com um clique. Mantenha seu sistema funcionando sem complicações.
   
