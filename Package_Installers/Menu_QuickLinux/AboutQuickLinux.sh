@@ -41,7 +41,7 @@ dialog --msgbox "Sobre o QuickLinux
 
 **Sobre o QuickLinux:<<<**
 
-$lastLocalVersion
+$versionMessage
 
 Bem-vindo ao QuickLinux, sua ferramenta interativa definitiva para simplificar sua jornada no mundo do Linux. Projetado para tornar as operações diárias no Linux rápidas, fáceis e acessíveis, o QuickLinux é seu parceiro confiável para tarefas essenciais no terminal.
 
