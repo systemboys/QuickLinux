@@ -42,8 +42,11 @@ fi
 # ---/ÚLTIMAS VERSÕES---
 
 # ---LOCAL DE INSTALAÇÃO---
+# Caminho absoluto do arquivo
+fileName="../../QuickLinux.sh"
+
 # Obtém o diretório atual onde o script está sendo executado
-current_dir=$(dirname "$0")
+current_dir=$(dirname "$fileName")
 
 # Obtém o caminho completo do arquivo
 file_path=$(realpath "$current_dir")
