@@ -62,6 +62,8 @@
 # v0.2.1 2023-11-07 às 22h00, Marcos Aurélio:
 #   - Extraindo o Histórico de Versões do QuickLinux e exibindo em "Sobre o QuickLinux"
 #     na sessão "Menu QuickLinux."
+# v0.2.2 2023-11-08 às 22h00, Marcos Aurélio:
+#   - Alteração na exibição de versão disponível.
 #
 # Licença: GPL.
 
