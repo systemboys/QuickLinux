@@ -68,6 +68,9 @@
 #   - Exibição do local de instalação do QuickLinux.
 # v0.2.4 2023-11-09 às 00h45, Marcos Aurélio:
 #   - Versão inicial, script que verifica a versão do kernel Linux na sessão Linux.
+# v0.2.5 2023-11-09 às 01h28, Marcos Aurélio:
+#   - Incrementação do "sudo apt update" junto com o "sudo apt upgrade" -y para atulizar
+#     o Kernel Linux"
 #
 # Licença: GPL.
 
