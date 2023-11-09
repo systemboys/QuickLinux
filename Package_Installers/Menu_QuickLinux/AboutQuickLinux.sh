@@ -11,6 +11,8 @@
 # Histórico:
 # v0.0.1 2023-11-06 às 23h00, Marcos Aurélio:
 #   - Versão inicial, exibindo o conteúdo sobre o QuickLinux.
+# v0.0.2 2023-11-08 às 22h00, Marcos Aurélio:
+#   - Alteração na exibição de versão disponível.
 #
 # Licença: GPL.
 
@@ -27,9 +29,12 @@ versionHistory=$(sed -n '/# Histórico:/,/# Licença: GPL/p' ../../QuickLinux.sh
 
 # Comparar as duas variáveis
 if [ "$lastLocalVersion" != "$lastGitHubVersion" ]; then
-  versionMessage="Há uma nova versão! ($lastGitHubVersion)"
+  versionMessage="Há uma atualização disponível para o seu QuiskLinux!
+Versão disponível: $lastGitHubVersion
+Versão atual: $lastLocalVersion"
 else
-  versionMessage="Esta é a última versão!"
+  versionMessage="Seu roteador está atualizado!
+Versão atual: $lastLocalVersion"
 fi
 
 dialog --msgbox "Sobre o QuickLinux
