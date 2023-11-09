@@ -115,6 +115,11 @@ RunCommandsInTerminal() {
     ./RunCommandsInTerminal.sh
 }
 
+# Verificar a versão do kernel Linux
+LinuxKernelVersion() {
+    ./LinuxKernelVersion.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -127,6 +132,7 @@ while true; do
             4 "Desligar o Linux" \
             5 "Senha do usuário root" \
             6 "Executar comandos no terminal" \
+            7 "Versão do kernel Linux" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -165,6 +171,10 @@ while true; do
         6)
             clear
             RunCommandsInTerminal
+            ;;
+        7)
+            clear
+            LinuxKernelVersion
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
