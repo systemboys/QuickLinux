@@ -33,13 +33,15 @@ if [ "$lastLocalVersion" != "$lastGitHubVersion" ]; then
 Versão disponível: $lastGitHubVersion
 Versão atual: $lastLocalVersion"
 else
-  versionMessage="Seu roteador está atualizado!
+  versionMessage="Seu QuickLinux está atualizado!
 Versão atual: $lastLocalVersion"
 fi
 
 dialog --msgbox "Sobre o QuickLinux
 
-**Sobre o QuickLinux: $lastLocalVersion >>> $versionMessage <<<**
+**Sobre o QuickLinux:<<<**
+
+$lastLocalVersion
 
 Bem-vindo ao QuickLinux, sua ferramenta interativa definitiva para simplificar sua jornada no mundo do Linux. Projetado para tornar as operações diárias no Linux rápidas, fáceis e acessíveis, o QuickLinux é seu parceiro confiável para tarefas essenciais no terminal.
 
