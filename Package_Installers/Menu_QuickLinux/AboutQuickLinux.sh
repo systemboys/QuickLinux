@@ -15,6 +15,8 @@
 #   - Alteração na exibição de versão disponível.
 # v0.0.3 2023-11-08 às 23h25, Marcos Aurélio:
 #   - Exibição do local de instalação do QuickLinux.
+# v0.0.4 2023-11-09 às 13h30, Marcos Aurélio:
+#   - Obtém o histórico de versões entre # Histórico: e # Licença: GPL no arquivo no GitHub.
 #
 # Licença: GPL.
 

@@ -71,6 +71,8 @@
 # v0.2.5 2023-11-09 às 01h28, Marcos Aurélio:
 #   - Incrementação do "sudo apt update" junto com o "sudo apt upgrade" -y para atulizar
 #     o Kernel Linux"
+# v0.2.5 2023-11-09 às 13h30, Marcos Aurélio:
+#   - Obtém o histórico de versões entre # Histórico: e # Licença: GPL no arquivo no GitHub.
 #
 # Licença: GPL.
 
