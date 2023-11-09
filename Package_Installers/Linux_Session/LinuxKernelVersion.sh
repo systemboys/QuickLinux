@@ -19,5 +19,7 @@ clear
 # Verificar a versão do kernel Linux
 kernel_version=$(uname -r)
 
-dialog --msgbox "Versão do Kernel Linux é $kernel_version" 8 40
+dialog --msgbox "Versão do Kernel Linux é:
+
+$kernel_version" 8 40
 
