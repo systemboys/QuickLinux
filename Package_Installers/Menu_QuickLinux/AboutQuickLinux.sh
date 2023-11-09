@@ -39,7 +39,7 @@ fi
 
 dialog --msgbox "Sobre o QuickLinux
 
-**Sobre o QuickLinux:<<<**
+**Sobre o QuickLinux<<<**
 
 $versionMessage
 
