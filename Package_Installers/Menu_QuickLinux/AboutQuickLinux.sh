@@ -82,5 +82,5 @@ Local de instalação: $file_path
 
 ** Histórico de versões **
 
-$versionHistory" 20 80
+$versionHistory" 20 95
 
