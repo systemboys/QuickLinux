@@ -28,7 +28,8 @@ lastLocalVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | 
 lastGitHubVersion=$(curl -s https://github.com/systemboys/QuickLinux/blob/main/QuickLinux.sh | grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' | tail -n 1)
 
 # Obtém o histórico de versões entre # Histórico: e # Licença: GPL
-versionHistory=$(sed -n '/# Histórico:/,/# Licença: GPL/p' ../../QuickLinux.sh)
+# versionHistory=$(sed -n '/# Histórico:/,/# Licença: GPL/p' ../../QuickLinux.sh)
+versionHistory=$(curl -s https://raw.githubusercontent.com/systemboys/QuickLinux/main/QuickLinux.sh | sed -n '/# Histórico:/,/# Licença: GPL/p')
 
 # Comparar as duas variáveis
 if [ "$lastLocalVersion" != "$lastGitHubVersion" ]; then
