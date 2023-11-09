@@ -62,7 +62,7 @@ Bem-vindo ao QuickLinux, sua ferramenta interativa definitiva para simplificar s
 
 **O Que o QuickLinux Oferece:**
 
-Local de instalação: $file_path/QuickLinux
+Local de instalação: $file_path
 
 - **Atualização e Manutenção Simples:** Atualize seus pacotes com um clique. Mantenha seu sistema funcionando sem complicações.
   
