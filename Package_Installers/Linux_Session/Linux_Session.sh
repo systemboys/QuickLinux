@@ -124,6 +124,11 @@ LinuxKernelVersion() {
     ./LinuxKernelVersion.sh
 }
 
+# Corrigir pacotes quebrados ou dependências ausentes
+FixBrokenPackages() {
+    ./FixBrokenPackages.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -137,6 +142,7 @@ while true; do
             5 "Senha do usuário root" \
             6 "Executar comandos no terminal" \
             7 "Versão do kernel Linux" \
+            8 "Corrigir pacotes ou dependências" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -179,6 +185,10 @@ while true; do
         7)
             clear
             LinuxKernelVersion
+            ;;
+        8)
+            clear
+            FixBrokenPackages
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40

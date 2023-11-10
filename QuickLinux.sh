@@ -70,7 +70,9 @@
 #   - Versão inicial, script que verifica a versão do kernel Linux na sessão Linux.
 # v0.2.5 2023-11-09 às 01h28, Marcos Aurélio:
 #   - Incrementação do "sudo apt update" junto com o "sudo apt upgrade" -y para atulizar
-#     o Kernel Linux"
+#     o Kernel Linux".
+# v0.2.6 2023-11-10 às 14h10, Marcos Aurélio:
+#   - Corrigir pacotes quebrados ou dependências ausentes, opção incrementada na sessão "Linux".
 #
 # Licença: GPL.
 
