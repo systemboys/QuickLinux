@@ -19,5 +19,5 @@ clear
 # Corrigir pacotes quebrados ou dependências ausentes
 sudo apt --fix-broken install
 
-dialog --msgbox "Pacotes quebrados ou dependências ausentes foram corrigidas corrigidas!" 8 40
+dialog --msgbox "Pacotes quebrados ou dependências ausentes foram corrigidas!" 8 40
 
