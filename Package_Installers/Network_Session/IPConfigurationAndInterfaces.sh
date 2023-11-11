@@ -48,8 +48,9 @@ ConfigureNetworkInterface() {
     # Solicita ao usuário que insira o domínio usando o dialog
     domain=$(dialog --inputbox "Digite com base no exemplo abaixo:
 <network> <ip> <mask> <gateway> <dns>
+
 Exemplo:
-eth0 192.168.0.199 255.255.255.0 192.168.0.1 192.168.0.1" 10 80 3>&1 1>&2 2>&3)
+eth0 192.168.0.199 255.255.255.0 192.168.0.1 192.168.0.1" 15 80 3>&1 1>&2 2>&3)
 
     # Verifica se o campo de domínio está vazio
     if [ -z "$domain" ]; then
@@ -68,7 +69,7 @@ eth0 192.168.0.199 255.255.255.0 192.168.0.1 192.168.0.1" 10 80 3>&1 1>&2 2>&3)
 while true; do
     # Mostra um menu para escolher entre pingar um domínio ou sair
     choice=$(dialog --clear --backtitle "Ping Tool" \
-            --menu "Escolha uma opção:" 10 40 2 \
+            --menu "Escolha uma opção:" 15 40 2 \
             0 "Voltar..." \
             1 "Obter as interfaces de rede" \
             2 "Obter IP das interfaces de rede" \
