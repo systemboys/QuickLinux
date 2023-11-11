@@ -47,6 +47,8 @@ IP Address: $ip_address" 8 40
 ConfigureNetworkInterface() {
     # Solicita ao usuário que insira o domínio usando o dialog
     domain=$(dialog --inputbox "Digite com base no exemplo abaixo:
+<network> <ip> <mask> <gateway> <dns>
+Exemplo:
 eth0 192.168.0.199 255.255.255.0 192.168.0.1 192.168.0.1" 10 80 3>&1 1>&2 2>&3)
 
     # Verifica se o campo de domínio está vazio
