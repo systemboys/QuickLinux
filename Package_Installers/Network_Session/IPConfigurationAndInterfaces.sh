@@ -23,10 +23,9 @@ GetNetworkInterfaces() {
     interfaces=$(ifconfig -a | grep -oE '^[a-zA-Z0-9]+')
 
     # Exibir as interfaces de rede em um bloco de código
-    echo "As interfaces de rede são:"
-    echo "```"
-    echo "$interfaces"
-    echo "```"
+    dialog --msgbox "As interfaces de rede são:
+    
+    $interfaces" 8 40
 }
 
 # Função para realizar o ping e mostrar o resultado em uma janela de mensagem
