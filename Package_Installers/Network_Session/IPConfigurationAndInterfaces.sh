@@ -17,6 +17,18 @@
 #
 # Licença: GPL.
 
+# Função para obter as interfaces de rede do computador
+GetNetworkInterfaces() {
+    # Obter a lista de interfaces de rede
+    interfaces=$(ifconfig -a | grep -oE '^[a-zA-Z0-9]+')
+
+    # Exibir as interfaces de rede em um bloco de código
+    echo "As interfaces de rede são:"
+    echo "```"
+    echo "$interfaces"
+    echo "```"
+}
+
 # Função para realizar o ping e mostrar o resultado em uma janela de mensagem
 pingDomain() {
     # Solicita ao usuário que insira o domínio usando o dialog
@@ -41,7 +53,8 @@ while true; do
     choice=$(dialog --clear --backtitle "Ping Tool" \
             --menu "Escolha uma opção:" 10 40 2 \
             0 "Voltar..." \
-            1 "Pingar um Domínio" \
+            1 "Obter as interfaces de rede" \
+            2 "Pingar um Domínio" \
             2>&1 >/dev/tty)
 
     # Verifica a escolha do usuário
@@ -53,6 +66,10 @@ while true; do
         1) # Chama a função para pingar um domínio
             clear
             pingDomain
+            ;;
+        2) # Obter as interfaces de rede
+            clear
+            GetNetworkInterfaces
             ;;
     esac
 done
