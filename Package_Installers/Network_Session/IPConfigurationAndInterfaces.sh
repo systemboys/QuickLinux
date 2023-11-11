@@ -89,9 +89,15 @@ eth0 192.168.0.199 255.255.255.0 192.168.0.1 192.168.0.1" 12 80 3>&1 1>&2 2>&3)
     # Execução da função
     configureNetwork $fieldWithTheData
 
+    # Obter configurações
+    ifConfig=$(ifconfig)
+
     # Exibe mensagem de conclusão usando dialog
     dialog --title "Alterações feitas" --msgbox "Configurações autais:
-$fieldWithTheData" 8 80
+$fieldWithTheData
+
+Interfaces:
+$ifConfig" 20 80
 }
 
 # Inicia o loop para o menu interativo usando dialog
