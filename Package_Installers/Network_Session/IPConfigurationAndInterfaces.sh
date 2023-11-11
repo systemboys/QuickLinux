@@ -68,7 +68,7 @@ eth0 192.168.0.199 255.255.255.0 192.168.0.1 192.168.0.1" 15 80 3>&1 1>&2 2>&3)
 # Inicia o loop para o menu interativo usando dialog
 while true; do
     # Mostra um menu para escolher entre pingar um domínio ou sair
-    choice=$(dialog --clear --backtitle "Ping Tool" \
+    choice=$(dialog --clear --backtitle "Configuração de IP e interfaces" \
             --menu "Escolha uma opção:" 15 40 2 \
             0 "Voltar..." \
             1 "Obter as interfaces de rede" \
