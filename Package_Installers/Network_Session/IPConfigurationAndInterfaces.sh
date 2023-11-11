@@ -22,9 +22,9 @@ GetNetworkInterfaces() {
     # Obter a lista de interfaces de rede
     interfaces=$(ifconfig -a | grep -oE '^[a-zA-Z0-9]+')
 
-    # Exibir as interfaces de rede em um bloco de código
-    dialog --msgbox "As interfaces de rede são:
-    $interfaces" 8 40
+# Exibir as interfaces de rede em um bloco de código
+dialog --msgbox "As interfaces de rede são:
+$interfaces" 8 40
 }
 
 # Função para obter IP das interfaces de rede do computador
@@ -37,10 +37,10 @@ GetIPAddresses() {
     # Obtém o endereço IP da interface
     ip_address=$(ip -o -4 addr show dev $interface | awk '{split($4,a,"/"); print a[1]}')
 
-    # Exibe o endereço IP da interface
-    dialog --msgbox "Interface: $interface
-    IP Address: $ip_address" 8 40
-  done
+# Exibe o endereço IP da interface
+dialog --msgbox "Interface: $interface
+IP Address: $ip_address" 8 40
+    done
 }
 
 # Função para realizar o ping e mostrar o resultado em uma janela de mensagem
