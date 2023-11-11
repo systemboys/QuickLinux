@@ -53,7 +53,7 @@ IPConfigurationAndInterfaces() {
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
-            --menu "${sessionDescription}" 15 40 2 \
+            --menu "${sessionDescription}" 12 40 2 \
             0 "Voltar..." \
             1 "Verificar IP" \
             2 "Disparar PING / Traçar rota" \
