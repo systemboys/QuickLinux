@@ -46,13 +46,12 @@ while true; do
 
     # Verifica a escolha do usuário
     case "$choice" in
-        0)
-            # Sai do script se o usuário escolher sair
+        0) # Sai do script se o usuário escolher sair
             clear
             exit 0
             ;;
-        1)
-            # Chama a função para pingar um domínio
+        1) # Chama a função para pingar um domínio
+            clear
             pingDomain
             ;;
     esac
