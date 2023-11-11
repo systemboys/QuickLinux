@@ -43,6 +43,7 @@ GetIPAddresses() {
 # Exibe o endereço IP da interface
 dialog --msgbox "Interface: $interface
 IP Address: $ip_address
+
 Interfaces:
 $ifConfig" 20 90
     done
