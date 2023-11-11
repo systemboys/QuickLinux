@@ -37,9 +37,14 @@ GetIPAddresses() {
     # Obtém o endereço IP da interface
     ip_address=$(ip -o -4 addr show dev $interface | awk '{split($4,a,"/"); print a[1]}')
 
+  # Configurações de IP das interfaces
+  ifConfig=$(ifconfig)
+
 # Exibe o endereço IP da interface
 dialog --msgbox "Interface: $interface
-IP Address: $ip_address" 8 40
+IP Address: $ip_address
+Interfaces:
+$ifConfig" 20 90
     done
 }
 
