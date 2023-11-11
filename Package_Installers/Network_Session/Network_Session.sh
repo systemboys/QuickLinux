@@ -44,6 +44,11 @@ Trigger_Ping() {
     ./Trigger_Ping.sh
 }
 
+# Configuração de IP e interfaces
+IPConfigurationAndInterfaces() {
+    ./IPConfigurationAndInterfaces.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -52,6 +57,7 @@ while true; do
             0 "Voltar..." \
             1 "Verificar IP" \
             2 "Disparar PING / Traçar rota" \
+            3 "Configuração de IP e interfaces" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -74,6 +80,10 @@ while true; do
         2)
             clear
             Trigger_Ping
+            ;;
+        3)
+            clear
+            IPConfigurationAndInterfaces
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
