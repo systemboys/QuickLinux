@@ -24,7 +24,6 @@ GetNetworkInterfaces() {
 
     # Exibir as interfaces de rede em um bloco de código
     dialog --msgbox "As interfaces de rede são:
-    
     $interfaces" 8 40
 }
 
