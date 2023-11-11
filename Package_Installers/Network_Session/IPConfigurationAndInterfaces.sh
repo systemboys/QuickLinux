@@ -90,7 +90,8 @@ eth0 192.168.0.199 255.255.255.0 192.168.0.1 192.168.0.1" 12 80 3>&1 1>&2 2>&3)
     configureNetwork $fieldWithTheData
 
     # Exibe mensagem de conclusão usando dialog
-    dialog --title "Alterações feitas" --msgbox "$fieldWithTheData" 8 80
+    dialog --title "Alterações feitas" --msgbox "Configurações autais:
+$fieldWithTheData" 8 80
 }
 
 # Inicia o loop para o menu interativo usando dialog
