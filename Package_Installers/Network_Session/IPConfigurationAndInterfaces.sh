@@ -27,24 +27,19 @@ GetNetworkInterfaces() {
     $interfaces" 8 40
 }
 
-# Função para obter o IP local das interfaces de rede do computador
-GetLocalIp() {
+# Função para obter IP das interfaces de rede do computador
+GetIPAddresses() {
   # Obtém o nome das interfaces de rede
   interfaces=$(ip -o link show | awk -F': ' '{print $2}')
 
   # Itera sobre as interfaces de rede
   for interface in $interfaces; do
     # Obtém o endereço IP da interface
-    ip=$(ip -o -4 addr show dev $interface | awk '{split($4,a,"/"); print a[1]}')
+    ip_address=$(ip -o -4 addr show dev $interface | awk '{split($4,a,"/"); print a[1]}')
 
-    # Verifica se o endereço IP é válido
-    if [[ $ip =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-      echo "Interface: $interface"
-      echo "IP: $ip"
-      echo
-      dialog --msgbox "Interface: $interface
-      IP: $ip" 8 40
-    fi
+    # Exibe o endereço IP da interface
+    dialog --msgbox "Interface: $interface
+    IP Address: $ip_address" 8 40
   done
 }
 
@@ -73,7 +68,7 @@ while true; do
             --menu "Escolha uma opção:" 10 40 2 \
             0 "Voltar..." \
             1 "Obter as interfaces de rede" \
-            2 "Obter o IP local das interfaces de rede" \
+            2 "Obter IP das interfaces de rede" \
             3 "Pingar um Domínio" \
             2>&1 >/dev/tty)
 
@@ -87,9 +82,9 @@ while true; do
             clear
             GetNetworkInterfaces
             ;;
-        2) # Função para obter o IP local das interfaces de rede do computador
+        2) # Função para obter IP das interfaces de rede do computador
             clear
-            GetLocalIp
+            GetIPAddresses
             ;;
         3) # Chama a função para pingar um domínio
             clear
