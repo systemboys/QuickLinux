@@ -63,13 +63,13 @@ while true; do
             clear
             exit 0
             ;;
-        1) # Chama a função para pingar um domínio
-            clear
-            pingDomain
-            ;;
-        2) # Obter as interfaces de rede
+        1) # Obter as interfaces de rede
             clear
             GetNetworkInterfaces
+            ;;
+        2) # Chama a função para pingar um domínio
+            clear
+            pingDomain
             ;;
     esac
 done
