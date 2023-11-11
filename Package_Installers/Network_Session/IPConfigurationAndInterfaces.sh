@@ -44,13 +44,14 @@ IP Address: $ip_address" 8 40
 }
 
 # Função para realizar o ping e mostrar o resultado em uma janela de mensagem
-pingDomain() {
+ConfigureNetworkInterface() {
     # Solicita ao usuário que insira o domínio usando o dialog
-    domain=$(dialog --inputbox 'Digite o domínio:' 8 40 3>&1 1>&2 2>&3)
+    domain=$(dialog --inputbox "Digite com base no exemplo abaixo:
+eth0 192.168.0.199 255.255.255.0 192.168.0.1 192.168.0.1" 10 80 3>&1 1>&2 2>&3)
 
     # Verifica se o campo de domínio está vazio
     if [ -z "$domain" ]; then
-        dialog --msgbox "O domínio não pode estar vazio. Por favor, tente novamente." 8 40
+        dialog --msgbox "O campo não pode estar vazio. Por favor, tente novamente." 8 40
         return
     fi
 
@@ -69,7 +70,7 @@ while true; do
             0 "Voltar..." \
             1 "Obter as interfaces de rede" \
             2 "Obter IP das interfaces de rede" \
-            3 "Pingar um Domínio" \
+            3 "Configurar interface de rede" \
             2>&1 >/dev/tty)
 
     # Verifica a escolha do usuário
@@ -88,7 +89,7 @@ while true; do
             ;;
         3) # Chama a função para pingar um domínio
             clear
-            pingDomain
+            ConfigureNetworkInterface
             ;;
     esac
 done
