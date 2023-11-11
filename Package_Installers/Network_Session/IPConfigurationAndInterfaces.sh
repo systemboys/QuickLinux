@@ -46,23 +46,51 @@ IP Address: $ip_address" 8 40
 # Função para realizar o ping e mostrar o resultado em uma janela de mensagem
 ConfigureNetworkInterface() {
     # Solicita ao usuário que insira o domínio usando o dialog
-    domain=$(dialog --inputbox "Digite com base no exemplo abaixo:
+    fieldWithTheData=$(dialog --inputbox "Digite com base no exemplo abaixo:
 <network> <ip> <mask> <gateway> <dns>
 
 Exemplo:
-eth0 192.168.0.199 255.255.255.0 192.168.0.1 192.168.0.1" 15 80 3>&1 1>&2 2>&3)
+eth0 192.168.0.199 255.255.255.0 192.168.0.1 192.168.0.1" 12 80 3>&1 1>&2 2>&3)
 
     # Verifica se o campo de domínio está vazio
-    if [ -z "$domain" ]; then
+    if [ -z "$fieldWithTheData" ]; then
         dialog --msgbox "O campo não pode estar vazio. Por favor, tente novamente." 8 40
         return
     fi
 
-    # Pinga o domínio e armazena o resultado
-    ping_result=$(ping -c 8 "$domain")
+    # Função que modifica as configurações da interface
+    configureNetwork() {
+        if [ "$#" -ne 5 ]; then
+            echo "Uso: configureNetwork <network> <ip> <mask> <gateway> <dns>"
+            return 1
+        fi
 
-    # Exibe o resultado em uma janela de mensagem usando dialog
-    dialog --title "Resultado do Ping para $domain" --msgbox "$ping_result" 20 70
+        network="$1"
+        ip="$2"
+        mask="$3"
+        gateway="$4"
+        dns="$5"
+
+        # Configurar o endereço IP da interface
+        ifconfig "$network" "$ip" netmask "$mask"
+
+        # Adicionar rota padrão para o gateway
+        route add default gw "$gateway"
+
+        # Configurar servidores DNS
+        echo "nameserver $dns" > /etc/resolv.conf
+
+        echo "Configuração de rede concluída:"
+        ifconfig "$network"
+        route -n
+        cat /etc/resolv.conf
+    }
+
+    # Execução da função
+    configureNetwork $fieldWithTheData
+
+    # Exibe mensagem de conclusão usando dialog
+    dialog --title "Resultado do Ping para $fieldWithTheData" --msgbox "$ping_result" 12 80
 }
 
 # Inicia o loop para o menu interativo usando dialog
