@@ -249,6 +249,20 @@ E dentro do arquivo `Option_A.sh` o seguinte conteúdo:
 ```bash
 #!/bin/bash
 
+# Option_A.sh - Script que ...
+#
+# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+#
+# ---------------------------------------------------------------
+# Este programa tem a finalidade de xxx.
+# ---------------------------------------------------------------
+# Histórico:
+# v0.0.1 2023-12-06 às 17h50, Marcos Aurélio:
+#   - Versão inicial, ....
+#
+# Licença: GPL.
+
 clear
 
 # Your commands here...
