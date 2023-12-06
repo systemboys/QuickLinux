@@ -139,7 +139,6 @@ Aqui estão todas as opções em desenvolvimento.
   - [x] Instalar Opera
   - [x] Instalar FileZilla
   - [x] Instalar Discord
-    
     > *( ! ) O script ainda não funcionou como devia, a instalação do Discrod depende do download com versão atualizada e toda vez que instala, já tem atualizações. O script ainda tem que ser melhorado.*
   - [x] Instalar Mozilla Firefox
   - [x] Instalar TigerVNC Viewer
