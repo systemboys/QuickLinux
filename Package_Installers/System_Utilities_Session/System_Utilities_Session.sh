@@ -82,7 +82,7 @@ while true; do
             ;;
         2)
             clear
-            System_Information
+            Linux_Hardware_Sensors
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
