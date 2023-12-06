@@ -75,6 +75,8 @@
 #   - Corrigir pacotes quebrados ou dependências ausentes, opção incrementada na sessão "Linux".
 # v0.2.7 2023-11-11 às 00h30, Marcos Aurélio:
 #   - Opção "Configuração de IP e interfaces" na sessão "Redes".
+# v0.2.7 2023-12-06 às 18h22, Marcos Aurélio:
+#   - Adicionada a opção 'Sensores de Hardware do Linux' na sessão 'Utilitários do Sistema'.
 #
 # Licença: GPL.
 
