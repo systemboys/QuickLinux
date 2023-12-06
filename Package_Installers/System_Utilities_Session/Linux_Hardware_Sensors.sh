@@ -19,4 +19,4 @@ clear
 # Sensores
 sensors=$(sensors)
 
-dialog --msgbox "$sensors" 8 40
+dialog --msgbox "$sensors" 20 95
