@@ -63,7 +63,7 @@ Com o QuickLinux, queremos tornar a experiência de instalação de software no 
 
 Este Menu contêm scripts de instalação de pacotes de software dentro do diretório "/QuickLinux/". Estão armazenados vários arquivos.sh. Veja a estrutura de arquivos:
 
-```bash
+```tex
 /QuickLinux/
 ├─ /Images/
 │  └─ QuickWindows.png
