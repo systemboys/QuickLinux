@@ -120,6 +120,20 @@ Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sess�
 ```bash
 #!/bin/bash
 
+# Option_A.sh - Script que xxx.
+#
+# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+#
+# ---------------------------------------------------------------
+# Este programa tem a finalidade de xxx.
+# ---------------------------------------------------------------
+# Histórico:
+# v0.0.1 2023-12-06 às 17h50, Marcos Aurélio:
+#   - Versão inicial, xxx.
+#
+# Licença: GPL.
+
 # Incluindo o GlobalVariables.sh para acessar as variáveis
 source ../../GlobalVariables.sh
 
@@ -249,7 +263,7 @@ E dentro do arquivo `Option_A.sh` o seguinte conteúdo:
 ```bash
 #!/bin/bash
 
-# Option_A.sh - Script que ...
+# Option_A.sh - Script que xxx.
 #
 # Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
 # Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
@@ -259,7 +273,7 @@ E dentro do arquivo `Option_A.sh` o seguinte conteúdo:
 # ---------------------------------------------------------------
 # Histórico:
 # v0.0.1 2023-12-06 às 17h50, Marcos Aurélio:
-#   - Versão inicial, ....
+#   - Versão inicial, xxx.
 #
 # Licença: GPL.
 
@@ -274,6 +288,20 @@ Caso você queira verificar se determinado pacote está instalado e ignorar a in
 
 ```bash
 #!/bin/bash
+
+# Option_A.sh - Script que xxx.
+#
+# Autor: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+# Manutenção: Marcos Aurélio R. da Silva <systemboys@hotmail.com>
+#
+# ---------------------------------------------------------------
+# Este programa tem a finalidade de xxx.
+# ---------------------------------------------------------------
+# Histórico:
+# v0.0.1 2023-12-06 às 17h50, Marcos Aurélio:
+#   - Versão inicial, xxx.
+#
+# Licença: GPL.
 
 clear
 
