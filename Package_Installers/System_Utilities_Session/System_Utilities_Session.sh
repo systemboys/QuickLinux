@@ -14,6 +14,8 @@
 #   - Versão inicial, adicionada a opção "Informações do Sistema" na sessão
 #     "Utilitários do Sistema" para fornecer informações detalhadas sobre o
 #     processador e a memória do sistema.
+# v0.0.2 2023-12-06 às 18h10, Marcos Aurélio:
+#   - Adicionada a opção Sensores de Hardware do Linux.
 #
 # Licença: GPL.
 
@@ -46,6 +48,11 @@ System_Information() {
     ./System_Information.sh
 }
 
+# Função para Opção Sensores de Hardware do Linux
+Linux_Hardware_Sensors() {
+    ./Linux_Hardware_Sensors.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -53,6 +60,7 @@ while true; do
             --menu "${sessionDescription}" 15 40 2 \
             0 "Voltar..." \
             1 "Informações do Sistema" \
+            2 "Sensores de Hardware do Linux" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -69,6 +77,10 @@ while true; do
             ./${fileName}
             ;;
         1)
+            clear
+            System_Information
+            ;;
+        2)
             clear
             System_Information
             ;;
