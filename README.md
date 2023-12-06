@@ -64,47 +64,52 @@ Com o QuickLinux, queremos tornar a experiência de instalação de software no 
 Este Menu contêm scripts de instalação de pacotes de software dentro do diretório "/QuickLinux/". Estão armazenados vários arquivos.sh. Veja a estrutura de arquivos:
 
 ```bash
-/QuickLinux
-  ├─ /Imagens/
-  │    └─ QuickLinux.png
-  ├─ /Package_Installers/
-  │    ├─ /Development_Session/
-  │    │    ├─ Development_Session.sh
-  │    │    ├─ Install_Docker_Compose.sh
-  │    │    └─ Install_Docker.sh
-  │    ├─ /Internet_Session/
-  │    │    ├─ Internet_Session.sh
-  │    │    ├─ Install_Package1.sh
-  │    │    ├─ Install_Package2.sh
-  │    │    ├─ Install_Package3.sh
-  │    │    └─ ...
-  │    ├─ /Linux_Session/
-  │    │    └─ Linux_Session.sh
-  │    ├─ /Menu_QuickLinux/
-  │    │    ├─ AboutQuickLinux.sh
-  │    │    └─ Package_Installers.sh
-  │    ├─ /Network_Session/
-  │    │    ├─ Network_Session.sh
-  │    │    ├─ Install_Package1.sh
-  │    │    ├─ Install_Package2.sh
-  │    │    ├─ Install_Package3.sh
-  │    │    └─ ...
-  │    ├─ /System_Utilities_Session/
-  │    │    ├─ System_Utilities_Session.sh
-  │    │    ├─ Install_Package1.sh
-  │    │    ├─ Install_Package2.sh
-  │    │    ├─ Install_Package3.sh
-  │    │    └─ ...
-  │    └─ /Terminal_Utilities_Session/
-  │         ├─ Terminal_Utilities_Session.sh
-  │         ├─ Install_Package1.sh
-  │         ├─ Install_Package2.sh
-  │         ├─ Install_Package3.sh
-  │         └─ ...
-  ├─ GlobalVariables.sh
-  ├─ Install.sh
-  ├─ QuickLinux.sh
-  └─ README.md
+/QuickLinux/
+├─ /Images/
+│  └─ QuickWindows.png
+├─ /Package_Installers/
+│  ├─ /Development_Session/
+│  │  ├─ Development_Session.sh
+│  │  ├─ Install_Docker.sh
+│  │  └─ Install_Docker_Compose.sh
+│  ├─ /Internet_Session/
+│  │  ├─ Install_AnyDesk.sh
+│  │  ├─ Install_Discord.sh
+│  │  ├─ Install_FileZilla.sh
+│  │  ├─ Install_Google_Chrome.sh
+│  │  ├─ Install_Google_Earth_Pro.sh
+│  │  ├─ Install_Microsoft_Edge.sh
+│  │  ├─ Install_Mozilla_Firefox.sh
+│  │  ├─ Install_Opera.sh
+│  │  ├─ Install_Remmina.sh
+│  │  ├─ Install_Skype_for_Linux.sh
+│  │  ├─ Install_TigerVNC_Viewer.sh
+│  │  └─ Internet_Session.sh
+│  ├─ /Linux_Session/
+│  │  ├─ FixBrokenPackages.sh
+│  │  ├─ LinuxKernelVersion.sh
+│  │  ├─ Linux_Session.sh
+│  │  └─ RunCommandsInTerminal.sh
+│  ├─ /Menu_QuickLinux/
+│  │  ├─ AboutQuickLinux.sh
+│  │  └─ Menu_QuickLinux.sh
+│  ├─ /Network_Session/
+│  │  ├─ Check_IP.sh
+│  │  ├─ IPConfigurationAndInterfaces.sh
+│  │  ├─ Network_Session.sh
+│  │  └─ Trigger_Ping.sh
+│  ├─ /System_Utilities_Session/
+│  │  ├─ Linux_Hardware_Sensors.sh
+│  │  ├─ System_Information.sh
+│  │  └─ System_Utilities_Session.sh
+│  └─ /Terminal_Utilities_Session/
+│     ├─ Install_Links2_browser.sh
+│     ├─ Install_Lynx_browser.sh
+│     └─ Terminal_Utilities_Session.sh
+├─ GlobalVariables.sh
+├─ Install.sh
+├─ QuickLinux.sh
+└─ README.md
 ```
 
 Dentro do diretório "Package_Installers", você pode ter vários `arquivos.sh`, cada um responsável por instalar um pacote de software específico. Isso torna a estrutura do seu projeto organizada e fácil de entender.
