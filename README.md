@@ -109,6 +109,68 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 
 Dentro do diretório "Package_Installers", você pode ter vários `arquivos.sh`, cada um responsável por instalar um pacote de software específico. Isso torna a estrutura do seu projeto organizada e fácil de entender.
 
+### Todas as opções do QuickLinux
+
+Aqui estão todas as opções em desenvolvimento.
+
+- [x] **Menu QuickLinux**
+  - [x] Voltar...
+  - [x] Atualizar QuickLinux
+  - [x] Deletar QuickLinux
+  - [x] Recarregar QuickLinux
+  - [x] Sobre o QuickLinux
+- [x] **Linux**
+  - [x] Voltar...
+  - [x] Atualizar pacotes Linux
+  - [x] Atualizar kernel Linux
+  - [x] Reiniciar o Linux
+  - [x] Desligar o Linux
+  - [x] Senha do usuário root
+  - [x] Executar comandos no terminal
+  - [x] Corrigir pacotes ou dependências
+- [x] **Internet**
+  - [x] Voltar...
+  - [x] Instalar AnyDesk
+  - [x] Instalar Microsoft Edge
+  - [x] Instalar Google Chrome
+  - [x] Instalar Google Earth Pro
+  - [x] Instalar Skype para Linux
+  - [x] Instalar Remmina
+  - [x] Instalar Opera
+  - [x] Instalar FileZilla
+  - [x] Instalar Discord
+    
+    > *( ! ) O script ainda não funcionou como devia, a instalação do Discrod depende do download com versão atualizada e toda vez que instala, já tem atualizações. O script ainda tem que ser melhorado.*
+  - [x] Instalar Mozilla Firefox
+  - [x] Instalar TigerVNC Viewer
+- [x] **Desenvolvimento**
+  - [x] Voltar...
+  - [x] Instalar Docker
+  - [x] Instalar Docker Compose
+- [x] **Utilitários de Terminal**
+  - [x] Voltar...
+  - [x] Instalar navegador Links2
+  - [x] Instalar navegador Lynx
+- [x] **Redes**
+  - [x] Voltar...
+  - [x] Verificar IP
+  - [x] **Disparar PING / Traçar rota**
+    - [x] Voltar...
+    - [x] Pingar um Domínio
+    - [x] Pingar um Domínio forçando IPv4
+    - [x] Traçar rota percorrida
+  - [x] **Configuração de IP e interfaces**
+    - [x] Voltar...
+    - [x] Obter as interfaces de rede
+    - [x] Obter IP das interfaces de rede
+    - [x] Configurar interface de rede
+- [x] **Utilitários do Sistema**
+  - [x] Voltar...
+  - [x] Informações do Sistema
+  - [x] Sensores de Hardware do Linux
+
+---
+
 # Rascunho para novos itens
 
 Aqui você pode editar o arquivo caso necessário, adicionando mais recursos.
