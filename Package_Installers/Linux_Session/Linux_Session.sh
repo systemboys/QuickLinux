@@ -41,7 +41,7 @@ sessionDescription="Opções de referência ao Linux."
 sair_do_script() {
     clear
     echo "Saindo do menu. Até mais!"
-    exit "$1" 2
+    exit "$1"
 }
 
 # Função para atualizar pacotes Linux
