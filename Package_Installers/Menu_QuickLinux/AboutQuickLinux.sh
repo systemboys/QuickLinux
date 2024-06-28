@@ -9,11 +9,11 @@
 # Este programa tem a finalidade de exibir o conteúdo do "Sobre o QuickLinux".
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-06 às 23h00, Marcos Aurélio:
+# v1.0.0 2023-11-06 às 23h00, Marcos Aurélio:
 #   - Versão inicial, exibindo o conteúdo sobre o QuickLinux.
-# v0.0.2 2023-11-08 às 22h00, Marcos Aurélio:
+# v1.0.1 2023-11-08 às 22h00, Marcos Aurélio:
 #   - Alteração na exibição de versão disponível.
-# v0.0.3 2023-11-08 às 23h25, Marcos Aurélio:
+# v1.1.1 2023-11-08 às 23h25, Marcos Aurélio:
 #   - Exibição do local de instalação do QuickLinux.
 #
 # Licença: GPL.

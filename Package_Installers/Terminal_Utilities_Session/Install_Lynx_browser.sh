@@ -9,7 +9,7 @@
 # Este programa tem a finalidade de Instalar o navegador de moto texto para terminal Lynx.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-10-29 às 17h00, Marcos Aurélio:
+# v1.0.0 2023-10-29 às 17h00, Marcos Aurélio:
 #   - Versão inicial, Instalar o navegador de moto texto para terminal Lynx.
 #
 # Licença: GPL.

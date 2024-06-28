@@ -9,9 +9,9 @@
 # Este programa tem a finalidade de Opções para assuntos relacionados ao Linux.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-10-29 às 17h00, Marcos Aurélio:
+# v1.0.0 2023-10-29 às 17h00, Marcos Aurélio:
 #   - Versão inicial, Opções para assuntos relacionados ao Linux.
-# v0.0.2 2023-11-09 às 01h28, Marcos Aurélio:
+# v1.0.1 2023-11-09 às 01h28, Marcos Aurélio:
 #   - Incrementação do "sudo apt update" junto com o "sudo apt upgrade -y" para atulizar
 #     o Kernel Linux"
 #

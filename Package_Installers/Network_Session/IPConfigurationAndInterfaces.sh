@@ -12,7 +12,7 @@
 # configurações e interfaces de rede.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-11 às 00h30, Marcos Aurélio:
+# v1.0.0 2023-11-11 às 00h30, Marcos Aurélio:
 #   - Versão inicial, opções referentes à configurações e interfaces de rede.
 #
 # Licença: GPL.

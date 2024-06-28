@@ -11,7 +11,7 @@
 # no diretório "/tmp/".
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-06 às 18h18, Marcos Aurélio:
+# v1.0.0 2023-11-06 às 18h18, Marcos Aurélio:
 #   - Versão inicial, script para instalar o QuickLinux no diretório "/tmp/".
 #
 # Licença: GPL.

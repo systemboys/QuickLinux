@@ -9,7 +9,7 @@
 # Este programa tem a finalidade de Instalar o navegador Google Chrome no Linux.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-10-29 às 17h00, Marcos Aurélio:
+# v1.0.0 2023-10-29 às 17h00, Marcos Aurélio:
 #   - Versão inicial, Instalar o navegador Google Chrome no Linux.
 #
 # Licença: GPL.

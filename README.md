@@ -195,7 +195,7 @@ Para adicionar uma nova sessão, crie um diretório com o nome da sua nova sess�
 # Este programa tem a finalidade de xxx.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-12-06 às 17h50, Marcos Aurélio:
+# v1.0.0 2023-12-06 às 17h50, Marcos Aurélio:
 #   - Versão inicial, xxx.
 #
 # Licença: GPL.
@@ -338,7 +338,7 @@ E dentro do arquivo `Option_A.sh` o seguinte conteúdo:
 # Este programa tem a finalidade de xxx.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-12-06 às 17h50, Marcos Aurélio:
+# v1.0.0 2023-12-06 às 17h50, Marcos Aurélio:
 #   - Versão inicial, xxx.
 #
 # Licença: GPL.
@@ -364,7 +364,7 @@ Caso você queira verificar se determinado pacote está instalado e ignorar a in
 # Este programa tem a finalidade de xxx.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-12-06 às 17h50, Marcos Aurélio:
+# v1.0.0 2023-12-06 às 17h50, Marcos Aurélio:
 #   - Versão inicial, xxx.
 #
 # Licença: GPL.

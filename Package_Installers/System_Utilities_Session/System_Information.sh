@@ -9,7 +9,7 @@
 # Este programa tem a finalidade de obter informações do processador e memória.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-04 às 17h50, Marcos Aurélio:
+# v1.0.0 2023-11-04 às 17h50, Marcos Aurélio:
 #   - Versão inicial, obter informações do processador e memória.
 #
 # Licença: GPL.

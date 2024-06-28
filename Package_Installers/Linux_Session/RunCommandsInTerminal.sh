@@ -11,7 +11,7 @@
 # no terminal Linux.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-04 às 22h20, Marcos Aurélio:
+# v1.0.0 2023-11-04 às 22h20, Marcos Aurélio:
 #   - Versão inicial, permitindo que o usuário insira comandos no terminal Linux.
 #
 # Licença: GPL.

@@ -12,70 +12,70 @@
 # pacotes e comandos Linux.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-09-30 às 19h30, Marcos Aurélio:
+# v1.0.0 2023-09-30 às 19h30, Marcos Aurélio:
 #   - Versão inicial, menu de controle de instalações de pacotes e outros
 #     comandos para sistemas Linux.
-# v0.0.2 2023-10-01 às 07h30, Marcos Aurélio:
+# v1.0.1 2023-10-01 às 07h30, Marcos Aurélio:
 #   - Testes de instalações de pacotes e alguns comandos Linux.
-# v0.0.3 2023-10-02 às 21h15, Marcos Aurélio:
+# v1.0.2 2023-10-02 às 21h15, Marcos Aurélio:
 #   - Alguns ajustes nas linhas de comandos, para melhorar o entendimento.
-# v0.0.4 2023-10-19 às 10h00, Marcos Aurélio:
+# v2.0.0 2023-10-19 às 10h00, Marcos Aurélio:
 #   - O menu foi mudado para o modelo de janelas "Dialog", ficando mais elegante.
-# v0.0.5 2023-10-24 às 14h15, Marcos Aurélio:
+# v2.1.0 2023-10-24 às 14h15, Marcos Aurélio:
 #   - Adicionado uma variável que "Obtém o número da última versão do histórico do script"
-# v0.0.6 2023-10-24 às 20h50, Marcos Aurélio:
+# v2.1.1 2023-10-24 às 20h50, Marcos Aurélio:
 #   - Correção da instrução na primeira tela do menu, uma palavra errada foi corrigida.
-# v0.0.7 2023-10-26 às 00h20, Marcos Aurélio:
+# v2.2.1 2023-10-26 às 00h20, Marcos Aurélio:
 #   - Opção para instalar o Docker na sessão "Desenvolvimento" e incrementação de
 #     verificação de instalação de pacotes no termino de cada instalação.
-# v0.0.8 2023-10-26 às 01h17, Marcos Aurélio:
+# v2.3.1 2023-10-26 às 01h17, Marcos Aurélio:
 #   - Opção para instalar o Docker Compose na sessão "Desenvolvimento".
-# v0.0.9 2023-10-27 às 14h17, Marcos Aurélio:
+# v2.4.1 2023-10-27 às 14h17, Marcos Aurélio:
 #   - Opção para sessão de Utilitários de Termianl.
-# v0.1.0 2023-10-27 às 15h40, Marcos Aurélio:
+# v2.5.1 2023-10-27 às 15h40, Marcos Aurélio:
 #   - Opção para sessão de Redes.
-# v0.1.1 2023-10-27 às 16h20, Marcos Aurélio:
+# v2.6.1 2023-10-27 às 16h20, Marcos Aurélio:
 #   - Opção para "Verificar IP" sessão de "Redes".
-# v0.1.2 2023-10-27 às 17h00, Marcos Aurélio:
+# v2.7.1 2023-10-27 às 17h00, Marcos Aurélio:
 #   - Opção para "Disparar PING" sessão de "Redes".
-# v0.1.3 2023-10-27 às 17h15, Marcos Aurélio:
+# v2.8.1 2023-10-27 às 17h15, Marcos Aurélio:
 #   - Opção para "Pingar um Domínio" em "Disparar PING" sessão de "Redes".
-# v0.1.4 2023-10-27 às 17h22, Marcos Aurélio:
+# v2.9.1 2023-10-27 às 17h22, Marcos Aurélio:
 #   - Opção para "Pingar um Domínio forçando IPv4" em "Disparar PING" sessão de "Redes".
-# v0.1.5 2023-10-28 às 00h15, Marcos Aurélio:
+# v2.10.1 2023-10-28 às 00h15, Marcos Aurélio:
 #   - Adicionada a opção "Traceroute", "traçar rota". Comando para identificar a rota
 #     percorrida por um pacote de dados pela rede até a chegada em seu destino.
-# v0.1.6 2023-11-01 às 01h10, Marcos Aurélio:
+# v2.10.2 2023-11-01 às 01h10, Marcos Aurélio:
 #   - Alterada a opção "Disparar PING" para "Disparar PING / Traçar rota" na sessão "Redes".
-# v0.1.7 2023-11-04 às 17h20, Marcos Aurélio:
+# v2.11.2 2023-11-04 às 17h20, Marcos Aurélio:
 #   - Adicionada a opção "Informações do Sistema" na sessão "Utilitários do Sistema" para
 #     fornecer informações detalhadas sobre o processador e a memória do sistema.
-# v0.1.8 2023-11-04 às 22h20, Marcos Aurélio:
+# v2.12.2 2023-11-04 às 22h20, Marcos Aurélio:
 #   - Adicionada a opção que permite que o usuário insira comandos no terminal Linux.
-# v0.1.8 2023-11-04 às 23h46, Marcos Aurélio:
+# v2.12.3 2023-11-04 às 23h46, Marcos Aurélio:
 #   - Adicionado os caracteres (🚀🐧) no título do QuickLinux.
-# v0.1.9 2023-11-06 às 23h00, Marcos Aurélio:
+# v2.12.4 2023-11-06 às 23h00, Marcos Aurélio:
 #   - Adicionadas as variáveis globais que estão no arquivo "GlobalVariables.sh".
-# v0.2.0 2023-11-07 às 02h00, Marcos Aurélio:
+# v2.12.5 2023-11-07 às 02h00, Marcos Aurélio:
 #   - Foi colocado uma verificação na janela "Sobre o QuickLinux" onde compara a versão
 #     local com a versão do QuickLinux no repositório no GitHub.
-# v0.2.1 2023-11-07 às 22h00, Marcos Aurélio:
+# v2.12.6 2023-11-07 às 22h00, Marcos Aurélio:
 #   - Extraindo o Histórico de Versões do QuickLinux e exibindo em "Sobre o QuickLinux"
 #     na sessão "Menu QuickLinux."
-# v0.2.2 2023-11-08 às 22h00, Marcos Aurélio:
+# v2.12.7 2023-11-08 às 22h00, Marcos Aurélio:
 #   - Alteração na exibição de versão disponível.
-# v0.2.3 2023-11-08 às 23h25, Marcos Aurélio:
+# v2.12.8 2023-11-08 às 23h25, Marcos Aurélio:
 #   - Exibição do local de instalação do QuickLinux.
-# v0.2.4 2023-11-09 às 00h45, Marcos Aurélio:
-#   - Versão inicial, script que verifica a versão do kernel Linux na sessão Linux.
-# v0.2.5 2023-11-09 às 01h28, Marcos Aurélio:
+# v2.13.8 2023-11-09 às 00h45, Marcos Aurélio:
+#   - Script que verifica a versão do kernel Linux na sessão Linux.
+# v2.13.9 2023-11-09 às 01h28, Marcos Aurélio:
 #   - Incrementação do "sudo apt update" junto com o "sudo apt upgrade" -y para atulizar
 #     o Kernel Linux".
-# v0.2.6 2023-11-10 às 14h10, Marcos Aurélio:
+# v2.13.10 2023-11-10 às 14h10, Marcos Aurélio:
 #   - Corrigir pacotes quebrados ou dependências ausentes, opção incrementada na sessão "Linux".
-# v0.2.7 2023-11-11 às 00h30, Marcos Aurélio:
+# v2.14.10 2023-11-11 às 00h30, Marcos Aurélio:
 #   - Opção "Configuração de IP e interfaces" na sessão "Redes".
-# v0.2.8 2023-12-06 às 18h22, Marcos Aurélio:
+# v2.15.10 2023-12-06 às 18h22, Marcos Aurélio:
 #   - Adicionada a opção 'Sensores de Hardware do Linux' na sessão 'Utilitários do Sistema'.
 #
 # Licença: GPL.

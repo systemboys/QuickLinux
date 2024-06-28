@@ -9,7 +9,7 @@
 # Este programa tem a finalidade de Opções de ferramentas PING para redes.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-10-29 às 17h00, Marcos Aurélio:
+# v1.0.0 2023-10-29 às 17h00, Marcos Aurélio:
 #   - Versão inicial, Opções de ferramentas PING para redes.
 #
 # Licença: GPL.

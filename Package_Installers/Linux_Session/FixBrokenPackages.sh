@@ -9,7 +9,7 @@
 # Este programa tem a finalidade de corrigir pacotes quebrados ou dependências ausentes.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-10 às 14h10, Marcos Aurélio:
+# v1.0.0 2023-11-10 às 14h10, Marcos Aurélio:
 #   - Versão inicial, corrigir pacotes quebrados ou dependências ausentes
 #
 # Licença: GPL.

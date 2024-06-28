@@ -9,7 +9,7 @@
 # Este programa tem a finalidade de verificar a versão do Kernel Linux.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-09 às 00h45, Marcos Aurélio:
+# v1.0.0 2023-11-09 às 00h45, Marcos Aurélio:
 #   - Versão inicial, script que verifica a versão do kernel Linux na sessão Linux.
 #
 # Licença: GPL.

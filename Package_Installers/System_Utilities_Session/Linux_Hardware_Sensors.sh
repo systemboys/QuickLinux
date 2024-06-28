@@ -9,7 +9,7 @@
 # Este programa tem a finalidade de obter informações de Hardware do computador.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-12-06 às 17h50, Marcos Aurélio:
+# v1.0.0 2023-12-06 às 17h50, Marcos Aurélio:
 #   - Versão inicial, obter informações de Hardware do computador.
 #
 # Licença: GPL.

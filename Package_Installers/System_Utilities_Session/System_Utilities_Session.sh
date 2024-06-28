@@ -10,11 +10,11 @@
 # diversos relacionados à utilitários do sistema.
 # ---------------------------------------------------------------
 # Histórico:
-# v0.0.1 2023-11-04 às 17h20, Marcos Aurélio:
+# v1.0.0 2023-11-04 às 17h20, Marcos Aurélio:
 #   - Versão inicial, adicionada a opção "Informações do Sistema" na sessão
 #     "Utilitários do Sistema" para fornecer informações detalhadas sobre o
 #     processador e a memória do sistema.
-# v0.0.2 2023-12-06 às 18h10, Marcos Aurélio:
+# v1.1.0 2023-12-06 às 18h10, Marcos Aurélio:
 #   - Adicionada a opção Sensores de Hardware do Linux.
 #
 # Licença: GPL.
