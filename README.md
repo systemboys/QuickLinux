@@ -397,7 +397,12 @@ else
     dialog --msgbox "${packageName} já está instalado! Ignorando a instalação..." 8 40
 fi
 ```
-Após criar o arquivo `Option_A.sh`, não esqueça de dar permissão de execução com o comando `chmod +x Option_A.sh` para garantir sua funcionalidade.
+
+Após criar o arquivo `Option_A.sh`, não esqueça de dar permissão de execução com o comando para garantir sua funcionalidade:
+
+```bash
+chmod +x Option_A.sh
+```
 
 > **_( i )_** No exemplo acima, o pacote é o "FileZilla". O script verifica se está instalado para ignorar a instalação caso esteja, caso contrário, segue a instalação do pacote.
 
