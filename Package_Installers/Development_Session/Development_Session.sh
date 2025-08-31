@@ -45,8 +45,8 @@ Install_Docker_Compose() {
 }
 
 # Função para Instalar Node.js e NPM (NodeSource)
-install_NodeJs_NPM() {
-    ./install_NodeJs_NPM.sh
+Install_NodeJs_NPM() {
+    ./Install_NodeJs_NPM.sh
 }
 
 # Menu interativo usando dialog
@@ -83,7 +83,7 @@ while true; do
             ;;
         3)
             clear
-            install_NodeJs_NPM
+            Install_NodeJs_NPM
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
