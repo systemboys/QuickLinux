@@ -77,6 +77,8 @@
 #   - Opção "Configuração de IP e interfaces" na sessão "Redes".
 # v2.15.10 2023-12-06 às 18h22, Marcos Aurélio:
 #   - Adicionada a opção 'Sensores de Hardware do Linux' na sessão 'Utilitários do Sistema'.
+# v2.16.10 2025-08-31 às 18h16, Marcos Aurélio:
+#   - Versão inicial, Instalar Node.js e NPM (NodeSource).
 #
 # Licença: GPL.
 

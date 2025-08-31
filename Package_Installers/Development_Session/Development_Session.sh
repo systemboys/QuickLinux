@@ -81,7 +81,7 @@ while true; do
             clear
             Install_Docker_Compose
             ;;
-        3) # Sessão install_NodeJs_NPM
+        3)
             clear
             install_NodeJs_NPM
             ;;
