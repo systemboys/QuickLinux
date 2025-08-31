@@ -40,7 +40,7 @@ fileName="$1"
 developer="$2"
 
 # Variáveis úteis
-sessionName="${programName} ${lastVersion} 🚀🐧"
+sessionName="${programName} ${lastVersion}"
 sessionDescription="Opções de referência a Sessão Utilitários do Sistema."
 
 # Função para Opção Informações do Sistema

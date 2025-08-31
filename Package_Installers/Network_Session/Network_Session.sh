@@ -31,7 +31,7 @@ fileName="$1"
 developer="$2"
 
 # Variáveis úteis
-sessionName="${programName} ${lastVersion} 🚀🐧"
+sessionName="${programName} ${lastVersion}"
 sessionDescription="Opções de referência a Redes."
 
 # Função para verificar o IP

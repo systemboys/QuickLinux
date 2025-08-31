@@ -31,7 +31,7 @@ fileName="$1"
 developer="$2"
 
 # Variáveis úteis
-sessionName="${programName} ${lastVersion} 🚀🐧"
+sessionName="${programName} ${lastVersion}"
 sessionDescription="Opções de referência a Utilitários de Terminal."
 
 # Função para instalar o navegador Links2

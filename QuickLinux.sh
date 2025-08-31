@@ -104,7 +104,7 @@ fi
 
 # Variáveis úteis
 fileName=$(basename "$0")
-sessionName="${programName} ${lastVersion} 🚀🐧"
+sessionName="${programName} ${lastVersion}"
 sessionDescription="Selecione as opções usando (↓ ↑ → ←) e pressione \"Enter\". Pode usar os números ou o clique também:"
 
 # Função para executar sessão Menu QuickLinux
