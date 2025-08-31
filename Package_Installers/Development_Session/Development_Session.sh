@@ -44,6 +44,11 @@ Install_Docker_Compose() {
     ./Install_Docker_Compose.sh
 }
 
+# Função para Instalar Node.js e NPM (NodeSource)
+install_NodeJs_NPM() {
+    ./Install_NodeJs_NPM.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -52,6 +57,7 @@ while true; do
             0 "Voltar..." \
             1 "Instalar Docker" \
             2 "Instalar Docker Compose" \
+            3 "Instalar Node.js e NPM (NodeSource)" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -74,6 +80,10 @@ while true; do
         2)
             clear
             Install_Docker_Compose
+            ;;
+        3) # Sessão install_NodeJs_NPM
+            clear
+            install_NodeJs_NPM
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
