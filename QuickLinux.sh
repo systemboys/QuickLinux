@@ -79,6 +79,8 @@
 #   - Adicionada a opção 'Sensores de Hardware do Linux' na sessão 'Utilitários do Sistema'.
 # v2.16.10 2025-08-31 às 18h16, Marcos Aurélio:
 #   - Versão inicial, Instalar Node.js e NPM (NodeSource).
+# v2.16.11 2025-09-01 às 00h20, Marcos Aurélio:
+#   - Incrementação da versão do Docker Compose na sessão "Desenvolvimento".
 #
 # Licença: GPL.
 

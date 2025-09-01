@@ -11,6 +11,7 @@
 # Histórico:
 # v1.0.0 2023-10-29 às 17h00, Marcos Aurélio:
 #   - Versão inicial, Instalar o Docker Compose no Linux.
+# v1.0.1 2025-09-01, Instalar a versão mais recente do Docker Compose.
 #
 # Licença: GPL.
 
@@ -33,14 +34,30 @@ if ! command -v ${packageVersionName} &> /dev/null; then
     # Instale as dependências
     sudo apt-get install -y curl jq
 
-    # Baixe a versão atual do Docker Compose
-    sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    # Descubra a última versão estável do Docker Compose
+    latest_version=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r .tag_name)
+
+    # Baixe a versão mais recente do Docker Compose
+    sudo curl -L "https://github.com/docker/compose/releases/download/${latest_version}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
     # Dê permissão de execução ao binário
     sudo chmod +x /usr/local/bin/docker-compose
 
+    # Crie um link simbólico para garantir que o comando esteja disponível no PATH
+    if [ ! -e /usr/bin/docker-compose ]; then
+        sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    fi
+
+    # Atualize o hash do shell para reconhecer o novo binário
+    hash -r
+
     # Verifique se o Docker Compose foi instalado corretamente
-    docker-compose --version
+    if ! docker-compose --version &> /dev/null; then
+        echo "Erro: Docker Compose não foi instalado corretamente."
+        exit 1
+    else
+        docker-compose --version
+    fi
 
     clear
     
