@@ -11,6 +11,8 @@
 # Histórico:
 # v1.0.0 2023-10-29 às 17h00, Marcos Aurélio:
 #   - Versão inicial, armazenar opções de assuntos para desenvolvimento.
+# v1.0.1 2025-09-29 às 17h00, Marcos Aurélio:
+#   - Adicionada a opção "Instalar Beekeeper Studio" na sessão "Desenvolvimento".
 #
 # Licença: GPL.
 
@@ -49,6 +51,11 @@ Install_NodeJs_NPM() {
     ./Install_NodeJs_NPM.sh
 }
 
+# Função para Instalar Beekeeper Studio
+Install_Beekeeper_Studio() {
+    ./Install_Beekeeper_Studio.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -58,6 +65,7 @@ while true; do
             1 "Instalar Docker" \
             2 "Instalar Docker Compose" \
             3 "Instalar Node.js e NPM (NodeSource)" \
+            4 "Instalar Beekeeper Studio" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -84,6 +92,10 @@ while true; do
         3)
             clear
             Install_NodeJs_NPM
+            ;;
+        4)
+            clear
+            Install_Beekeeper_Studio
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
