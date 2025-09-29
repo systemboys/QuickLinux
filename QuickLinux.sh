@@ -81,6 +81,8 @@
 #   - Versão inicial, Instalar Node.js e NPM (NodeSource).
 # v2.16.11 2025-09-01 às 00h20, Marcos Aurélio:
 #   - Incrementação da versão do Docker Compose na sessão "Desenvolvimento".
+# v2.16.12 2025-09-29 às 17h00, Marcos Aurélio:
+#   - Adicionada a opção "Instalar Beekeeper Studio" na sessão "Desenvolvimento".
 #
 # Licença: GPL.
 
