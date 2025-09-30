@@ -70,8 +70,10 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 ├─ /Package_Installers/
 │  ├─ /Development_Session/
 │  │  ├─ Development_Session.sh
+│  │  ├─ Install_Beekeeper_Studio.sh
+│  │  ├─ Install_Docker_Compose.sh
 │  │  ├─ Install_Docker.sh
-│  │  └─ Install_Docker_Compose.sh
+│  │  └─ Install_NodeJs_NPM.sh
 │  ├─ /Internet_Session/
 │  │  ├─ Install_AnyDesk.sh
 │  │  ├─ Install_Discord.sh
@@ -151,6 +153,8 @@ Aqui estão todas as opções em desenvolvimento.
   - [x] Voltar...
   - [x] Instalar Docker
   - [x] Instalar Docker Compose
+  - [x] Instalar Node.js e NPM (NodeSource)
+  - [x] Instalar Beekeeper Studio
 - [x] **Utilitários de Terminal**
   - [x] Voltar...
   - [x] Instalar navegador Links2
