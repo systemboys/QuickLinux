@@ -83,6 +83,8 @@
 #   - Incrementação da versão do Docker Compose na sessão "Desenvolvimento".
 # v2.16.12 2025-09-29 às 17h00, Marcos Aurélio:
 #   - Adicionada a opção "Instalar Beekeeper Studio" na sessão "Desenvolvimento".
+# v2.16.13 2025-01-25 às 21h49, Marcos Aurélio:
+#   - Adicionada a opção "Manutenção automática do sistema" na sessão "Linux".
 #
 # Licença: GPL.
 

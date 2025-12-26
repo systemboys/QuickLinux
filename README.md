@@ -91,6 +91,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ FixBrokenPackages.sh
 │  │  ├─ LinuxKernelVersion.sh
 │  │  ├─ Linux_Session.sh
+│  │  ├─ ManutencaoSistema.sh
 │  │  └─ RunCommandsInTerminal.sh
 │  ├─ /Menu_QuickLinux/
 │  │  ├─ AboutQuickLinux.sh
@@ -135,6 +136,7 @@ Aqui estão todas as opções em desenvolvimento.
   - [x] Senha do usuário root
   - [x] Executar comandos no terminal
   - [x] Corrigir pacotes ou dependências
+  - [x] Manutenção automática do sistema
 - [x] **Internet**
   - [x] Voltar...
   - [x] Instalar AnyDesk
