@@ -129,11 +129,16 @@ FixBrokenPackages() {
     ./FixBrokenPackages.sh
 }
 
+# Manutenção automática do sistema
+ManutencaoSistema() {
+    ./ManutencaoSistema.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
-            --menu "${sessionDescription}" 15 40 2 \
+            --menu "${sessionDescription}" 16 40 2 \
             0 "Voltar..." \
             1 "Atualizar pacotes Linux" \
             2 "Atualizar kernel Linux" \
@@ -143,6 +148,7 @@ while true; do
             6 "Executar comandos no terminal" \
             7 "Versão do kernel Linux" \
             8 "Corrigir pacotes ou dependências" \
+            9 "Manutenção automática do sistema" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -189,6 +195,10 @@ while true; do
         8)
             clear
             FixBrokenPackages
+            ;;
+        9)
+            clear
+            ManutencaoSistema
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
