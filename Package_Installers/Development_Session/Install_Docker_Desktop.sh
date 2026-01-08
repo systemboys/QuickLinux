@@ -10,7 +10,7 @@
 # Baseado na documentação oficial: https://docs.docker.com/desktop/setup/install/linux/debian/
 # ---------------------------------------------------------------
 # Histórico:
-# v1.0.0 2025-12-15 às 02h30, Marcos Aurélio:
+# v1.0.0 2026-01-08 às 13h20, Marcos Aurélio:
 #   - Versão inicial, Instalar o Docker Desktop no Linux (Debian).
 #
 # Licença: GPL.

@@ -13,7 +13,7 @@
 #   - Versão inicial, armazenar opções de assuntos para desenvolvimento.
 # v1.0.1 2025-09-29 às 17h00, Marcos Aurélio:
 #   - Adicionada a opção "Instalar Beekeeper Studio" na sessão "Desenvolvimento".
-# v1.0.2 2025-12-15 às 02h30, Marcos Aurélio:
+# v1.0.2 2026-01-08 às 13h20, Marcos Aurélio:
 #   - Adicionada a opção "Instalar Docker Desktop" na sessão "Desenvolvimento".
 #
 # Licença: GPL.

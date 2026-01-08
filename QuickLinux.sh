@@ -85,6 +85,8 @@
 #   - Adicionada a opção "Instalar Beekeeper Studio" na sessão "Desenvolvimento".
 # v2.16.13 2025-01-25 às 21h49, Marcos Aurélio:
 #   - Adicionada a opção "Manutenção automática do sistema" na sessão "Linux".
+# v2.16.14 2026-01-08 às 13h30, Marcos Aurélio:
+#   - Adicionada a opção "Instalar Docker Desktop" na sessão "Desenvolvimento".
 #
 # Licença: GPL.
 
