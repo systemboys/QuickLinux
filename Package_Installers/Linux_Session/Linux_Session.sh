@@ -14,6 +14,8 @@
 # v1.0.1 2023-11-09 às 01h28, Marcos Aurélio:
 #   - Incrementação do "sudo apt update" junto com o "sudo apt upgrade -y" para atulizar
 #     o Kernel Linux"
+# v1.0.2 2026-03-19 às 23h08, Marcos Aurélio:
+#   - Adicionada a opção "Otimizar memória do Linux" na sessão "Linux".
 #
 # Licença: GPL.
 
@@ -134,6 +136,11 @@ ManutencaoSistema() {
     ./ManutencaoSistema.sh
 }
 
+# Otimizar memória do Linux
+OtimizarMemoria() {
+    ./OtimizarMemoria.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
@@ -149,6 +156,7 @@ while true; do
             7 "Versão do kernel Linux" \
             8 "Corrigir pacotes ou dependências" \
             9 "Manutenção automática do sistema" \
+            10 "Otimizar memória do Linux" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -199,6 +207,10 @@ while true; do
         9)
             clear
             ManutencaoSistema
+            ;;
+        10)
+            clear
+            OtimizarMemoria
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40

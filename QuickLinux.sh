@@ -87,7 +87,8 @@
 #   - Adicionada a opção "Manutenção automática do sistema" na sessão "Linux".
 # v2.16.14 2026-01-08 às 13h30, Marcos Aurélio:
 #   - Adicionada a opção "Instalar Docker Desktop" na sessão "Desenvolvimento".
-#
+# v2.16.15 2026-03-19 às 23h08, Marcos Aurélio:
+#   - Adicionada a opção "Otimizar memória do Linux" na sessão "Linux".
 # Licença: GPL.
 
 # Obtém o número da última versão do histórico do script
