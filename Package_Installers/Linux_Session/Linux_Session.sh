@@ -16,50 +16,52 @@
 #     o Kernel Linux"
 # v1.0.2 2026-03-19 às 23h08, Marcos Aurélio:
 #   - Adicionada a opção "Otimizar memória do Linux" na sessão "Linux".
+# v1.0.3 2026-04-07 às 21h24, Marcos Aurélio:
+#   - Adicionada a opção "Atualizar sistema (seguro, sem kernel)" na sessão "Linux".
 #
 # Licença: GPL.
 
 # Incluindo o GlobalVariables.sh para acessar as variáveis
 source ../../GlobalVariables.sh
 
-# Obtém o número da última versão do histórico do script
 lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "../../QuickLinux.sh" | tail -n 1)
 
-# Verifica se o número de argumentos é correto
 if [ "$#" -ne 2 ]; then
     echo "Erro: Número incorreto de argumentos."
     exit 1
 fi
 
-# Obtém os valores dos argumentos
 fileName="$1"
 developer="$2"
 
-# Variáveis úteis
 sessionName="${programName} ${lastVersion}"
 sessionDescription="Opções de referência ao Linux."
 
-# Função para sair do script
 sair_do_script() {
     clear
     echo "Saindo do menu. Até mais!"
     exit "$1"
 }
 
-# Função para atualizar pacotes Linux
 update_packages() {
     sudo apt-get update
     dialog --msgbox "Pacotes Linux atualizados!" 8 40
 }
 
-# Função para atualizar o kernel Linux
+# 🔒 FUNÇÃO SEGURA (SEM QUEBRAR KERNEL)
 update_kernel() {
+    # Bloqueia kernel problemático e meta pacote
+    sudo apt-mark hold linux-image-amd64 linux-headers-amd64 >/dev/null 2>&1
+    sudo apt-mark hold linux-image-6.12.74+deb13+1-amd64 >/dev/null 2>&1
+    sudo apt-mark hold linux-headers-6.12.74+deb13+1-amd64 >/dev/null 2>&1
+
+    # Atualiza sistema sem mexer no kernel
     sudo apt-get update
     sudo apt-get upgrade -y
-    dialog --msgbox "Kernel Linux atualizado!" 8 40
+
+    dialog --msgbox "Sistema atualizado com segurança (kernel protegido)." 8 60
 }
 
-# Função para reiniciar o Linux
 restart_linux() {
     (
         echo "10" ; sleep 1
@@ -67,11 +69,10 @@ restart_linux() {
         echo "50" ; sleep 1
         echo "70" ; sleep 1
         echo "100" ; sleep 1
-    ) | dialog --title "Reinicializando o Linux" --gauge "Aguarde, reinicializando o Linux..." 10 70 0
+    ) | dialog --title "Reinicializando o Linux" --gauge "Aguarde..." 10 70 0
     sudo reboot
 }
 
-# Função para desligar o Linux
 shut_down_linux() {
     (
         echo "10" ; sleep 1
@@ -79,76 +80,62 @@ shut_down_linux() {
         echo "50" ; sleep 1
         echo "70" ; sleep 1
         echo "100" ; sleep 1
-    ) | dialog --title "Desligando o Linux" --gauge "Aguarde, Desligando o Linux..." 10 70 0
+    ) | dialog --title "Desligando o Linux" --gauge "Aguarde..." 10 70 0
     sudo poweroff
 }
 
-# Função para alterar senha do usuário root
 RootUserPassword() {
-    # Loop para garantir que o usuário forneça uma senha não vazia
     while true; do
-        # Captura a senha do usuário usando o dialog
-        passRoot=$(dialog --title 'Redefinir senha' --passwordbox 'Por favor, informe a senha:' 0 0 3>&1 1>&2 2>&3)
+        passRoot=$(dialog --title 'Redefinir senha' --passwordbox 'Informe a senha:' 0 0 3>&1 1>&2 2>&3)
 
-        # Verifica se o usuário pressionou Cancelar
         if [ $? -ne 0 ]; then
-            dialog --msgbox "Operação cancelada pelo usuário." 5 50
+            dialog --msgbox "Operação cancelada." 5 50
             exit 0
         fi
 
-        # Verifica se a senha está vazia
         if [ -z "$passRoot" ]; then
-            dialog --msgbox "Senha não pode ser vazia. Por favor, tente novamente." 6 50
+            dialog --msgbox "Senha não pode ser vazia." 6 50
         else
-            # Se a senha não está vazia, tenta alterar a senha do root
             echo "root:${passRoot}" | chpasswd
 
-            # Verifica se a alteração da senha foi bem-sucedida
             if [ $? -eq 0 ]; then
-                dialog --msgbox "Senha do Usuário Root redefinida com sucesso." 6 50
-                # Executa o arquivo.sh como root
+                dialog --msgbox "Senha redefinida com sucesso." 6 50
                 su -c "./${fileName}" root
                 break
             else
-                dialog --msgbox "Falha ao redefinir a senha do Usuário Root. Tente novamente." 6 50
+                dialog --msgbox "Erro ao redefinir senha." 6 50
             fi
         fi
     done
 }
 
-# Função para Opção "Executar comandos no terminal"
 RunCommandsInTerminal() {
     ./RunCommandsInTerminal.sh
 }
 
-# Verificar a versão do kernel Linux
 LinuxKernelVersion() {
     ./LinuxKernelVersion.sh
 }
 
-# Corrigir pacotes quebrados ou dependências ausentes
 FixBrokenPackages() {
     ./FixBrokenPackages.sh
 }
 
-# Manutenção automática do sistema
 ManutencaoSistema() {
     ./ManutencaoSistema.sh
 }
 
-# Otimizar memória do Linux
 OtimizarMemoria() {
     ./OtimizarMemoria.sh
 }
 
-# Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
-            --menu "${sessionDescription}" 16 40 2 \
+            --menu "${sessionDescription}" 16 50 10 \
             0 "Voltar..." \
             1 "Atualizar pacotes Linux" \
-            2 "Atualizar kernel Linux" \
+            2 "Atualizar sistema (seguro, sem kernel)" \
             3 "Reiniciar o Linux" \
             4 "Desligar o Linux" \
             5 "Senha do usuário root" \
@@ -159,7 +146,6 @@ while true; do
             10 "Otimizar memória do Linux" \
             2>&1 >/dev/tty)
 
-    # Se o usuário pressionar Cancelar, sair do loop
     if [ $? -ne 0 ]; then
         clear
         cd ../..
@@ -167,53 +153,17 @@ while true; do
     fi
 
     case $choice in
-        0)
-            clear
-            cd ../..
-            ./${fileName}
-            ;;
-        1)
-            clear
-            update_packages
-            ;;
-        2)
-            clear
-            update_kernel
-            ;;
-        3)
-            clear
-            restart_linux
-            ;;
-        4)
-            clear
-            shut_down_linux
-            ;;
-        5)
-            clear
-            RootUserPassword
-            ;;
-        6)
-            clear
-            RunCommandsInTerminal
-            ;;
-        7)
-            clear
-            LinuxKernelVersion
-            ;;
-        8)
-            clear
-            FixBrokenPackages
-            ;;
-        9)
-            clear
-            ManutencaoSistema
-            ;;
-        10)
-            clear
-            OtimizarMemoria
-            ;;
-        *)
-            dialog --msgbox "Opção inválida. Tente novamente." 8 40
-            ;;
+        0) clear; cd ../..; ./${fileName} ;;
+        1) clear; update_packages ;;
+        2) clear; update_kernel ;;
+        3) clear; restart_linux ;;
+        4) clear; shut_down_linux ;;
+        5) clear; RootUserPassword ;;
+        6) clear; RunCommandsInTerminal ;;
+        7) clear; LinuxKernelVersion ;;
+        8) clear; FixBrokenPackages ;;
+        9) clear; ManutencaoSistema ;;
+        10) clear; OtimizarMemoria ;;
+        *) dialog --msgbox "Opção inválida." 8 40 ;;
     esac
 done

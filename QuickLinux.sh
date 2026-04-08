@@ -89,6 +89,8 @@
 #   - Adicionada a opção "Instalar Docker Desktop" na sessão "Desenvolvimento".
 # v2.16.15 2026-03-19 às 23h08, Marcos Aurélio:
 #   - Adicionada a opção "Otimizar memória do Linux" na sessão "Linux".
+# v2.16.16 2026-04-07 às 21h24, Marcos Aurélio:
+#   - Adicionada a opção "Atualizar sistema (seguro, sem kernel)" na sessão "Linux".
 # Licença: GPL.
 
 # Obtém o número da última versão do histórico do script
