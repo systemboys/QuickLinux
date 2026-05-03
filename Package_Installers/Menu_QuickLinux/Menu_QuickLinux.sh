@@ -89,9 +89,12 @@ AboutQuickLinux() {
 }
 
 # Menu interativo usando dialog
+lastChoice=0
+
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
+            --default-item "$lastChoice" \
             --menu "${sessionDescription}" 15 40 2 \
             0 "↩️  Voltar..." \
             1 "⬇️  Atualizar QuickLinux" \
@@ -112,18 +115,22 @@ while true; do
             exit 0
             ;;
         1)
+            lastChoice=1
             clear
             UpdateQuickLinux
             ;;
         2)
+            lastChoice=2
             clear
             DeleteQuickLinux
             ;;
         3)
+            lastChoice=3
             clear
             ReloadQuickLinux
             ;;
         4)
+            lastChoice=4
             clear
             AboutQuickLinux
             ;;

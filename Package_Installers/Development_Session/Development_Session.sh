@@ -99,9 +99,12 @@ Remove_Development_Test_Container() {
 }
 
 # Menu interativo usando dialog
+lastChoice=0
+
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
+            --default-item "$lastChoice" \
             --menu "${sessionDescription}" 20 60 11 \
             0 "↩️  Voltar..." \
             1 "🐳 Instalar Docker" \
@@ -128,42 +131,52 @@ while true; do
             exit 0
             ;;
         1)
+            lastChoice=1
             clear
             install_Docker
             ;;
         2)
+            lastChoice=2
             clear
             Install_Docker_Compose
             ;;
         3)
+            lastChoice=3
             clear
             Install_Docker_Desktop
             ;;
         4)
+            lastChoice=4
             clear
             Install_NodeJs_NPM
             ;;
         5)
+            lastChoice=5
             clear
             Install_Beekeeper_Studio
             ;;
         6)
+            lastChoice=6
             clear
             Prepare_Development_Environment
             ;;
         7)
+            lastChoice=7
             clear
             Create_Development_Test_Container
             ;;
         8)
+            lastChoice=8
             clear
             Access_Development_Test_Container
             ;;
         9)
+            lastChoice=9
             clear
             Stop_Development_Test_Container
             ;;
         10)
+            lastChoice=10
             clear
             Remove_Development_Test_Container
             ;;

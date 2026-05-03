@@ -80,9 +80,12 @@ Trace_Route_Traveled() {
 sessionName="${programName} ${lastVersion} 🚀🐧"
 
 # Inicia o loop para o menu interativo usando dialog
+lastChoice=0
+
 while true; do
     # Mostra um menu para escolher entre pingar um domínio ou sair
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
+            --default-item "$lastChoice" \
             --menu "Escolha uma opção:" 12 40 2 \
             0 "↩️ Voltar..." \
             1 "📡 Pingar um Domínio" \
@@ -99,14 +102,17 @@ while true; do
             ;;
         1)
             # Chama a função para pingar um domínio
+            lastChoice=1
             pingDomain
             ;;
         2)
             # Chama a função para pingar um domínio forçando IPv4
+            lastChoice=2
             pingDomainIPv4
             ;;
         3)
             # Traçar rota percorrida
+            lastChoice=3
             Trace_Route_Traveled
     esac
 done

@@ -109,9 +109,12 @@ $ifConfig" 20 80
 }
 
 # Inicia o loop para o menu interativo usando dialog
+lastChoice=0
+
 while true; do
     # Mostra um menu para escolher entre pingar um domínio ou sair
     choice=$(dialog --clear --backtitle "Configuração de IP e interfaces" \
+            --default-item "$lastChoice" \
             --menu "Escolha uma opção:" 12 40 2 \
             0 "↩️ Voltar..." \
             1 "🧷 Obter as interfaces de rede" \
@@ -126,14 +129,17 @@ while true; do
             exit 0
             ;;
         1) # Obter as interfaces de rede
+            lastChoice=1
             clear
             GetNetworkInterfaces
             ;;
         2) # Função para obter IP das interfaces de rede do computador
+            lastChoice=2
             clear
             GetIPAddresses
             ;;
         3) # Chama a função para pingar um domínio
+            lastChoice=3
             clear
             ConfigureNetworkInterface
             ;;

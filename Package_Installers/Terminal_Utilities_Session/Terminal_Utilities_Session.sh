@@ -49,9 +49,12 @@ Install_Lynx_browser() {
 }
 
 # Menu interativo usando dialog
+lastChoice=0
+
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
+            --default-item "$lastChoice" \
             --menu "${sessionDescription}" 15 40 2 \
             0 "↩️ Voltar..." \
             1 "🔗 Instalar navegador Links2" \
@@ -70,10 +73,12 @@ while true; do
             exit 0
             ;;
         1)
+            lastChoice=1
             clear
             Install_Links2_browser
             ;;
         2)
+            lastChoice=2
             clear
             Install_Lynx_browser
             ;;

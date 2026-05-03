@@ -58,9 +58,12 @@ Linux_Hardware_Sensors() {
 }
 
 # Menu interativo usando dialog
+lastChoice=0
+
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
+            --default-item "$lastChoice" \
             --menu "${sessionDescription}" 15 40 2 \
             0 "↩️  Voltar..." \
             1 "📊 Informações do Sistema" \
@@ -79,10 +82,12 @@ while true; do
             exit 0
             ;;
         1)
+            lastChoice=1
             clear
             System_Information
             ;;
         2)
+            lastChoice=2
             clear
             Linux_Hardware_Sensors
             ;;

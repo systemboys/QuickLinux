@@ -190,9 +190,12 @@ OtimizarMemoria() {
     ./OtimizarMemoria.sh
 }
 
+lastChoice=0
+
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
+            --default-item "$lastChoice" \
             --menu "${sessionDescription}" 16 50 10 \
             0 "↩️  Voltar..." \
             1 "📦 Atualizar pacotes Linux" \
@@ -214,16 +217,16 @@ while true; do
 
     case $choice in
         0) clear; exit 0 ;;
-        1) clear; update_packages ;;
-        2) clear; update_kernel ;;
-        3) clear; restart_linux ;;
-        4) clear; shut_down_linux ;;
-        5) clear; RootUserPassword ;;
-        6) clear; RunCommandsInTerminal ;;
-        7) clear; LinuxKernelVersion ;;
-        8) clear; FixBrokenPackages ;;
-        9) clear; ManutencaoSistema ;;
-        10) clear; OtimizarMemoria ;;
+        1) lastChoice=1; clear; update_packages ;;
+        2) lastChoice=2; clear; update_kernel ;;
+        3) lastChoice=3; clear; restart_linux ;;
+        4) lastChoice=4; clear; shut_down_linux ;;
+        5) lastChoice=5; clear; RootUserPassword ;;
+        6) lastChoice=6; clear; RunCommandsInTerminal ;;
+        7) lastChoice=7; clear; LinuxKernelVersion ;;
+        8) lastChoice=8; clear; FixBrokenPackages ;;
+        9) lastChoice=9; clear; ManutencaoSistema ;;
+        10) lastChoice=10; clear; OtimizarMemoria ;;
         *) dialog --msgbox "Opção inválida." 8 40 ;;
     esac
 done

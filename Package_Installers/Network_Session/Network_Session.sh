@@ -54,9 +54,12 @@ IPConfigurationAndInterfaces() {
 }
 
 # Menu interativo usando dialog
+lastChoice=0
+
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
+            --default-item "$lastChoice" \
             --menu "${sessionDescription}" 12 40 2 \
             0 "↩️  Voltar..." \
             1 "🔎 Verificar IP" \
@@ -76,14 +79,17 @@ while true; do
             exit 0
             ;;
         1)
+            lastChoice=1
             clear
             Check_IP
             ;;
         2)
+            lastChoice=2
             clear
             Trigger_Ping
             ;;
         3)
+            lastChoice=3
             clear
             IPConfigurationAndInterfaces
             ;;

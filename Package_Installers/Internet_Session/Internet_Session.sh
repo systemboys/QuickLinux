@@ -94,9 +94,12 @@ Install_TigerVNC_Viewer() {
 }
 
 # Menu interativo usando dialog
+lastChoice=0
+
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
+            --default-item "$lastChoice" \
             --menu "${sessionDescription}" 15 40 2 \
             0 "↩️  Voltar..." \
             1 "🖥️  Instalar AnyDesk" \
@@ -124,46 +127,57 @@ while true; do
             exit 0
             ;;
         1)
+            lastChoice=1
             clear
             Install_AnyDesk
             ;;
         2)
+            lastChoice=2
             clear
             Install_Microsoft_Edge
             ;;
         3)
+            lastChoice=3
             clear
             Install_Google_Chrome
             ;;
         4)
+            lastChoice=4
             clear
             Install_Google_Earth_Pro
             ;;
         5)
+            lastChoice=5
             clear
             Install_Skype_for_Linux
             ;;
         6)
+            lastChoice=6
             clear
             Install_Remmina
             ;;
         7)
+            lastChoice=7
             clear
             Install_Opera
             ;;
         8)
+            lastChoice=8
             clear
             Install_FileZilla
             ;;
         9)
+            lastChoice=9
             clear
             Install_Discord
             ;;
         10)
+            lastChoice=10
             clear
             Install_Mozilla_Firefox
             ;;
         11)
+            lastChoice=11
             clear
             Install_TigerVNC_Viewer
             ;;
