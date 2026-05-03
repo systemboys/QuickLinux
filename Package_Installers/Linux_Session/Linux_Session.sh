@@ -148,12 +148,11 @@ while true; do
 
     if [ $? -ne 0 ]; then
         clear
-        cd ../..
-        ./${fileName}
+        exit 0
     fi
 
     case $choice in
-        0) clear; cd ../..; ./${fileName} ;;
+        0) clear; exit 0 ;;
         1) clear; update_packages ;;
         2) clear; update_kernel ;;
         3) clear; restart_linux ;;

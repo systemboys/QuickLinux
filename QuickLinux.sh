@@ -93,11 +93,13 @@
 #   - Adicionada a opção "Atualizar sistema (seguro, sem kernel)" na sessão "Linux".
 # Licença: GPL.
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # Obtém o número da última versão do histórico do script
-lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "$0" | tail -n 1)
+lastVersion=$(grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' "${SCRIPT_DIR}/QuickLinux.sh" | tail -n 1)
 
 # Incluindo o GlobalVariables.sh para acessar as variáveis
-source GlobalVariables.sh
+source "${SCRIPT_DIR}/GlobalVariables.sh"
 
 # Verifica se o script está sendo executado como superusuário
 if [ "$EUID" -ne 0 ]; then
@@ -120,50 +122,46 @@ sessionDescription="Selecione as opções usando (↓ ↑ → ←) e pressione \
 
 # Função para executar sessão Menu QuickLinux
 Menu_QuickLinux() {
-    cd Package_Installers/Menu_QuickLinux
-    ./Menu_QuickLinux.sh "$fileName" "$developer"
+    (cd "${SCRIPT_DIR}/Package_Installers/Menu_QuickLinux" && ./Menu_QuickLinux.sh "$fileName" "$developer")
 }
 
 # Função para executar sessão Linux
 Linux_Session() {
-    cd Package_Installers/Linux_Session
-    ./Linux_Session.sh "$fileName" "$developer"
+    (cd "${SCRIPT_DIR}/Package_Installers/Linux_Session" && ./Linux_Session.sh "$fileName" "$developer")
 }
 
 # Função para executar sessão Internet
 Internet_Session() {
-    cd Package_Installers/Internet_Session
-    ./Internet_Session.sh "$fileName" "$developer"
+    (cd "${SCRIPT_DIR}/Package_Installers/Internet_Session" && ./Internet_Session.sh "$fileName" "$developer")
 }
 
 # Função para executar sessão Desenvolvimento
 Development_Session() {
-    cd Package_Installers/Development_Session
-    ./Development_Session.sh "$fileName" "$developer"
+    (cd "${SCRIPT_DIR}/Package_Installers/Development_Session" && ./Development_Session.sh "$fileName" "$developer")
 }
 
 # Função para executar sessão Utilitários de Terminal
 Terminal_Utilities_Session() {
-    cd Package_Installers/Terminal_Utilities_Session
-    ./Terminal_Utilities_Session.sh "$fileName" "$developer"
+    (cd "${SCRIPT_DIR}/Package_Installers/Terminal_Utilities_Session" && ./Terminal_Utilities_Session.sh "$fileName" "$developer")
 }
 
 # Função para executar sessão Redes
 Network_Session() {
-    cd Package_Installers/Network_Session
-    ./Network_Session.sh "$fileName" "$developer"
+    (cd "${SCRIPT_DIR}/Package_Installers/Network_Session" && ./Network_Session.sh "$fileName" "$developer")
 }
 
 # função para executar sessão Utilitários do Sistema
 System_Utilities_Session() {
-    cd Package_Installers/System_Utilities_Session
-    ./System_Utilities_Session.sh "$fileName" "$developer"
+    (cd "${SCRIPT_DIR}/Package_Installers/System_Utilities_Session" && ./System_Utilities_Session.sh "$fileName" "$developer")
 }
 
 # Menu interativo usando dialog
+lastChoice=1
+
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
+            --default-item "$lastChoice" \
             --menu "${sessionDescription}" 15 40 2 \
             1 "Menu QuickLinux" \
             2 "Linux" \
@@ -183,30 +181,37 @@ while true; do
 
     case $choice in
         1) # Sessão Menu QuickLinux
+            lastChoice=1
             clear
             Menu_QuickLinux
             ;;
         2) # Sessão Linux
+            lastChoice=2
             clear
             Linux_Session
             ;;
         3) # Sessão Internet
+            lastChoice=3
             clear
             Internet_Session
             ;;
         4) # Sessão Desenvolvimento
+            lastChoice=4
             clear
             Development_Session
             ;;
         5) # Sessão de Utilitários de Terminal
+            lastChoice=5
             clear
             Terminal_Utilities_Session
             ;;
         6) # Sessão de Redes
+            lastChoice=6
             clear
             Network_Session
             ;;
         7) # Sessão Utilitários do Sistema
+            lastChoice=7
             clear
             System_Utilities_Session
             ;;

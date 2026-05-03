@@ -57,15 +57,13 @@ while true; do
     # Se o usuário pressionar Cancelar, sair do loop
     if [ $? -ne 0 ]; then
         clear
-        cd ../..
-        ./${fileName}
+        exit 0
     fi
 
     case $choice in
         0)
             clear
-            cd ../..
-            ./${fileName}
+            exit 0
             ;;
         1)
             clear
