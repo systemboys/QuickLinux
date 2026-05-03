@@ -13,6 +13,8 @@
 #   - Versão inicial, Opções para sessão relacionadas à Internet.
 # v1.0.1 2026-05-03 às 11h55, Marcos Aurélio:
 #   - Ajuste no retorno da sessão para preservar a seleção no menu principal.
+# v1.0.2 2026-05-03 às 13h20, Marcos Aurélio:
+#   - Adicionados ícones aos itens do menu.
 #
 # Licença: GPL.
 
@@ -96,18 +98,18 @@ while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
             --menu "${sessionDescription}" 15 40 2 \
-            0 "Voltar..." \
-            1 "Instalar AnyDesk" \
-            2 "Instalar Microsoft Edge" \
-            3 "Instalar Google Chrome" \
-            4 "Instalar Google Earth Pro" \
-            5 "Instalar Skype para Linux" \
-            6 "Instalar Remmina" \
-            7 "Instalar Opera" \
-            8 "Instalar FileZilla" \
-            9 "Instalar Discord" \
-            10 "Instalar Mozilla Firefox" \
-            11 "Instalar TigerVNC Viewer" \
+            0 "↩️  Voltar..." \
+            1 "🖥️  Instalar AnyDesk" \
+            2 "🌊 Instalar Microsoft Edge" \
+            3 "🌈 Instalar Google Chrome" \
+            4 "🌍 Instalar Google Earth Pro" \
+            5 "📞 Instalar Skype para Linux" \
+            6 "🖧  Instalar Remmina" \
+            7 "🎭 Instalar Opera" \
+            8 "📁 Instalar FileZilla" \
+            9 "💬 Instalar Discord" \
+            10 "🦊 Instalar Mozilla Firefox" \
+            11 "🖱️  Instalar TigerVNC Viewer" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop

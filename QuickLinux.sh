@@ -103,6 +103,8 @@
 # v2.18.18 2026-05-03 às 13h05, Marcos Aurélio:
 #   - Adicionadas opções na sessão Desenvolvimento para gerenciar container de testes
 #     com acesso ao Docker do host.
+# v2.18.19 2026-05-03 às 13h20, Marcos Aurélio:
+#   - Adicionados ícones aos itens dos menus para melhorar a navegação visual.
 # Licença: GPL.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -175,13 +177,13 @@ while true; do
             --title "${sessionName}" \
             --default-item "$lastChoice" \
             --menu "${sessionDescription}" 15 40 2 \
-            1 "Menu QuickLinux" \
-            2 "Linux" \
-            3 "Internet" \
-            4 "Desenvolvimento" \
-            5 "Utilitários de Terminal" \
-            6 "Redes" \
-            7 "Utilitários do Sistema" \
+            1 "🧭 Menu QuickLinux" \
+            2 "🐧 Linux" \
+            3 "🌐 Internet" \
+            4 "🧑‍💻 Desenvolvimento" \
+            5 "⌨️  Utilitários de Terminal" \
+            6 "📡 Redes" \
+            7 "🖥️  Utilitários do Sistema" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop

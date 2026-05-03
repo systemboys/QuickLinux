@@ -14,6 +14,8 @@
 # Histórico:
 # v1.0.0 2023-11-11 às 00h30, Marcos Aurélio:
 #   - Versão inicial, opções referentes à configurações e interfaces de rede.
+# v1.0.1 2026-05-03 às 13h20, Marcos Aurélio:
+#   - Adicionados ícones aos itens do menu.
 #
 # Licença: GPL.
 
@@ -111,10 +113,10 @@ while true; do
     # Mostra um menu para escolher entre pingar um domínio ou sair
     choice=$(dialog --clear --backtitle "Configuração de IP e interfaces" \
             --menu "Escolha uma opção:" 12 40 2 \
-            0 "Voltar..." \
-            1 "Obter as interfaces de rede" \
-            2 "Obter IP das interfaces de rede" \
-            3 "Configurar interface de rede" \
+            0 "↩️ Voltar..." \
+            1 "🧷 Obter as interfaces de rede" \
+            2 "🏷️ Obter IP das interfaces de rede" \
+            3 "⚙️ Configurar interface de rede" \
             2>&1 >/dev/tty)
 
     # Verifica a escolha do usuário
@@ -137,4 +139,3 @@ while true; do
             ;;
     esac
 done
-

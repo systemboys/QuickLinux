@@ -11,6 +11,8 @@
 # Histórico:
 # v1.0.0 2023-10-29 às 17h00, Marcos Aurélio:
 #   - Versão inicial, Opções de ferramentas PING para redes.
+# v1.0.1 2026-05-03 às 13h20, Marcos Aurélio:
+#   - Adicionados ícones aos itens do menu.
 #
 # Licença: GPL.
 
@@ -82,10 +84,10 @@ while true; do
     # Mostra um menu para escolher entre pingar um domínio ou sair
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --menu "Escolha uma opção:" 12 40 2 \
-            0 "Voltar..." \
-            1 "Pingar um Domínio" \
-            2 "Pingar um Domínio forçando IPv4" \
-            3 "Traçar rota percorrida" \
+            0 "↩️ Voltar..." \
+            1 "📡 Pingar um Domínio" \
+            2 "4️⃣ Pingar um Domínio forçando IPv4" \
+            3 "🛣️ Traçar rota percorrida" \
             2>&1 >/dev/tty)
 
     # Verifica a escolha do usuário

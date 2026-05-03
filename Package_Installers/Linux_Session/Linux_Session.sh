@@ -20,6 +20,8 @@
 #   - Adicionada a opção "Atualizar sistema (seguro, sem kernel)" na sessão "Linux".
 # v1.0.4 2026-05-03 às 11h55, Marcos Aurélio:
 #   - Ajuste no retorno da sessão para preservar a seleção no menu principal.
+# v1.0.5 2026-05-03 às 13h20, Marcos Aurélio:
+#   - Adicionados ícones aos itens do menu.
 #
 # Licença: GPL.
 
@@ -135,17 +137,17 @@ while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
             --menu "${sessionDescription}" 16 50 10 \
-            0 "Voltar..." \
-            1 "Atualizar pacotes Linux" \
-            2 "Atualizar sistema (seguro, sem kernel)" \
-            3 "Reiniciar o Linux" \
-            4 "Desligar o Linux" \
-            5 "Senha do usuário root" \
-            6 "Executar comandos no terminal" \
-            7 "Versão do kernel Linux" \
-            8 "Corrigir pacotes ou dependências" \
-            9 "Manutenção automática do sistema" \
-            10 "Otimizar memória do Linux" \
+            0 "↩️  Voltar..." \
+            1 "📦 Atualizar pacotes Linux" \
+            2 "🛡️  Atualizar sistema (seguro, sem kernel)" \
+            3 "🔁 Reiniciar o Linux" \
+            4 "⏻  Desligar o Linux" \
+            5 "🔑 Senha do usuário root" \
+            6 "⌨️  Executar comandos no terminal" \
+            7 "🧬 Versão do kernel Linux" \
+            8 "🧩 Corrigir pacotes ou dependências" \
+            9 "🧰 Manutenção automática do sistema" \
+            10 "🧠 Otimizar memória do Linux" \
             2>&1 >/dev/tty)
 
     if [ $? -ne 0 ]; then

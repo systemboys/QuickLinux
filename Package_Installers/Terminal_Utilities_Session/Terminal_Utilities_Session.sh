@@ -13,6 +13,8 @@
 #   - Versão inicial, Opções para sessão relacionadas a utilitários para Linux.
 # v1.0.1 2026-05-03 às 11h55, Marcos Aurélio:
 #   - Ajuste no retorno da sessão para preservar a seleção no menu principal.
+# v1.0.2 2026-05-03 às 13h20, Marcos Aurélio:
+#   - Adicionados ícones aos itens do menu.
 #
 # Licença: GPL.
 
@@ -51,9 +53,9 @@ while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
             --menu "${sessionDescription}" 15 40 2 \
-            0 "Voltar..." \
-            1 "Instalar navegador Links2" \
-            2 "Instalar navegador Lynx" \
+            0 "↩️ Voltar..." \
+            1 "🔗 Instalar navegador Links2" \
+            2 "📝 Instalar navegador Lynx" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
