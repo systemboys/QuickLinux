@@ -87,10 +87,10 @@ while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --default-item "$lastChoice" \
             --menu "Escolha uma opção:" 12 40 2 \
-            0 "↩️ Voltar..." \
+            0 "↩️  Voltar..." \
             1 "📡 Pingar um Domínio" \
-            2 "4️⃣ Pingar um Domínio forçando IPv4" \
-            3 "🛣️ Traçar rota percorrida" \
+            2 "4️⃣  Pingar um Domínio forçando IPv4" \
+            3 "🛣️  Traçar rota percorrida" \
             2>&1 >/dev/tty)
 
     # Verifica a escolha do usuário

@@ -116,10 +116,10 @@ while true; do
     choice=$(dialog --clear --backtitle "Configuração de IP e interfaces" \
             --default-item "$lastChoice" \
             --menu "Escolha uma opção:" 12 40 2 \
-            0 "↩️ Voltar..." \
+            0 "↩️  Voltar..." \
             1 "🧷 Obter as interfaces de rede" \
-            2 "🏷️ Obter IP das interfaces de rede" \
-            3 "⚙️ Configurar interface de rede" \
+            2 "🏷️  Obter IP das interfaces de rede" \
+            3 "⚙️  Configurar interface de rede" \
             2>&1 >/dev/tty)
 
     # Verifica a escolha do usuário
