@@ -100,6 +100,9 @@
 # v2.17.18 2026-05-03 às 12h40, Marcos Aurélio:
 #   - Renomeada a preparação de ambiente da sessão Desenvolvimento para uso genérico
 #     em projetos Docker/Node.js locais ou remotos.
+# v2.18.18 2026-05-03 às 13h05, Marcos Aurélio:
+#   - Adicionadas opções na sessão Desenvolvimento para gerenciar container de testes
+#     com acesso ao Docker do host.
 # Licença: GPL.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

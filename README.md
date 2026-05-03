@@ -70,6 +70,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 ├─ /Package_Installers/
 │  ├─ /Development_Session/
 │  │  ├─ Development_Session.sh
+│  │  ├─ Development_Test_Container.sh
 │  │  ├─ Install_Beekeeper_Studio.sh
 │  │  ├─ Install_Docker_Compose.sh
 │  │  ├─ Install_Docker_Desktop.sh
@@ -161,6 +162,10 @@ Aqui estão todas as opções em desenvolvimento.
   - [x] Instalar Node.js e NPM (NodeSource)
   - [x] Instalar Beekeeper Studio
   - [x] Preparar ambiente de desenvolvimento
+  - [x] Criar container de testes
+  - [x] Acessar container de testes
+  - [x] Parar container de testes
+  - [x] Remover container de testes
 - [x] **Utilitários de Terminal**
   - [x] Voltar...
   - [x] Instalar navegador Links2

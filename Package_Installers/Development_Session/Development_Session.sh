@@ -23,6 +23,9 @@
 # v1.1.1 2026-05-03 às 12h40, Marcos Aurélio:
 #   - Renomeada a opção de preparação de ambiente para uso genérico em projetos
 #     Docker/Node.js locais ou remotos.
+# v1.2.0 2026-05-03 às 13h05, Marcos Aurélio:
+#   - Adicionadas opções para criar, acessar, parar e remover container de testes
+#     para desenvolvimento.
 #
 # Licença: GPL.
 
@@ -76,11 +79,28 @@ Prepare_Development_Environment() {
     ./Prepare_Development_Environment.sh
 }
 
+# Funções para gerenciar container de testes para desenvolvimento
+Create_Development_Test_Container() {
+    ./Development_Test_Container.sh create
+}
+
+Access_Development_Test_Container() {
+    ./Development_Test_Container.sh access
+}
+
+Stop_Development_Test_Container() {
+    ./Development_Test_Container.sh stop
+}
+
+Remove_Development_Test_Container() {
+    ./Development_Test_Container.sh remove
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
-            --menu "${sessionDescription}" 16 55 7 \
+            --menu "${sessionDescription}" 20 60 11 \
             0 "Voltar..." \
             1 "Instalar Docker" \
             2 "Instalar Docker Compose" \
@@ -88,6 +108,10 @@ while true; do
             4 "Instalar Node.js e NPM (NodeSource)" \
             5 "Instalar Beekeeper Studio" \
             6 "Preparar ambiente de desenvolvimento" \
+            7 "🧪 Criar container de testes" \
+            8 "🧪 Acessar container de testes" \
+            9 "🧪 Parar container de testes" \
+            10 "🧪 Remover container de testes" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -124,6 +148,22 @@ while true; do
         6)
             clear
             Prepare_Development_Environment
+            ;;
+        7)
+            clear
+            Create_Development_Test_Container
+            ;;
+        8)
+            clear
+            Access_Development_Test_Container
+            ;;
+        9)
+            clear
+            Stop_Development_Test_Container
+            ;;
+        10)
+            clear
+            Remove_Development_Test_Container
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40
