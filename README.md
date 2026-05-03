@@ -8,9 +8,9 @@ QuickLinux: Facilite a vida no Linux com um menu interativo. Instale pacotes, at
 
 **Recursos Principais:**
 
-1. **Instalação Descomplicada:** Esqueça os comandos complexos e a pesquisa por tutoriais. Nosso menu oferece opções para os comandos simples e diretos para instalar programas populares com seleção de opções via setas direcionais ou apenas cliques.
+1. **Instalação Descomplicada:** Esqueça os comandos complexos e a pesquisa por tutoriais. Nosso menu oferece opções simples e diretas para instalar programas populares com seleção via setas direcionais ou cliques.
 
-2. **Variedade de Pacotes:** Desde navegadores populares como Google Chrome e Mozilla Firefox até ferramentas de desenvolvimento como Visual Studio Code e Docker, o menu cobre uma ampla gama de necessidades.
+2. **Variedade de Pacotes:** Desde navegadores populares como Google Chrome e Mozilla Firefox até ferramentas de desenvolvimento como Docker, Docker Compose, Node.js e Beekeeper Studio, o menu cobre uma ampla gama de necessidades.
 
 3. **Configurações Pré-Definidas:** Além de instalar pacotes, o menu também oferece opções para configurações pré-definidas, economizando tempo e esforço dos usuários.
 
@@ -20,32 +20,53 @@ QuickLinux: Facilite a vida no Linux com um menu interativo. Instale pacotes, at
 
 **Como Usar:**
 
-1. **Clone o Repositório:** Clone nosso repositório do GitHub para ter acesso ao **_QuickLinux_**.
+1. **Instalação Recomendada:** Execute o instalador direto pelo terminal. Ele verifica se o `Git` está instalado, instala se necessário, usa `/tmp/QuickLinux` como diretório padrão, reaproveita a instalação quando ela já está íntegra e recria o diretório apenas se os arquivos essenciais não existirem.
+
+   ```bash
+   bash -c "$(curl -fsSL https://github.com/systemboys/QuickLinux/raw/main/Install.sh)"
+   ```
+
+   O instalador valida estes arquivos antes de executar o QuickLinux:
+
+   ```tex
+   /tmp/QuickLinux/QuickLinux.sh
+   /tmp/QuickLinux/Package_Installers/Menu_QuickLinux/Menu_QuickLinux.sh
+   ```
+
+2. **Instalação Manual:** Se preferir, clone o repositório do GitHub para ter acesso ao **_QuickLinux_**.
 
    ```
    git clone https://github.com/systemboys/QuickLinux.git
    ```
 
-2. **Navegue e Execute:** Navegue até o diretório do menu e execute os comandos diretamente do terminal. É tão simples quanto isso!
+3. **Navegue e Execute:** Navegue até o diretório do menu e execute os comandos diretamente do terminal. É tão simples quanto isso!
 
    ```
    cd QuickLinux
    ./QuickLinux.sh
    ```
 
-   > Você pode executar o seguinte comando no seu terminal Linux. Obs.: **( ! )** Sertifique-se de que o `Git` esteja instalado em seu Linux!:
+   > Você também pode executar o seguinte comando no terminal Linux. Obs.: **( ! )** Certifique-se de que o `Git` esteja instalado:
    
    ```bash
-   cd /tmp/ && rm -rf QuickLinux && git clone https://github.com/systemboys/QuickLinux.git && cd QuickLinux && ./QuickLinux.sh
+   cd /tmp
+   if [ ! -d QuickLinux ]; then
+       git clone https://github.com/systemboys/QuickLinux.git
+   fi
+   cd QuickLinux
+   ./QuickLinux.sh
    ```
 
-   Uma outra alternativa direta, é colar a seguinte linha de comando diretamente no seu terminal caso não tenha o Git instalado no seu Linux, assim, tanto o Git quanto o QuickLinux serão instalados:
+4. **Explore e Instale:** Explore as categorias, escolha os pacotes que deseja instalar e siga as instruções. Em poucos instantes, você terá os programas desejados em seu sistema Linux.
 
-   ```bash
-   bash -c "$(curl -fsSL https://github.com/systemboys/QuickLinux/raw/main/Install.sh)"
-   ```
+> **Nota:** os menus preservam a última opção executada. Ao concluir uma ação e fechar a mensagem com "Aceitar", a sessão volta com o mesmo item selecionado.
 
-3. **Explore e Instale:** Explore as categorias, escolha os pacotes que deseja instalar e siga as instruções. Em poucos instantes, você terá os programas desejados em seu sistema Linux.
+**Comportamento Atual:**
+
+- A opção **Atualizar pacotes Linux** atualiza a lista de pacotes com `apt-get update` e evita uma nova consulta quando a lista já foi atualizada há menos de 1 hora.
+- A opção **Atualizar sistema (seguro, sem kernel)** protege os pacotes de kernel com `apt-mark hold`, atualiza a lista de pacotes quando necessário, conta os pacotes atualizáveis e só executa o upgrade quando houver atualizações disponíveis.
+- Os instaladores Docker usam o repositório apt oficial do Docker para Debian/Ubuntu e removem a fonte legada `/etc/apt/sources.list.d/docker.list` antes de configurar `/etc/apt/sources.list.d/docker.sources`, evitando conflito de `Signed-By`.
+- O instalador `Install.sh` reaproveita `/tmp/QuickLinux` quando a instalação já possui os arquivos essenciais e só clona novamente quando o diretório não existe ou está incompleto.
 
 **Contribua e Compartilhe:**
 
@@ -61,12 +82,12 @@ Com o QuickLinux, queremos tornar a experiência de instalação de software no 
 
 ## Estrutura de arquivos
 
-Este Menu contêm scripts de instalação de pacotes de software dentro do diretório "/QuickLinux/". Estão armazenados vários arquivos.sh. Veja a estrutura de arquivos:
+Este menu contém scripts de instalação de pacotes de software dentro do diretório "/QuickLinux/". Estão armazenados vários arquivos `.sh`. Veja a estrutura de arquivos:
 
 ```tex
 /QuickLinux/
 ├─ /Images/
-│  └─ QuickWindows.png
+│  └─ QuickLinux.png
 ├─ /Package_Installers/
 │  ├─ /Development_Session/
 │  │  ├─ Development_Session.sh
@@ -95,6 +116,7 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ LinuxKernelVersion.sh
 │  │  ├─ Linux_Session.sh
 │  │  ├─ ManutencaoSistema.sh
+│  │  ├─ OtimizarMemoria.sh
 │  │  └─ RunCommandsInTerminal.sh
 │  ├─ /Menu_QuickLinux/
 │  │  ├─ AboutQuickLinux.sh
@@ -133,13 +155,15 @@ Aqui estão todas as opções em desenvolvimento.
 - [x] **Linux**
   - [x] Voltar...
   - [x] Atualizar pacotes Linux
-  - [x] Atualizar kernel Linux
+  - [x] Atualizar sistema (seguro, sem kernel)
   - [x] Reiniciar o Linux
   - [x] Desligar o Linux
   - [x] Senha do usuário root
   - [x] Executar comandos no terminal
+  - [x] Versão do kernel Linux
   - [x] Corrigir pacotes ou dependências
   - [x] Manutenção automática do sistema
+  - [x] Otimizar memória do Linux
 - [x] **Internet**
   - [x] Voltar...
   - [x] Instalar AnyDesk
@@ -151,7 +175,6 @@ Aqui estão todas as opções em desenvolvimento.
   - [x] Instalar Opera
   - [x] Instalar FileZilla
   - [x] Instalar Discord
-    > *( ! ) O script ainda não funcionou como devia, a instalação do Discrod depende do download com versão atualizada e toda vez que instala, já tem atualizações. O script ainda tem que ser melhorado.*
   - [x] Instalar Mozilla Firefox
   - [x] Instalar TigerVNC Viewer
 - [x] **Desenvolvimento**
@@ -248,11 +271,14 @@ Option_B() {
 }
 
 # Menu interativo usando dialog
+lastChoice=0
+
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
+            --default-item "$lastChoice" \
             --menu "${sessionDescription}" 15 40 2 \
-            0 "Voltar..." \
+            0 "↩️  Voltar..." \
             1 "Opção A" \
             2 "Opção B" \
             2>&1 >/dev/tty)
@@ -260,21 +286,21 @@ while true; do
     # Se o usuário pressionar Cancelar, sair do loop
     if [ $? -ne 0 ]; then
         clear
-        cd ../..
-        ./${fileName}
+        exit 0
     fi
 
     case $choice in
         0)
             clear
-            cd ../..
-            ./${fileName}
+            exit 0
             ;;
         1)
+            lastChoice=1
             clear
             Option_A
             ;;
         2)
+            lastChoice=2
             clear
             Option_B
             ;;
@@ -292,8 +318,7 @@ Para chamar sua nova sessão a partir do menu inicial, adicione a função que e
 
 # Função para executar sessão Internet
 New_Session_A() {
-    cd Package_Installers/New_Session_A
-    ./New_Session_A.sh "$fileName" "$developer"
+    (cd "${SCRIPT_DIR}/Package_Installers/New_Session_A" && ./New_Session_A.sh "$fileName" "$developer")
 }
 
 # ... (restante do código)
@@ -312,6 +337,7 @@ Depois coloque a posição da chamada da função na **_case_**:
 ```bash
 # ... (restante do código)
 3) # Sessão New_Session_A
+    lastChoice=3
     clear
     New_Session_A
     ;;
