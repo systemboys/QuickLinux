@@ -67,6 +67,7 @@ QuickLinux: Facilite a vida no Linux com um menu interativo. Instale pacotes, at
 - A opção **Atualizar sistema (seguro, sem kernel)** protege os pacotes de kernel com `apt-mark hold`, atualiza a lista de pacotes quando necessário, conta os pacotes atualizáveis e só executa o upgrade quando houver atualizações disponíveis.
 - Os instaladores Docker usam o repositório apt oficial do Docker para Debian/Ubuntu e removem a fonte legada `/etc/apt/sources.list.d/docker.list` antes de configurar `/etc/apt/sources.list.d/docker.sources`, evitando conflito de `Signed-By`.
 - O instalador `Install.sh` reaproveita `/tmp/QuickLinux` quando a instalação já possui os arquivos essenciais e só clona novamente quando o diretório não existe ou está incompleto.
+- Ao abrir o QuickLinux, é possível escolher entre executar **com ícones** ou **sem ícones**. Essa escolha evita caracteres quebrados em distribuições/fontes que não exibem emojis corretamente.
 
 **Contribua e Compartilhe:**
 
@@ -152,6 +153,7 @@ Aqui estão todas as opções em desenvolvimento.
   - [x] Deletar QuickLinux
   - [x] Recarregar QuickLinux
   - [x] Sobre o QuickLinux
+  - [x] Alternar ícones
 - [x] **Linux**
   - [x] Voltar...
   - [x] Atualizar pacotes Linux
@@ -255,7 +257,7 @@ fileName="$1"
 developer="$2"
 
 # Variáveis úteis
-sessionName="${programName} ${lastVersion} 🚀🐧"
+sessionName="${programName} ${lastVersion}"
 sessionDescription="Opções de referência a Nova Sessão A."
 
 # Função para Opção A
@@ -278,9 +280,9 @@ while true; do
             --title "${sessionName}" \
             --default-item "$lastChoice" \
             --menu "${sessionDescription}" 15 40 2 \
-            0 "↩️  Voltar..." \
-            1 "Opção A" \
-            2 "Opção B" \
+            0 "$(ql_label "↩️" "Voltar...")" \
+            1 "$(ql_label "▶️" "Opção A")" \
+            2 "$(ql_label "▶️" "Opção B")" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop

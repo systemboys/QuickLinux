@@ -101,18 +101,18 @@ while true; do
             --title "${sessionName}" \
             --default-item "$lastChoice" \
             --menu "${sessionDescription}" 15 40 2 \
-            0 "↩️  Voltar..." \
-            1 "🖥️  Instalar AnyDesk" \
-            2 "🌊 Instalar Microsoft Edge" \
-            3 "🌈 Instalar Google Chrome" \
-            4 "🌍 Instalar Google Earth Pro" \
-            5 "📞 Instalar Skype para Linux" \
-            6 "🖧  Instalar Remmina" \
-            7 "🎭 Instalar Opera" \
-            8 "📁 Instalar FileZilla" \
-            9 "💬 Instalar Discord" \
-            10 "🦊 Instalar Mozilla Firefox" \
-            11 "🖱️  Instalar TigerVNC Viewer" \
+            0 "$(ql_label "↩️ " "Voltar...")" \
+            1 "$(ql_label "🖥️ " "Instalar AnyDesk")" \
+            2 "$(ql_label "🌊" "Instalar Microsoft Edge")" \
+            3 "$(ql_label "🌈" "Instalar Google Chrome")" \
+            4 "$(ql_label "🌍" "Instalar Google Earth Pro")" \
+            5 "$(ql_label "📞" "Instalar Skype para Linux")" \
+            6 "$(ql_label "🖧 " "Instalar Remmina")" \
+            7 "$(ql_label "🎭" "Instalar Opera")" \
+            8 "$(ql_label "📁" "Instalar FileZilla")" \
+            9 "$(ql_label "💬" "Instalar Discord")" \
+            10 "$(ql_label "🦊" "Instalar Mozilla Firefox")" \
+            11 "$(ql_label "🖱️ " "Instalar TigerVNC Viewer")" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop

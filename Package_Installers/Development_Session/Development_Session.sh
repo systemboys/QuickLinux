@@ -106,17 +106,17 @@ while true; do
             --title "${sessionName}" \
             --default-item "$lastChoice" \
             --menu "${sessionDescription}" 20 60 11 \
-            0 "↩️  Voltar..." \
-            1 "🐳 Instalar Docker" \
-            2 "🧱 Instalar Docker Compose" \
-            3 "🐋 Instalar Docker Desktop" \
-            4 "🟢 Instalar Node.js e NPM (NodeSource)" \
-            5 "🐝 Instalar Beekeeper Studio" \
-            6 "🧰 Preparar ambiente de desenvolvimento" \
-            7 "🧪 Criar container de testes" \
-            8 "🚪 Acessar container de testes" \
-            9 "⏸️  Parar container de testes" \
-            10 "🗑️  Remover container de testes" \
+            0 "$(ql_label "↩️ " "Voltar...")" \
+            1 "$(ql_label "🐳" "Instalar Docker")" \
+            2 "$(ql_label "🧱" "Instalar Docker Compose")" \
+            3 "$(ql_label "🐋" "Instalar Docker Desktop")" \
+            4 "$(ql_label "🟢" "Instalar Node.js e NPM (NodeSource)")" \
+            5 "$(ql_label "🐝" "Instalar Beekeeper Studio")" \
+            6 "$(ql_label "🧰" "Preparar ambiente de desenvolvimento")" \
+            7 "$(ql_label "🧪" "Criar container de testes")" \
+            8 "$(ql_label "🚪" "Acessar container de testes")" \
+            9 "$(ql_label "⏸️ " "Parar container de testes")" \
+            10 "$(ql_label "🗑️ " "Remover container de testes")" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop

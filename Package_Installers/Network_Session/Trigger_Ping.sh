@@ -77,7 +77,7 @@ Trace_Route_Traveled() {
 }
 
 # Variáveis úteis
-sessionName="${programName} ${lastVersion} 🚀🐧"
+sessionName="${programName} ${lastVersion}"
 
 # Inicia o loop para o menu interativo usando dialog
 lastChoice=0
@@ -87,10 +87,10 @@ while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --default-item "$lastChoice" \
             --menu "Escolha uma opção:" 12 40 2 \
-            0 "↩️  Voltar..." \
-            1 "📡 Pingar um Domínio" \
-            2 "4️⃣  Pingar um Domínio forçando IPv4" \
-            3 "🛣️  Traçar rota percorrida" \
+            0 "$(ql_label "↩️ " "Voltar...")" \
+            1 "$(ql_label "📡" "Pingar um Domínio")" \
+            2 "$(ql_label "4️⃣ " "Pingar um Domínio forçando IPv4")" \
+            3 "$(ql_label "🛣️ " "Traçar rota percorrida")" \
             2>&1 >/dev/tty)
 
     # Verifica a escolha do usuário

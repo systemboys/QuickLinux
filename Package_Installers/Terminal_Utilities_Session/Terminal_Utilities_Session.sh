@@ -56,9 +56,9 @@ while true; do
             --title "${sessionName}" \
             --default-item "$lastChoice" \
             --menu "${sessionDescription}" 15 40 2 \
-            0 "↩️ Voltar..." \
-            1 "🔗 Instalar navegador Links2" \
-            2 "📝 Instalar navegador Lynx" \
+            0 "$(ql_label "↩️ " "Voltar...")" \
+            1 "$(ql_label "🔗" "Instalar navegador Links2")" \
+            2 "$(ql_label "📝" "Instalar navegador Lynx")" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop

@@ -61,10 +61,10 @@ while true; do
             --title "${sessionName}" \
             --default-item "$lastChoice" \
             --menu "${sessionDescription}" 12 40 2 \
-            0 "↩️  Voltar..." \
-            1 "🔎 Verificar IP" \
-            2 "📶 Disparar PING / Traçar rota" \
-            3 "🧭 Configuração de IP e interfaces" \
+            0 "$(ql_label "↩️ " "Voltar...")" \
+            1 "$(ql_label "🔎" "Verificar IP")" \
+            2 "$(ql_label "📶" "Disparar PING / Traçar rota")" \
+            3 "$(ql_label "🧭" "Configuração de IP e interfaces")" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop

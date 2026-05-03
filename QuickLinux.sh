@@ -110,6 +110,9 @@
 # v2.18.21 2026-05-03 às 13h35, Marcos Aurélio:
 #   - Ajustadas opções de atualização da sessão Linux para evitar retrabalho quando
 #     não houver pacotes a atualizar.
+# v2.18.22 2026-05-03 às 16h35, Marcos Aurélio:
+#   - Adicionada escolha para executar o QuickLinux com ou sem ícones, melhorando
+#     compatibilidade com distribuições/fontes que não exibem emojis corretamente.
 # Licença: GPL.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -133,6 +136,22 @@ if ! command -v dialog &> /dev/null; then
     sudo apt-get update
     sudo apt-get install -y dialog
 fi
+
+choose_icon_mode() {
+    dialog --clear \
+        --title "QuickLinux" \
+        --yes-label "Com ícones" \
+        --no-label "Sem ícones" \
+        --yesno "Como deseja executar o QuickLinux?\n\nExemplos de ícones:\n🧭  Menu QuickLinux\n🐧  Linux\n🌐  Internet\n\nSe sua distribuição mostrar quadrados ou caracteres estranhos, escolha \"Sem ícones\"." 14 72
+
+    if [ $? -eq 0 ]; then
+        ql_set_icons 1
+    else
+        ql_set_icons 0
+    fi
+}
+
+choose_icon_mode
 
 # Variáveis úteis
 fileName=$(basename "$0")
@@ -182,13 +201,13 @@ while true; do
             --title "${sessionName}" \
             --default-item "$lastChoice" \
             --menu "${sessionDescription}" 15 40 2 \
-            1 "🧭 Menu QuickLinux" \
-            2 "🐧 Linux" \
-            3 "🌐 Internet" \
-            4 "🏗️  Desenvolvimento" \
-            5 "⌨️  Utilitários de Terminal" \
-            6 "📡 Redes" \
-            7 "🖥️  Utilitários do Sistema" \
+            1 "$(ql_label "🧭" "Menu QuickLinux")" \
+            2 "$(ql_label "🐧" "Linux")" \
+            3 "$(ql_label "🌐" "Internet")" \
+            4 "$(ql_label "🏗️ " "Desenvolvimento")" \
+            5 "$(ql_label "⌨️ " "Utilitários de Terminal")" \
+            6 "$(ql_label "📡" "Redes")" \
+            7 "$(ql_label "🖥️ " "Utilitários do Sistema")" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop

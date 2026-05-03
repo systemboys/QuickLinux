@@ -15,6 +15,8 @@
 #   - Ajuste no retorno da sessão para preservar a seleção no menu principal.
 # v1.0.2 2026-05-03 às 13h20, Marcos Aurélio:
 #   - Adicionados ícones aos itens do menu.
+# v1.0.3 2026-05-03 às 16h35, Marcos Aurélio:
+#   - Adicionada opção para ativar ou desativar ícones nos menus.
 #
 # Licença: GPL.
 
@@ -88,6 +90,16 @@ AboutQuickLinux() {
     ./AboutQuickLinux.sh
 }
 
+ToggleQuickLinuxIcons() {
+    if ql_icons_enabled; then
+        ql_set_icons 0
+        dialog --msgbox "Ícones desativados.\n\nOs menus passarão a exibir apenas texto." 8 60
+    else
+        ql_set_icons 1
+        dialog --msgbox "Ícones ativados.\n\nOs menus voltarão a exibir ícones junto aos textos." 8 65
+    fi
+}
+
 # Menu interativo usando dialog
 lastChoice=0
 
@@ -95,12 +107,13 @@ while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
             --default-item "$lastChoice" \
-            --menu "${sessionDescription}" 15 40 2 \
-            0 "↩️  Voltar..." \
-            1 "⬇️  Atualizar QuickLinux" \
-            2 "🗑️  Deletar QuickLinux" \
-            3 "🔄 Recarregar QuickLinux" \
-            4 "ℹ️  Sobre o QuickLinux" \
+            --menu "${sessionDescription}" 16 55 6 \
+            0 "$(ql_label "↩️ " "Voltar...")" \
+            1 "$(ql_label "⬇️ " "Atualizar QuickLinux")" \
+            2 "$(ql_label "🗑️ " "Deletar QuickLinux")" \
+            3 "$(ql_label "🔄" "Recarregar QuickLinux")" \
+            4 "$(ql_label "ℹ️ " "Sobre o QuickLinux")" \
+            5 "$(ql_label "🎨" "$(ql_icons_toggle_text)")" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -133,6 +146,11 @@ while true; do
             lastChoice=4
             clear
             AboutQuickLinux
+            ;;
+        5)
+            lastChoice=5
+            clear
+            ToggleQuickLinuxIcons
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40

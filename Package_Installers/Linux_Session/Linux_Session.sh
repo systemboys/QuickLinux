@@ -197,17 +197,17 @@ while true; do
             --title "${sessionName}" \
             --default-item "$lastChoice" \
             --menu "${sessionDescription}" 16 50 10 \
-            0 "↩️  Voltar..." \
-            1 "📦 Atualizar pacotes Linux" \
-            2 "🛡️  Atualizar sistema (seguro, sem kernel)" \
-            3 "🔁 Reiniciar o Linux" \
-            4 "⏻  Desligar o Linux" \
-            5 "🔑 Senha do usuário root" \
-            6 "⌨️  Executar comandos no terminal" \
-            7 "🧬 Versão do kernel Linux" \
-            8 "🧩 Corrigir pacotes ou dependências" \
-            9 "🧰 Manutenção automática do sistema" \
-            10 "🧠 Otimizar memória do Linux" \
+            0 "$(ql_label "↩️ " "Voltar...")" \
+            1 "$(ql_label "📦" "Atualizar pacotes Linux")" \
+            2 "$(ql_label "🛡️ " "Atualizar sistema (seguro, sem kernel)")" \
+            3 "$(ql_label "🔁" "Reiniciar o Linux")" \
+            4 "$(ql_label "⏻ " "Desligar o Linux")" \
+            5 "$(ql_label "🔑" "Senha do usuário root")" \
+            6 "$(ql_label "⌨️ " "Executar comandos no terminal")" \
+            7 "$(ql_label "🧬" "Versão do kernel Linux")" \
+            8 "$(ql_label "🧩" "Corrigir pacotes ou dependências")" \
+            9 "$(ql_label "🧰" "Manutenção automática do sistema")" \
+            10 "$(ql_label "🧠" "Otimizar memória do Linux")" \
             2>&1 >/dev/tty)
 
     if [ $? -ne 0 ]; then

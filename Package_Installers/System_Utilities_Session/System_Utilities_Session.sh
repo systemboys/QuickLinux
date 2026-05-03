@@ -65,9 +65,9 @@ while true; do
             --title "${sessionName}" \
             --default-item "$lastChoice" \
             --menu "${sessionDescription}" 15 40 2 \
-            0 "↩️  Voltar..." \
-            1 "📊 Informações do Sistema" \
-            2 "🌡️  Sensores de Hardware do Linux" \
+            0 "$(ql_label "↩️ " "Voltar...")" \
+            1 "$(ql_label "📊" "Informações do Sistema")" \
+            2 "$(ql_label "🌡️ " "Sensores de Hardware do Linux")" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
