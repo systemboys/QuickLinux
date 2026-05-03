@@ -11,6 +11,8 @@
 # Histórico:
 # v1.0.0 2023-10-29 às 17h00, Marcos Aurélio:
 #   - Versão inicial, Opções relacionadas à redes.
+# v1.0.1 2026-05-03 às 11h55, Marcos Aurélio:
+#   - Ajuste no retorno da sessão para preservar a seleção no menu principal.
 #
 # Licença: GPL.
 

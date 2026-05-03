@@ -72,8 +72,10 @@ Este Menu contêm scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ Development_Session.sh
 │  │  ├─ Install_Beekeeper_Studio.sh
 │  │  ├─ Install_Docker_Compose.sh
+│  │  ├─ Install_Docker_Desktop.sh
 │  │  ├─ Install_Docker.sh
-│  │  └─ Install_NodeJs_NPM.sh
+│  │  ├─ Install_NodeJs_NPM.sh
+│  │  └─ Prepare_Development_Environment.sh
 │  ├─ /Internet_Session/
 │  │  ├─ Install_AnyDesk.sh
 │  │  ├─ Install_Discord.sh
@@ -155,8 +157,10 @@ Aqui estão todas as opções em desenvolvimento.
   - [x] Voltar...
   - [x] Instalar Docker
   - [x] Instalar Docker Compose
+  - [x] Instalar Docker Desktop
   - [x] Instalar Node.js e NPM (NodeSource)
   - [x] Instalar Beekeeper Studio
+  - [x] Preparar ambiente de desenvolvimento
 - [x] **Utilitários de Terminal**
   - [x] Voltar...
   - [x] Instalar navegador Links2
@@ -411,4 +415,3 @@ chmod +x Option_A.sh
 ```
 
 > **_( i )_** No exemplo acima, o pacote é o "FileZilla". O script verifica se está instalado para ignorar a instalação caso esteja, caso contrário, segue a instalação do pacote.
-

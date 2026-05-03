@@ -91,6 +91,15 @@
 #   - Adicionada a opção "Otimizar memória do Linux" na sessão "Linux".
 # v2.16.16 2026-04-07 às 21h24, Marcos Aurélio:
 #   - Adicionada a opção "Atualizar sistema (seguro, sem kernel)" na sessão "Linux".
+# v2.16.17 2026-05-03 às 11h50, Marcos Aurélio:
+#   - Ajuste no retorno das sessões para manter selecionado no menu principal o último
+#     item acessado.
+# v2.17.17 2026-05-03 às 12h25, Marcos Aurélio:
+#   - Atualizadas opções de desenvolvimento e adicionada preparação de ambiente para
+#     executar o Breeze em VPS.
+# v2.17.18 2026-05-03 às 12h40, Marcos Aurélio:
+#   - Renomeada a preparação de ambiente da sessão Desenvolvimento para uso genérico
+#     em projetos Docker/Node.js locais ou remotos.
 # Licença: GPL.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

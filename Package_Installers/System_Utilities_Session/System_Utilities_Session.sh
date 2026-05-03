@@ -16,6 +16,8 @@
 #     processador e a memória do sistema.
 # v1.1.0 2023-12-06 às 18h10, Marcos Aurélio:
 #   - Adicionada a opção Sensores de Hardware do Linux.
+# v1.1.1 2026-05-03 às 11h55, Marcos Aurélio:
+#   - Ajuste no retorno da sessão para preservar a seleção no menu principal.
 #
 # Licença: GPL.
 

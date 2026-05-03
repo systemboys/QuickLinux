@@ -11,6 +11,8 @@
 # Histórico:
 # v1.0.0 2025-09-29 às 17h00, Marcos Aurélio:
 #   - Versão inicial, Instalar o Beekeeper Studio.
+# v1.0.1 2026-05-03 às 12h25, Marcos Aurélio:
+#   - Ajustada instalação para garantir pré-requisitos do repositório apt oficial.
 #
 # Licença: GPL.
 
@@ -28,14 +30,17 @@ if ! command -v ${packageVersionName} &> /dev/null; then
 
         clear
 
+        apt-get update
+        apt-get install -y ca-certificates curl gnupg
+
         # Install our GPG key
-        curl -fsSL https://deb.beekeeperstudio.io/beekeeper.key | sudo gpg --dearmor --output /usr/share/keyrings/beekeeper.gpg \
-        && sudo chmod go+r /usr/share/keyrings/beekeeper.gpg \
+        curl -fsSL https://deb.beekeeperstudio.io/beekeeper.key | gpg --dearmor --yes --output /usr/share/keyrings/beekeeper.gpg \
+        && chmod go+r /usr/share/keyrings/beekeeper.gpg \
         && echo "deb [signed-by=/usr/share/keyrings/beekeeper.gpg] https://deb.beekeeperstudio.io stable main" \
-        | sudo tee /etc/apt/sources.list.d/beekeeper-studio-app.list > /dev/null
+        | tee /etc/apt/sources.list.d/beekeeper-studio-app.list > /dev/null
 
         # Update apt and install
-        sudo apt update && sudo apt install beekeeper-studio -y
+        apt-get update && apt-get install beekeeper-studio -y
 
         clear
     fi

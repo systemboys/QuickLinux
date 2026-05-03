@@ -15,6 +15,14 @@
 #   - Adicionada a opção "Instalar Beekeeper Studio" na sessão "Desenvolvimento".
 # v1.0.2 2026-01-08 às 13h20, Marcos Aurélio:
 #   - Adicionada a opção "Instalar Docker Desktop" na sessão "Desenvolvimento".
+# v1.0.3 2026-05-03 às 11h55, Marcos Aurélio:
+#   - Ajuste no retorno da sessão para preservar a seleção no menu principal.
+# v1.1.0 2026-05-03 às 12h25, Marcos Aurélio:
+#   - Atualizadas opções de desenvolvimento e adicionada preparação de ambiente para
+#     executar o Breeze em VPS.
+# v1.1.1 2026-05-03 às 12h40, Marcos Aurélio:
+#   - Renomeada a opção de preparação de ambiente para uso genérico em projetos
+#     Docker/Node.js locais ou remotos.
 #
 # Licença: GPL.
 
@@ -63,17 +71,23 @@ Install_Docker_Desktop() {
     ./Install_Docker_Desktop.sh
 }
 
+# Função para preparar ambiente de desenvolvimento/deploy
+Prepare_Development_Environment() {
+    ./Prepare_Development_Environment.sh
+}
+
 # Menu interativo usando dialog
 while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
-            --menu "${sessionDescription}" 15 40 2 \
+            --menu "${sessionDescription}" 16 55 7 \
             0 "Voltar..." \
             1 "Instalar Docker" \
             2 "Instalar Docker Compose" \
             3 "Instalar Docker Desktop" \
             4 "Instalar Node.js e NPM (NodeSource)" \
             5 "Instalar Beekeeper Studio" \
+            6 "Preparar ambiente de desenvolvimento" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -106,6 +120,10 @@ while true; do
         5)
             clear
             Install_Beekeeper_Studio
+            ;;
+        6)
+            clear
+            Prepare_Development_Environment
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40

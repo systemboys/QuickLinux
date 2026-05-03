@@ -12,6 +12,8 @@
 # Histórico:
 # v1.0.0 2026-01-08 às 13h20, Marcos Aurélio:
 #   - Versão inicial, Instalar o Docker Desktop no Linux (Debian).
+# v1.0.1 2026-05-03 às 12h25, Marcos Aurélio:
+#   - Ajustada configuração do repositório oficial do Docker para Debian e Ubuntu.
 #
 # Licença: GPL.
 
@@ -30,6 +32,22 @@ if ! command -v docker-desktop &> /dev/null && [ ! -f "/opt/docker-desktop/bin/d
 
     # Passo 1: Configurar o repositório apt do Docker
     dialog --infobox "Configurando o repositório apt do Docker..." 8 40
+
+    . /etc/os-release
+    case "$ID" in
+        debian)
+            docker_repo_os="debian"
+            docker_repo_codename="$VERSION_CODENAME"
+            ;;
+        ubuntu)
+            docker_repo_os="ubuntu"
+            docker_repo_codename="${UBUNTU_CODENAME:-$VERSION_CODENAME}"
+            ;;
+        *)
+            dialog --msgbox "Distribuição não suportada pelo instalador oficial do Docker Desktop: ${PRETTY_NAME:-$ID}" 8 70
+            exit 1
+            ;;
+    esac
     
     # Instalar dependências necessárias
     apt-get update -qq
@@ -37,16 +55,20 @@ if ! command -v docker-desktop &> /dev/null && [ ! -f "/opt/docker-desktop/bin/d
     
     # Adicionar chave GPG oficial do Docker
     install -m 0755 -d /etc/apt/keyrings
-    if [ ! -f /etc/apt/keyrings/docker.gpg ]; then
-        curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-        chmod a+r /etc/apt/keyrings/docker.gpg
+    if [ ! -f /etc/apt/keyrings/docker.asc ]; then
+        curl -fsSL "https://download.docker.com/linux/${docker_repo_os}/gpg" -o /etc/apt/keyrings/docker.asc
+        chmod a+r /etc/apt/keyrings/docker.asc
     fi
     
     # Configurar repositório
-    echo \
-      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-      tee /etc/apt/sources.list.d/docker.list > /dev/null
+    cat > /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/${docker_repo_os}
+Suites: ${docker_repo_codename}
+Components: stable
+Architectures: $(dpkg --print-architecture)
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
     
     apt-get update -qq
     
@@ -94,4 +116,3 @@ else
     clear
     dialog --msgbox "${packageName} já está instalado! Ignorando a instalação..." 8 40
 fi
-

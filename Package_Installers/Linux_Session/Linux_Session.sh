@@ -18,6 +18,8 @@
 #   - Adicionada a opção "Otimizar memória do Linux" na sessão "Linux".
 # v1.0.3 2026-04-07 às 21h24, Marcos Aurélio:
 #   - Adicionada a opção "Atualizar sistema (seguro, sem kernel)" na sessão "Linux".
+# v1.0.4 2026-05-03 às 11h55, Marcos Aurélio:
+#   - Ajuste no retorno da sessão para preservar a seleção no menu principal.
 #
 # Licença: GPL.
 
