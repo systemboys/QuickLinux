@@ -105,6 +105,8 @@
 #     com acesso ao Docker do host.
 # v2.18.19 2026-05-03 às 13h20, Marcos Aurélio:
 #   - Adicionados ícones aos itens dos menus para melhorar a navegação visual.
+# v2.18.20 2026-05-03 às 13h25, Marcos Aurélio:
+#   - Alterado ícone da sessão Desenvolvimento para simbolizar construção.
 # Licença: GPL.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -180,7 +182,7 @@ while true; do
             1 "🧭 Menu QuickLinux" \
             2 "🐧 Linux" \
             3 "🌐 Internet" \
-            4 "🧑‍💻 Desenvolvimento" \
+            4 "🏗️  Desenvolvimento" \
             5 "⌨️  Utilitários de Terminal" \
             6 "📡 Redes" \
             7 "🖥️  Utilitários do Sistema" \
