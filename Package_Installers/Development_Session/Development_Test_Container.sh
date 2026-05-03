@@ -106,6 +106,7 @@ create_container() {
         bash -lc '
             set -e
             rm -f /tmp/quicklinux-dev-ready
+            rm -f /etc/apt/sources.list.d/docker.list
             apt-get update
             apt-get install -y ca-certificates curl gnupg git unzip zip openssl default-mysql-client nano htop
             install -m 0755 -d /etc/apt/keyrings

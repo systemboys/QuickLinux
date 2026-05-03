@@ -49,6 +49,8 @@ if ! command -v docker-desktop &> /dev/null && [ ! -f "/opt/docker-desktop/bin/d
             ;;
     esac
     
+    rm -f /etc/apt/sources.list.d/docker.list
+
     # Instalar dependências necessárias
     apt-get update -qq
     apt-get install -y -qq ca-certificates curl gnupg

@@ -45,6 +45,8 @@ install_docker_repository() {
             ;;
     esac
 
+    rm -f /etc/apt/sources.list.d/docker.list
+
     apt-get update
     apt-get install -y ca-certificates curl gnupg
     install -m 0755 -d /etc/apt/keyrings
