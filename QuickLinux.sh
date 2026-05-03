@@ -107,6 +107,9 @@
 #   - Adicionados ícones aos itens dos menus para melhorar a navegação visual.
 # v2.18.20 2026-05-03 às 13h25, Marcos Aurélio:
 #   - Alterado ícone da sessão Desenvolvimento para simbolizar construção.
+# v2.18.21 2026-05-03 às 13h35, Marcos Aurélio:
+#   - Ajustadas opções de atualização da sessão Linux para evitar retrabalho quando
+#     não houver pacotes a atualizar.
 # Licença: GPL.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

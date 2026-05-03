@@ -22,6 +22,9 @@
 #   - Ajuste no retorno da sessão para preservar a seleção no menu principal.
 # v1.0.5 2026-05-03 às 13h20, Marcos Aurélio:
 #   - Adicionados ícones aos itens do menu.
+# v1.0.6 2026-05-03 às 13h35, Marcos Aurélio:
+#   - Ajustadas opções de atualização para evitar retrabalho quando os pacotes já
+#     estiverem atualizados.
 #
 # Licença: GPL.
 
@@ -47,9 +50,43 @@ sair_do_script() {
     exit "$1"
 }
 
-update_packages() {
+apt_cache_is_recent() {
+    local stamp_file="/var/lib/apt/periodic/update-success-stamp"
+    local max_age_seconds=3600
+    local now
+    local stamp
+
+    [ -f "$stamp_file" ] || return 1
+
+    now=$(date +%s)
+    stamp=$(stat -c %Y "$stamp_file" 2>/dev/null) || return 1
+
+    [ $((now - stamp)) -lt "$max_age_seconds" ]
+}
+
+refresh_apt_cache_if_needed() {
+    if apt_cache_is_recent; then
+        return 0
+    fi
+
     sudo apt-get update
-    dialog --msgbox "Pacotes Linux atualizados!" 8 40
+}
+
+count_upgradeable_packages() {
+    apt-get -s upgrade 2>/dev/null | awk '/^Inst / {count++} END {print count + 0}'
+}
+
+update_packages() {
+    if apt_cache_is_recent; then
+        dialog --msgbox "A lista de pacotes já foi atualizada há menos de 1 hora.\n\nNenhuma nova consulta aos repositórios foi necessária." 8 70
+        return
+    fi
+
+    if sudo apt-get update; then
+        dialog --msgbox "Lista de pacotes Linux atualizada com sucesso!" 8 55
+    else
+        dialog --msgbox "Erro ao atualizar a lista de pacotes Linux." 8 55
+    fi
 }
 
 # 🔒 FUNÇÃO SEGURA (SEM QUEBRAR KERNEL)
@@ -59,11 +96,31 @@ update_kernel() {
     sudo apt-mark hold linux-image-6.12.74+deb13+1-amd64 >/dev/null 2>&1
     sudo apt-mark hold linux-headers-6.12.74+deb13+1-amd64 >/dev/null 2>&1
 
-    # Atualiza sistema sem mexer no kernel
-    sudo apt-get update
-    sudo apt-get upgrade -y
+    # Atualiza sistema sem mexer no kernel, evitando retrabalho quando não há upgrades
+    if ! refresh_apt_cache_if_needed; then
+        dialog --msgbox "Erro ao atualizar a lista de pacotes. O upgrade não será executado." 8 70
+        return
+    fi
 
-    dialog --msgbox "Sistema atualizado com segurança (kernel protegido)." 8 60
+    upgradeablePackages=$(count_upgradeable_packages)
+
+    if [ "$upgradeablePackages" -eq 0 ]; then
+        dialog --msgbox "Sistema já está atualizado.\n\nNenhum pacote precisa de upgrade no momento." 8 60
+        return
+    fi
+
+    dialog --yesno "Foram encontrados ${upgradeablePackages} pacote(s) para atualizar.\n\nExecutar upgrade seguro mantendo o kernel protegido?" 9 70
+    if [ $? -ne 0 ]; then
+        clear
+        return
+    fi
+
+    if ! sudo apt-get upgrade -y; then
+        dialog --msgbox "Erro durante o upgrade seguro do sistema." 8 60
+        return
+    fi
+
+    dialog --msgbox "Sistema atualizado com segurança.\n\nKernel protegido durante o processo." 8 60
 }
 
 restart_linux() {
