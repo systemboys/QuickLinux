@@ -99,7 +99,7 @@ while true; do
             0 "↩️  Voltar..." \
             1 "⬇️  Atualizar QuickLinux" \
             2 "🗑️  Deletar QuickLinux" \
-            3 "🔄  Recarregar QuickLinux" \
+            3 "🔄 Recarregar QuickLinux" \
             4 "ℹ️  Sobre o QuickLinux" \
             2>&1 >/dev/tty)
 
