@@ -15,6 +15,10 @@
 #   - Ajuste no retorno da sessão para preservar a seleção no menu principal.
 # v1.0.2 2026-05-03 às 13h20, Marcos Aurélio:
 #   - Adicionados ícones aos itens do menu.
+# v1.0.3 2026-05-03 às 17h05, Marcos Aurélio:
+#   - Adicionada opção para instalar o PDFTK.
+# v1.0.4 2026-05-03 às 17h15, Marcos Aurélio:
+#   - Adicionada opção para instalar o ImageMagick.
 #
 # Licença: GPL.
 
@@ -48,6 +52,16 @@ Install_Lynx_browser() {
     ./Install_Lynx_browser.sh
 }
 
+# Função para instalar o PDFTK
+Install_PDFTK() {
+    ./Install_PDFTK.sh
+}
+
+# Função para instalar o ImageMagick
+Install_ImageMagick() {
+    ./Install_ImageMagick.sh
+}
+
 # Menu interativo usando dialog
 lastChoice=0
 
@@ -55,10 +69,12 @@ while true; do
     choice=$(dialog --clear --backtitle "${sessionName} | ${developer}" \
             --title "${sessionName}" \
             --default-item "$lastChoice" \
-            --menu "${sessionDescription}" 15 40 2 \
+            --menu "${sessionDescription}" 15 55 4 \
             0 "$(ql_label "↩️ " "Voltar...")" \
             1 "$(ql_label "🔗" "Instalar navegador Links2")" \
             2 "$(ql_label "📝" "Instalar navegador Lynx")" \
+            3 "$(ql_label "📄" "Instalar PDFTK")" \
+            4 "$(ql_label "🖼️ " "Instalar ImageMagick")" \
             2>&1 >/dev/tty)
 
     # Se o usuário pressionar Cancelar, sair do loop
@@ -81,6 +97,16 @@ while true; do
             lastChoice=2
             clear
             Install_Lynx_browser
+            ;;
+        3)
+            lastChoice=3
+            clear
+            Install_PDFTK
+            ;;
+        4)
+            lastChoice=4
+            clear
+            Install_ImageMagick
             ;;
         *)
             dialog --msgbox "Opção inválida. Tente novamente." 8 40

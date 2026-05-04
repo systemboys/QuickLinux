@@ -132,6 +132,8 @@ Este menu contém scripts de instalação de pacotes de software dentro do diret
 │  │  ├─ System_Information.sh
 │  │  └─ System_Utilities_Session.sh
 │  └─ /Terminal_Utilities_Session/
+│     ├─ Install_ImageMagick.sh
+│     ├─ Install_PDFTK.sh
 │     ├─ Install_Links2_browser.sh
 │     ├─ Install_Lynx_browser.sh
 │     └─ Terminal_Utilities_Session.sh
@@ -195,6 +197,8 @@ Aqui estão todas as opções em desenvolvimento.
   - [x] Voltar...
   - [x] Instalar navegador Links2
   - [x] Instalar navegador Lynx
+  - [x] Instalar PDFTK
+  - [x] Instalar ImageMagick
 - [x] **Redes**
   - [x] Voltar...
   - [x] Verificar IP
