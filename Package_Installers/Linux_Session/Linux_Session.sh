@@ -91,6 +91,8 @@ update_packages() {
 
 # 🔒 FUNÇÃO SEGURA (SEM QUEBRAR KERNEL)
 update_kernel() {
+    clear
+
     # Bloqueia kernel problemático e meta pacote
     sudo apt-mark hold linux-image-amd64 linux-headers-amd64 >/dev/null 2>&1
     sudo apt-mark hold linux-image-6.12.74+deb13+1-amd64 >/dev/null 2>&1
