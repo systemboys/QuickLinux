@@ -117,6 +117,8 @@ update_kernel() {
         return
     fi
 
+    clear
+
     if ! sudo apt-get upgrade -y; then
         dialog --msgbox "Erro durante o upgrade seguro do sistema." 8 60
         return
